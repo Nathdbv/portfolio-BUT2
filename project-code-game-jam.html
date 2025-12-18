@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Code Game Jam (Compétence 6)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Compétence 6 : Collaborer au sein d’une équipe informatique — Code Game Jam 2025." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-dark page-project page-code-game-jam">
+  <a href="#main" class="skip-link">Passer au contenu</a>
+
+  <div class="page-wrapper">
+    <header class="site-header glass">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">P</span>
+          <span class="logo-text">Portfolio</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="work.html" class="nav-link active">Projets</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
+          <span class="theme-toggle-icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO : titre + images (2 preuves) -->
+      <section class="section hero">
+        <div class="container hero-vertical-layout">
+          <div class="reveal text-center">
+            <p class="eyebrow">Code Game Jam — 9ème édition • 2025</p>
+            <h1 class="hero-title">
+              COMPÉTENCE 6
+              <br />
+              <span class="accent-gradient">Collaborer au sein d’une équipe informatique</span>
+            </h1>
+            <div class="hero-subtitle mx-auto">
+              <p>
+                Du 23 au 25 janvier 2025, j’ai participé à la <strong>Code Game Jam (30h)</strong> au Ob.i LAB.
+                Au sein d'une équipe de 6 personnes, nous avons relevé le défi du thème imposé :
+                <span class="accent-gradient">“Mélodie à l’Infini”</span>.
+              </p>
+              <p>
+                <strong>Concept :</strong> Une réinterprétation des 4 Saisons de Vivaldi en 8-bits,
+                où la map évolue dynamiquement toutes les 30 secondes au rythme de la musique.
+              </p>
+            </div>
+
+            <!-- Chiffres clés -->
+            <div class="stats-bar reveal flex-center">
+              <span class="pill">30h Non-stop</span>
+              <span class="pill">Équipe de 6</span>
+              <span class="pill">GitHub • Blender • Unity</span>
+              <span class="pill highlight">🏆 Prix design global</span>
+              <span class="pill highlight">🥈 2ème local Montpellier</span>
+            </div>
+
+            <div class="hero-actions flex-center">
+              <a href="work.html" class="btn ghost">← Retour aux projets</a>
+              <a href="contact.html" class="btn primary">Me contacter</a>
+            </div>
+          </div>
+
+          <div class="hero-media-stack reveal">
+            <figure>
+              <img src="Images/cgj1.png" alt="Capture du gameplay" class="large-project-img" loading="lazy" />
+              <figcaption class="text-center">Image 1 — capture du gameplay</figcaption>
+            </figure>
+
+            <figure>
+              <img src="Images/cgj2.png" alt="Photo de l’équipe durant la Code Game Jam" class="large-project-img"
+                loading="lazy" />
+              <figcaption class="text-center">Image 2 — photo de l’équipe</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANALYSE DÉTAILLÉE (Grille 4 cartes) -->
+      <section class="section section-divider">
+        <div class="container project-detail-grid">
+          <!-- Carte A : Mon rôle -->
+          <article class="project-detail-card glass reveal">
+            <h2>Mon rôle</h2>
+            <p>Pendant la jam, j’ai contribué au projet sur plusieurs aspects complémentaires :</p>
+            <ul class="mini-list">
+              <li><strong>Game design :</strong> définition et ajustement des mécaniques principales pour garder un
+                gameplay cohérent malgré la contrainte des 30h.</li>
+              <li><strong>Modélisation 3D (Blender) :</strong> création d’éléments visuels adaptés au concept et au
+                rythme du jeu.</li>
+              <li><strong>Intégration / implémentation in-game :</strong> mise en place des assets et des comportements
+                dans le jeu afin de livrer un prototype jouable dans les délais.</li>
+            </ul>
+          </article>
+
+          <!-- Carte B : Organisation & collaboration -->
+          <article class="project-detail-card glass reveal">
+            <h2>Organisation & collaboration</h2>
+            <p>Nous étions une équipe de 6 et nous devions produire un résultat en 30h, ce qui impose de décider vite et
+              de prioriser.</p>
+            <p>Pour structurer le travail, nous avons utilisé <strong>GitHub</strong> pour centraliser le code et suivre
+              l’avancement.
+              La collaboration reposait sur une répartition claire des tâches et une communication régulière pour
+              synchroniser les décisions
+              (idée, direction artistique/sonore, intégration, tests) et garantir une version jouable à la fin.</p>
+          </article>
+
+          <!-- Carte C : Problème rencontré & gestion de crise -->
+          <article class="project-detail-card glass reveal">
+            <h2>Gestion de crise</h2>
+            <p>La difficulté la plus marquante a été un <strong>gros conflit Git</strong> : à un moment, j’ai été le
+              seul à conserver une version viable,
+              tandis que les autres membres avaient perdu la leur.</p>
+            <p>Cette situation m’a fait prendre conscience de l’importance d’une gestion de version rigoureuse
+              (synchronisation fréquente, intégration progressive, vigilance sur les merges) et surtout de la nécessité
+              de communiquer rapidement quand un blocage met en danger l’équipe.</p>
+          </article>
+
+          <!-- Carte D : Résultats & bilan -->
+          <article class="project-detail-card glass reveal">
+            <h2>Résultats & bilan</h2>
+            <p>Le projet final est resté un prototype jouable : nous n’avons pas eu assez de temps pour tout terminer,
+              mais nous avons pu présenter un concept clair récompensé par le jury avec le
+              <strong>🏆 Prix design global</strong> ainsi que la <strong>🏆 2ème place locale</strong> (site
+              Montpellier).
+            </p>
+            <p>Sur le plan personnel, je retiens surtout l’importance de prioriser, itérer vite,
+              et maintenir une communication efficace pour livrer quelque chose de solide en équipe, sous contrainte de
+              temps.</p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Nathan Dabonneville — Tous droits réservés.</p>
+        <div class="footer-links">
+          <a href="mailto:nathan.dab34@gmail.com">nathan.dab34@gmail.com</a>
+          <span>•</span>
+          <a href="contact.html">Me joindre</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button class="scroll-top" aria-label="Retour en haut">↑</button>
+  <script src="main.js" defer></script>
+</body>
+
+</html>

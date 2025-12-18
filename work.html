@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Projets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sélection de projets web, UI et expériences interactives." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-dark page-work">
+  <a href="#main" class="skip-link">Passer au contenu</a>
+
+  <div class="page-wrapper">
+    <header class="site-header glass">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">P</span>
+          <span class="logo-text">Portfolio</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="work.html" class="nav-link active">Projets</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
+          <span class="theme-toggle-icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container section-header">
+          <h1 class="section-title reveal">Projets sélectionnés</h1>
+          <p class="section-subtitle reveal">
+            Un mélange de sites vitrines, d’expériences interactives et
+            d’explorations visuelles.
+          </p>
+        </div>
+
+        <div class="container filter-bar reveal">
+          <button class="filter-button active" data-filter="all">Tous</button>
+          <button class="filter-button" data-filter="ui">UI / UX</button>
+          <button class="filter-button" data-filter="front">Front-end</button>
+          <button class="filter-button" data-filter="exp">Expérience interactive</button>
+        </div>
+
+        <div class="container project-grid">
+          <!-- Code Game Jam (Compétence 6) -->
+          <article class="project-card glass reveal" data-category="exp">
+            <!-- Rend toute la carte cliquable -->
+            <a class="project-card-overlay" href="project-code-game-jam.html"
+              aria-label="Ouvrir le projet : Code Game Jam 2025"></a>
+
+            <div class="project-image skeleton"
+              style="background-image: url('2af826fe-c1c2-4418-a437-20290cfa95c6.png'); background-size: cover; background-position: center;">
+            </div>
+            <div class="project-body">
+              <h2>Code Game Jam — 2025</h2>
+              <p>
+                Participation à une game jam : lancer un projet en équipe,
+                s’organiser sous contraintes (temps, juridiques) et assurer une
+                communication efficace.
+              </p>
+              <div class="project-tags">
+                <span class="pill">Compétence 6</span>
+                <span class="pill">Travail d’équipe</span>
+                <span class="pill">Game Jam</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-year">2025</span>
+              <a href="project-code-game-jam.html" class="project-link">Voir le projet</a>
+            </div>
+          </article>
+
+          <!-- Projet 1 -->
+          <article class="project-card glass reveal" data-category="ui front">
+            <div class="project-image skeleton"></div>
+            <div class="project-body">
+              <h2>Dashboard analytique minimaliste</h2>
+              <p>
+                Interface de dashboard épurée, avec cartes modulaires,
+                mode sombre, et animations au survol.
+              </p>
+              <div class="project-tags">
+                <span class="pill">UI Design</span>
+                <span class="pill">Front-end</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-year">2025</span>
+              <a href="#" class="project-link">Voir le prototype</a>
+            </div>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="project-card glass reveal" data-category="exp front">
+            <div class="project-image skeleton"></div>
+            <div class="project-body">
+              <h2>Site expérimental scroll & storytelling</h2>
+              <p>
+                Un long scroll qui raconte une histoire, avec effets de
+                parallaxe, texte synchronisé et animations de sections.
+              </p>
+              <div class="project-tags">
+                <span class="pill">Expérience</span>
+                <span class="pill">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-year">2024</span>
+              <a href="#" class="project-link">Voir la démo</a>
+            </div>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="project-card glass reveal" data-category="ui">
+            <div class="project-image skeleton"></div>
+            <div class="project-body">
+              <h2>Kit d’interface pour portfolio</h2>
+              <p>
+                Pack de composants réutilisables : cartes, boutons, headers,
+                formulaires, sections hero et grilles.
+              </p>
+              <div class="project-tags">
+                <span class="pill">UI Library</span>
+                <span class="pill">Design system</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-year">2024</span>
+              <a href="#" class="project-link">Voir les composants</a>
+            </div>
+          </article>
+
+          <!-- Projet 4 -->
+          <article class="project-card glass reveal" data-category="front">
+            <div class="project-image skeleton"></div>
+            <div class="project-body">
+              <h2>Landing page produit</h2>
+              <p>
+                Landing page responsive, chargement rapide, sections claires,
+                et CTA mis en valeur par le contraste et le rythme.
+              </p>
+              <div class="project-tags">
+                <span class="pill">Front-end</span>
+                <span class="pill">Performance</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-year">2023</span>
+              <a href="#" class="project-link">Aperçu</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-cta">
+        <div class="container cta-box glass reveal">
+          <div>
+            <h2>Tu veux un site dans ce style ?</h2>
+            <p>
+              Je peux adapter cette approche à ton projet, ton identité visuelle
+              et tes contraintes.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn primary">Discuter d’un projet</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ton Nom — Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <button class="scroll-top" aria-label="Retour en haut">
+    ↑
+  </button>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>

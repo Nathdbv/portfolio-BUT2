@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio créatif de développeur / designer front-end." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="#" />
+</head>
+<body class="theme-dark page-home">
+  <a href="#main" class="skip-link">Passer au contenu</a>
+
+  <div class="page-wrapper">
+    <header class="site-header glass">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">P</span>
+          <span class="logo-text">Portfolio</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html" class="nav-link active">Accueil</a></li>
+            <li><a href="about.html" class="nav-link">À propos</a></li>
+            <li><a href="work.html" class="nav-link">Projets</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
+          <span class="theme-toggle-icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow reveal">PORTFOLIO • 2025</p>
+            <h1 class="hero-title reveal">
+              Je conçois des <span class="accent-gradient">interfaces</span><br />
+              qui donnent envie de rester.
+            </h1>
+            <p class="hero-subtitle reveal">
+              Développeur front-end / designer UX, passionné par les expériences
+              web immersives, propres et performantes.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="work.html" class="btn primary">Voir mes projets</a>
+              <a href="about.html" class="btn ghost">En savoir plus</a>
+            </div>
+
+            <div class="hero-meta reveal">
+              <div>
+                <span class="meta-label">Spécialités</span>
+                <span class="meta-value">UI Design, Front-end, Animations</span>
+              </div>
+              <div>
+                <span class="meta-label">Stack</span>
+                <span class="meta-value">HTML • CSS • JS • React</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel reveal">
+            <div class="hero-card main glass">
+              <div class="hero-status">
+                <span class="badge green"></span>
+                <span>Disponible pour missions / alternance</span>
+              </div>
+              <div class="hero-avatar">
+                <div class="avatar-circle"></div>
+                <div class="avatar-blob"></div>
+              </div>
+              <h2>Créateur d’expériences numériques</h2>
+              <p>
+                Je transforme des idées floues en interfaces claires, esthétiques
+                et faciles à utiliser.
+              </p>
+              <ul class="hero-tags">
+                <li>Portfolio design</li>
+                <li>Animation avancée</li>
+                <li>Accessibilité</li>
+              </ul>
+            </div>
+
+            <div class="hero-card secondary glass">
+              <p class="card-title">Stats rapides</p>
+              <ul class="stat-list">
+                <li><span>+20</span><span>Projets réalisés</span></li>
+                <li><span>3</span><span>Domaines : web, vidéo, UI</span></li>
+                <li><span>∞</span><span>Idées en tête</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETS MIS EN AVANT -->
+      <section class="section section-divider">
+        <div class="container section-header">
+          <h2 class="section-title reveal">Sélection de projets</h2>
+          <p class="section-subtitle reveal">
+            Un aperçu des expériences que je conçois : animations fluides,
+            typographie maîtrisée et micro-interactions.
+          </p>
+        </div>
+
+        <div class="container featured-grid">
+          <article class="project-feature reveal">
+            <div class="project-thumb skeleton"></div>
+            <div class="project-content">
+              <h3>Expérience immersive d’onboarding</h3>
+              <p>
+                Interface animée pour guider les nouveaux utilisateurs dans une
+                application SaaS, avec transitions douces et storytelling.
+              </p>
+              <div class="project-meta">
+                <span class="pill">UI / UX</span>
+                <span class="pill">Animation</span>
+                <span class="pill">Design system</span>
+              </div>
+              <a href="work.html" class="project-link">Voir le cas d’usage →</a>
+            </div>
+          </article>
+
+          <article class="project-feature reveal">
+            <div class="project-thumb skeleton"></div>
+            <div class="project-content">
+              <h3>Portfolio vidéo & motion</h3>
+              <p>
+                Un site mono-page mettant en avant des vidéos, transitions
+                cinématographiques et effets de texte synchronisés.
+              </p>
+              <div class="project-meta">
+                <span class="pill">Front-end</span>
+                <span class="pill">Motion</span>
+                <span class="pill">Responsive</span>
+              </div>
+              <a href="work.html" class="project-link">Découvrir les détails →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- COMPÉTENCES -->
+      <section class="section">
+        <div class="container section-header">
+          <h2 class="section-title reveal">Ce que je sais faire</h2>
+        </div>
+
+        <div class="container skills-grid">
+          <div class="skill-card glass reveal">
+            <h3>Design d’interface</h3>
+            <p>
+              Hiérarchie visuelle, couleurs, typographie et composants cohérents
+              pour raconter une histoire dès le premier écran.
+            </p>
+            <ul>
+              <li>Design system & UI kits</li>
+              <li>Grilles & layouts responsives</li>
+              <li>Accessibilité et lisibilité</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass reveal">
+            <h3>Développement front-end</h3>
+            <p>
+              Intégration pixel-perfect, animations performantes et code propre
+              prêt pour la production.
+            </p>
+            <ul>
+              <li>HTML sémantique</li>
+              <li>CSS moderne (Grid, Flex, variables)</li>
+              <li>JavaScript vanilla & frameworks</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass reveal">
+            <h3>Expérience & storytelling</h3>
+            <p>
+              Construire des parcours utilisateurs fluides, qui donnent envie
+              de cliquer, scroller et revenir.
+            </p>
+            <ul>
+              <li>Micro-interactions</li>
+              <li>Transitions entre pages</li>
+              <li>Parcours utilisateur complet</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="section section-cta">
+        <div class="container cta-box glass reveal">
+          <div>
+            <h2>Un projet en tête ?</h2>
+            <p>
+              Portfolio, site d’artiste, expérience interactive ou refonte
+              complète : discutons-en.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn primary">Me contacter</a>
+            <a href="work.html" class="btn ghost">Voir mes projets</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ton Nom — Tous droits réservés.</p>
+        <div class="footer-links">
+          <a href="mailto:contact@tonmail.com">contact@tonmail.com</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span>•</span>
+          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button class="scroll-top" aria-label="Retour en haut">
+    ↑
+  </button>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
