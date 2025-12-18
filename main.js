@@ -29,9 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("theme-light");
-      const isLight = document.body.classList.contains("theme-light");
-      safeStorage("portfolio-theme", isLight ? "light" : "dark");
+      const toggleTheme = () => {
+        document.body.classList.toggle("theme-light");
+        const isLight = document.body.classList.contains("theme-light");
+        safeStorage("portfolio-theme", isLight ? "light" : "dark");
+      };
+
+      if (!document.startViewTransition) {
+        toggleTheme();
+      } else {
+        document.startViewTransition(() => toggleTheme());
+      }
     });
   }
 

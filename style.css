@@ -1335,3 +1335,20 @@ body.theme-light .field textarea {
 .page-code-game-jam .hero-actions {
   margin-bottom: 0 !important;
 }
+
+/* Smooth Theme Transition Fallback */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Customizing View Transition Duration */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+/* Force Center Sun Icon in Light Mode */
+body.theme-light .theme-toggle-icon {
+  transform: scale(0.96) !important;
+  box-shadow: none !important; /* Ensure it stays a full sun */
+}
