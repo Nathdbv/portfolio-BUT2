@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SAE 3.01 — Case 404 (CTF) | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Développement et déploiement d'une plateforme de Capture The Flag (CTF) complète. Infra Docker, Nginx et intégration plugins." />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* 
+       =========================================================
+       CTF ULTRA - PAGE SPECIFIC STYLES 
+       Focus: High Density & Premium Ergonomics
+       =========================================================
+    */
+
+        :root {
+            --ctf-primary: #00f2fe;
+            --ctf-accent: #7000ff;
+            --ctf-surface: rgba(255, 255, 255, 0.03);
+            --ctf-border: rgba(255, 255, 255, 0.08);
+            --ctf-text-dim: rgba(255, 255, 255, 0.6);
+        }
+
+        body.theme-light {
+            --ctf-surface: rgba(0, 0, 0, 0.02);
+            --ctf-border: rgba(0, 0, 0, 0.1);
+            --ctf-text-dim: #555555;
+        }
+
+        /* Page Wrapper Fix */
+        .ctf-ultra-page {
+            background-color: var(--bg-dark) !important;
+        }
+
+        /* Dense Hero */
+        .ctf-hero-split {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 0 2rem;
+        }
+
+        .ctf-hero-badge {
+            display: inline-flex;
+            padding: 4px 12px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--ctf-primary);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--ctf-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ctf-hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .ctf-hero-pitch {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Project Identity Card (Density Focus) */
+        .ctf-id-card {
+            background: var(--ctf-surface);
+            border: 1px solid var(--ctf-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .ctf-id-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .ctf-id-item h4 {
+            font-size: 0.75rem;
+            color: var(--ctf-primary);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .ctf-id-item p {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Bento Stats Row */
+        .ctf-bento-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .ctf-stat-box {
+            background: var(--ctf-surface);
+            border: 1px solid var(--ctf-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .ctf-stat-box:hover {
+            border-color: var(--ctf-primary);
+            transform: translateY(-5px);
+        }
+
+        .ctf-stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+
+        body.theme-light .ctf-stat-value {
+            color: #111;
+        }
+
+        .ctf-stat-label {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Narrative Cards */
+        .ctf-section-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .ctf-glass-card {
+            background: var(--ctf-surface);
+            border: 1px solid var(--ctf-border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        .ctf-glass-card h2,
+        .ctf-glass-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--ctf-primary);
+        }
+
+        /* Skill Matrix Table */
+        .ctf-skill-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .ctf-skill-matrix th {
+            text-align: left;
+            padding: 1rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--ctf-border);
+            color: var(--ctf-primary);
+        }
+
+        .ctf-skill-matrix td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid var(--ctf-border);
+        }
+
+        .ctf-skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Gallery (Preserved) */
+        .ctf-gallery-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--ctf-border);
+        }
+
+        @media (max-width: 992px) {
+            .ctf-hero-split {
+                grid-template-columns: 1fr;
+            }
+
+            .ctf-section-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-dark page-project ctf-ultra-page">
+    <div class="page-wrapper">
+        <header class="site-header glass">
+            <div class="container header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">P</span>
+                    <span class="logo-text">Portfolio</span>
+                </a>
+                <button class="nav-toggle" aria-label="Ouvrir le menu">
+                    <span></span><span></span>
+                </button>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="work.html" class="nav-link active">Projets</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-toggle-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main">
+            <div class="container">
+                <!-- PREMIUM HERO -->
+                <section class="ctf-hero-split reveal">
+                    <div>
+                        <span class="ctf-hero-badge">SAE 3.01 • Mission Cyber</span>
+                        <h1 class="ctf-hero-title">SAE 3.01 — <span class="accent-gradient">Case 404 (CTF)</span></h1>
+                        <p class="ctf-hero-pitch">
+                            Conception et déploiement d’un écosystème CTF cloud-ready pour l’association Yggame. Une
+                            infrastructure sécurisée, automatisée et une immersion totale pour les compétiteurs.
+                        </p>
+                        <!--<div class="hero-actions" style="margin-top: 2rem;">
+                            <a href="work.html" class="btn primary">← Retour</a>
+                            <a href="contact.html" class="btn ghost">Me contacter</a>
+                        </div>-->
+                    </div>
+
+                    <div class="ctf-id-card">
+                        <div class="ctf-id-grid">
+                            <div class="ctf-id-item">
+                                <h4>Client</h4>
+                                <p>Association Yggame</p>
+                            </div>
+                            <div class="ctf-id-item">
+                                <h4>Livrable</h4>
+                                <p>Plateforme & Défis</p>
+                            </div>
+                            <div class="ctf-id-item">
+                                <h4>Équipe</h4>
+                                <p>4 Personnes (Scrum)</p>
+                            </div>
+                            <div class="ctf-id-item">
+                                <h4>Status</h4>
+                                <p>5 Sprints + Livraison</p>
+                            </div>
+                            <div class="ctf-id-item" style="grid-column: span 2;">
+                                <h4>Stack Core</h4>
+                                <p>CTFd • Python • Docker • Nginx</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BENTO STATS -->
+                <section class="ctf-bento-stats reveal">
+                    <div class="ctf-stat-box">
+                        <span class="ctf-stat-value">CTFd</span>
+                        <span class="ctf-stat-label">Plateforme en ligne</span>
+                    </div>
+                    <div class="ctf-stat-box">
+                        <span class="ctf-stat-value">Docker</span>
+                        <span class="ctf-stat-label">Isolation par équipe</span>
+                    </div>
+                    <div class="ctf-stat-box">
+                        <span class="ctf-stat-value">Nginx</span>
+                        <span class="ctf-stat-label">Proxy Sécurisé</span>
+                    </div>
+                    <div class="ctf-stat-box">
+                        <span class="ctf-stat-value">20</span>
+                        <span class="ctf-stat-label">Défis déployés</span>
+                    </div>
+                </section>
+
+                <!-- CONTEXTE & ROLE -->
+                <section class="ctf-section-grid reveal">
+                    <article class="ctf-glass-card">
+                        <h2>Contexte & Mission</h2>
+                        <p>Dans le cadre de la SAE 3.01, nous avons dû répondre à un besoin client réel : fournir une
+                            infrastructure CTF robuste permettant de supporter des dizaines d’utilisateurs simultanés
+                            tout en garantissant une étanchéité totale entre les challenges.</p>
+                        <p style="margin-top: 1rem;">L’objectif était de transformer un VPS Debian brut en une
+                            plateforme ludique, monitorée et hautement sécurisée via filtrage IPv4 (allow-list).</p>
+                    </article>
+
+                    <article class="ctf-glass-card" style="border-left: 4px solid var(--ctf-primary);">
+                        <h2>Mon Rôle Stratégique</h2>
+                        <ul class="mini-list">
+                            <li><strong>Lead Infra :</strong> Orchestration de l’architecture Docker (compose global,
+                                volumes persistants).</li>
+                            <li><strong>Sécurité Réseau :</strong> Configuration du reverse proxy Nginx avec restriction
+                                d’accès par IP.</li>
+                            <li><strong>Intégration Plugins :</strong> Adaptation du code Python des plugins tiers
+                                (Rôles, Multi-flags, QCM).</li>
+                            <li><strong>UI & UX :</strong> Intégration et personnalisation du thème visuel Case 404.
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- INFRA & TECH -->
+                <section class="ctf-glass-card reveal" style="margin-bottom: 3rem;">
+                    <div class="grid-2" style="align-items: center;">
+                        <div>
+                            <h3>Écosystème Docker & Sécurité</h3>
+                            <p>Chaque défi (Enquêtes, Forensic, Web, etc.) est encapsulé dans son propre container
+                                Docker pour éviter toute fuite ou compromission de l'hôte. Portainer nous permet de
+                                monitorer l'état des services en temps réel.</p>
+                            <ul class="mini-list" style="margin-top: 1.5rem;">
+                                <li>Orchestration via <strong>Docker Compose</strong>.</li>
+                                <li>Isolation des processus & limitation des ressources.</li>
+                                <li><strong>Allow-list IPv4</strong> dynamique sur Nginx.</li>
+                                <li>Persistence via volumes Docker sécurisés.</li>
+                            </ul>
+                        </div>
+                        <div class="code-block-wrapper" style="margin:0;">
+                            <p class="code-label">nginx / allow-list.conf</p>
+                            <pre class="glass-code"><code># Filtrage des accès
+allow 192.168.x.x; # Jury
+allow 10.x.x.x;    # Equipe Dev
+deny all;          # Zero Trust</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEFIS & GESTION -->
+                <section class="ctf-section-grid reveal">
+                    <article class="ctf-glass-card">
+                        <h3>Défis & Thématiques</h3>
+                        <p>20 défis conçus pour une progression pédagogique fluide :</p>
+                        <div class="skill-pill-stack" style="margin-top: 1rem;">
+                            <span class="pill">Forensique</span>
+                            <span class="pill">OSINT</span>
+                            <span class="pill">Cryptographie</span>
+                            <span class="pill">Web Exploitation</span>
+                            <span class="pill">Stéganographie</span>
+                            <span class="pill">Shell / App</span>
+                        </div>
+                        <p class="note" style="margin-top: 1.5rem;"><em>Note : Isolation par containers pour les défis
+                                interactifs (SSH/Web).</em></p>
+                    </article>
+
+                    <article class="ctf-glass-card">
+                        <h3>Collaboration Agile</h3>
+                        <p>Gestion par sprints via <strong>Trello</strong> et versioning centralisé sur
+                            <strong>GitLab</strong>. La rotation du Scrum Master a assuré une cohésion d'équipe et une
+                            responsabilisaiton totale.
+                        </p>
+                        <div class="stats-bar" style="margin-top: 1rem; border: none; padding: 0;">
+                            <span class="pill">Trello</span>
+                            <span class="pill">Daily Scrum</span>
+                            <span class="pill">GitLab CI</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- DIFFICULTÉ (FOCUS ERGONOMIE) -->
+                <section class="ctf-glass-card reveal" style="border-right: 4px solid #ffbd2e; margin-bottom: 3rem;">
+                    <h3>Le Challenge Technique : Conflit Plugins/Thème</h3>
+                    <p>Le plugin <strong>QCM interactif</strong> est entré en conflit avec les styles du thème
+                        personnalisé (collisions CSS). </p>
+                    <div class="grid-2" style="margin-top: 1.5rem; gap: 3rem;">
+                        <div>
+                            <h4 style="font-size: 0.9rem; color: #ffbd2e; text-transform: uppercase;">Diagnostic</h4>
+                            <p style="font-size: 0.9rem;">Identification des sélecteurs hautement spécifiques via
+                                DevTools.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.9rem; color: #27c93f; text-transform: uppercase;">Résolution</h4>
+                            <p style="font-size: 0.9rem;">Injection de correctifs CSS ciblés et modification des
+                                templates Jinja2 pour isoler les scopes.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMPETENCES -->
+                <section class="ctf-glass-card reveal">
+                    <h2>Matrice de Compétences (BUT)</h2>
+                    <table class="ctf-skill-matrix">
+                        <thead>
+                            <tr>
+                                <th>Compétence</th>
+                                <th>Actions réalisées</th>
+                                <th>Preuve</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ctf-skill-tag">C3</span> Administration Infra</td>
+                                <td>Déploiement VPS, Stacks Docker, Nginx Proxy, Net-Sec.</td>
+                                <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Screenshots</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="ctf-skill-tag">C1</span> Développement UI</td>
+                                <td>Intégration Thème, CSS Patches, Adaptation Plugins.</td>
+                                <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Rendu Final</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="ctf-skill-tag">C5</span> Gestion Projet</td>
+                                <td>Backlogs Sprint, Daily Meetings, Pitch Final "Vente".</td>
+                                <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Trello</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="ctf-skill-tag">C6</span> Collaboration</td>
+                                <td>Versioning GitLab, Scrum Master tournant, Entraide Technique.</td>
+                                <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Historique</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- PREUVES VISUELLES (PRESERVED) -->
+                <section id="preuves" class="ctf-gallery-section reveal">
+                    <h2 class="section-title text-center">Preuves Visuelles</h2>
+
+                    <div class="filter-bar flex-center" style="margin-bottom: 3rem;">
+                        <button class="filter-button active" data-filter="all">Tous</button>
+                        <button class="filter-button" data-filter="ui">Interface</button>
+                        <button class="filter-button" data-filter="infra">Infrastucture</button>
+                        <button class="filter-button" data-filter="plugins">Plugins</button>
+                        <button class="filter-button" data-filter="gestion">Gestion</button>
+                    </div>
+
+                    <div class="ctf-gallery-grid" id="ctfGallery">
+                        <!-- UI -->
+                        <div class="gallery-item glass" data-category="ui">
+                            <img src="assets/ctf/ui-home.png" alt="Accueil Case 404" class="ctf-gallery-img">
+                            <div class="gallery-caption">Interface Home</div>
+                        </div>
+                        <div class="gallery-item glass" data-category="ui">
+                            <img src="assets/ctf/ui-scoreboard.png" alt="Scoreboard dynamique" class="ctf-gallery-img">
+                            <div class="gallery-caption">Scoreboard</div>
+                        </div>
+                        <!-- Infra -->
+                        <div class="gallery-item glass" data-category="infra">
+                            <img src="assets/ctf/portainer-stacks.png" alt="Dashboard Portainer"
+                                class="ctf-gallery-img">
+                            <div class="gallery-caption">Monitoring Docker</div>
+                        </div>
+                        <div class="gallery-item glass" data-category="infra">
+                            <img src="assets/ctf/nginx-allowlist.png" alt="Config Nginx allow-list"
+                                class="ctf-gallery-img">
+                            <div class="gallery-caption">Sécurité : Allow-list</div>
+                        </div>
+                        <!-- Plugins -->
+                        <div class="gallery-item glass" data-category="plugins">
+                            <img src="assets/ctf/plugin-qcm.png" alt="Plugin QCM Interactif" class="ctf-gallery-img">
+                            <div class="gallery-caption">Défis QCM</div>
+                        </div>
+                        <div class="gallery-item glass" data-category="plugins">
+                            <img src="assets/ctf/plugin-multiflags.png" alt="Plugin Multi-flags"
+                                class="ctf-gallery-img">
+                            <div class="gallery-caption">Challenges multi-étapes</div>
+                        </div>
+                        <!-- Gestion -->
+                        <div class="gallery-item glass" data-category="gestion">
+                            <img src="assets/ctf/trello-board.png" alt="Tableau Trello Sprints" class="ctf-gallery-img">
+                            <div class="gallery-caption">Backlog Scrum</div>
+                        </div>
+                        <!-- Extra -->
+                        <div class="gallery-item glass" data-category="plugins">
+                            <img src="assets/ctf/plugin-webhook-discord.png" alt="Notifications Discord"
+                                class="ctf-gallery-img">
+                            <div class="gallery-caption">Webhook Discord</div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="hero-actions flex-center section">
+                    <a href="work.html" class="btn primary">← Retour au portfolio</a>
+                    <a href="contact.html" class="btn ghost">Projet suivant</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- LIGHTBOX -->
+        <div id="ctfLightbox" class="ctf-lightbox">
+            <span class="ctf-lightbox-close">&times;</span>
+            <img class="ctf-lightbox-content" id="ctfLightboxImg">
+            <div id="ctfLightboxCaption" class="ctf-lightbox-caption"></div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container footer-inner text-center">
+                <p>© 2025 Nathan Dabonneville — Conçu pour l'excellence technique.</p>
+            </div>
+        </footer>
+    </div>
+
+    <button class="scroll-top">↑</button>
+    <script src="main.js"></script>
+
+    <!-- INLINE PAGE LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lightbox
+            const lb = document.getElementById('ctfLightbox');
+            const lbImg = document.getElementById('ctfLightboxImg');
+            const lbCap = document.getElementById('ctfLightboxCaption');
+            const close = document.querySelector('.ctf-lightbox-close');
+
+            document.querySelectorAll('.ctf-gallery-img').forEach(img => {
+                img.onclick = () => {
+                    lb.style.display = "block";
+                    lbImg.src = img.src;
+                    lbCap.innerHTML = img.alt;
+                }
+            });
+
+            const closeLb = () => lb.style.display = "none";
+            close.onclick = closeLb;
+            lb.onclick = (e) => { if (e.target === lb) closeLb(); }
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+            // Filters
+            const btns = document.querySelectorAll('.filter-button');
+            const items = document.querySelectorAll('.gallery-item');
+
+            btns.forEach(btn => {
+                btn.onclick = () => {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    items.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
