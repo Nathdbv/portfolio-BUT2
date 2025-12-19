@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio - Accueil</title>
+  <title>Nathan Dabonneville - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio créatif de développeur / designer front-end." />
+  <meta name="description" content="Portfolio de Nathan Dabonneville - Développeur Informatique BUT2." />
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="#" />
 </head>
+
 <body class="theme-dark page-home">
   <a href="#main" class="skip-link">Passer au contenu</a>
 
@@ -39,185 +41,136 @@
     </header>
 
     <main id="main">
-      <!-- HERO -->
-      <section class="section hero">
-        <div class="container hero-grid">
+      <!-- HERO DENSE -->
+      <section class="section hero home-hero-dense">
+        <div class="container hero-grid" style="gap: 2.5rem;">
           <div class="hero-text">
-            <p class="eyebrow reveal">PORTFOLIO • 2025</p>
-            <h1 class="hero-title reveal">
-              Je conçois des <span class="accent-gradient">interfaces</span><br />
-              qui donnent envie de rester.
+            <h1 class="hero-title reveal" style="margin-bottom: 1rem;">
+              Je développe des <br /><span class="accent-gradient">expériences numériques</span><br />
+              claires, utiles et vivantes.
             </h1>
-            <p class="hero-subtitle reveal">
-              Développeur front-end / designer UX, passionné par les expériences
-              web immersives, propres et performantes.
+            <p class="hero-subtitle reveal" style="margin-bottom: 2rem; max-width: 600px;">
+              Développeur polyvalent (BUT2 Informatique) avec un goût marqué pour l’UI,
+              l’itération et le « feeling » — du web aux prototypes Unity.
             </p>
-            <div class="hero-actions reveal">
+            <div class="hero-actions reveal" style="margin-bottom: 0;">
               <a href="work.html" class="btn primary">Voir mes projets</a>
-              <a href="about.html" class="btn ghost">En savoir plus</a>
+              <a href="about.html" class="btn ghost">À propos</a>
             </div>
 
-            <div class="hero-meta reveal">
-              <div>
-                <span class="meta-label">Spécialités</span>
-                <span class="meta-value">UI Design, Front-end, Animations</span>
-              </div>
-              <div>
-                <span class="meta-label">Stack</span>
-                <span class="meta-value">HTML • CSS • JS • React</span>
-              </div>
+            <div class="home-hero-mini-info reveal">
+              <span>Montpellier & alentours</span>
+              <span>BUT2 Info</span>
+              <span>Anglais B2 Cambridge</span>
             </div>
           </div>
 
           <div class="hero-panel reveal">
-            <div class="hero-card main glass">
-              <div class="hero-status">
-                <span class="badge green"></span>
-                <span>Disponible pour missions / alternance</span>
+            <div class="home-cards-stack">
+              <!-- Card 1: Repères -->
+              <div class="glass home-mini-card">
+                <h2>Repères</h2>
+                <div class="home-reperes-mini-grid">
+                  <div class="home-reperes-item">
+                    <p>BUT Informatique — 2e année</p>
+                  </div>
+                  <div class="home-reperes-item">
+                    <p>Anglais B2 — Certifié Cambridge</p>
+                  </div>
+                  <div class="home-reperes-item">
+                    <p>Stack : Web • Java • Unity • Python</p>
+                  </div>
+                </div>
               </div>
-              <div class="hero-avatar">
-                <div class="avatar-circle"></div>
-                <div class="avatar-blob"></div>
+
+              <!-- Card 2: Alternance -->
+              <div class="glass home-mini-card">
+                <h3>Alternance</h3>
+                <p>Disponible dès le Semestre 4. Immersion 100% de mi-avril à fin août.</p>
+                <a href="contact.html" class="btn ghost full-width"
+                  style="margin-top: 1rem; min-height: 40px; font-size: 0.85rem; justify-content: center;">Me
+                  contacter</a>
               </div>
-              <h2>Créateur d’expériences numériques</h2>
-              <p>
-                Je transforme des idées floues en interfaces claires, esthétiques
-                et faciles à utiliser.
-              </p>
-              <ul class="hero-tags">
-                <li>Portfolio design</li>
-                <li>Animation avancée</li>
-                <li>Accessibilité</li>
-              </ul>
             </div>
-
-            <div class="hero-card secondary glass">
-              <p class="card-title">Stats rapides</p>
-              <ul class="stat-list">
-                <li><span>+20</span><span>Projets réalisés</span></li>
-                <li><span>3</span><span>Domaines : web, vidéo, UI</span></li>
-                <li><span>∞</span><span>Idées en tête</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="scroll-indicator">
-          <span>Scroll</span>
-          <div class="mouse">
-            <div class="wheel"></div>
           </div>
         </div>
       </section>
 
-      <!-- PROJETS MIS EN AVANT -->
-      <section class="section section-divider">
-        <div class="container section-header">
-          <h2 class="section-title reveal">Sélection de projets</h2>
-          <p class="section-subtitle reveal">
-            Un aperçu des expériences que je conçois : animations fluides,
-            typographie maîtrisée et micro-interactions.
-          </p>
-        </div>
-
-        <div class="container featured-grid">
-          <article class="project-feature reveal">
-            <div class="project-thumb skeleton"></div>
-            <div class="project-content">
-              <h3>Expérience immersive d’onboarding</h3>
+      <!-- DÉCOUVRIR MES RÉALISATIONS (Glass Bar) -->
+      <section class="section home-section-dense">
+        <div class="container">
+          <div class="glass home-discovery-bar reveal">
+            <div class="text-side">
               <p>
-                Interface animée pour guider les nouveaux utilisateurs dans une
-                application SaaS, avec transitions douces et storytelling.
+                Retrouvez mes projets (IUT, <strong>Code Game Jam 2025</strong>, prototypes) avec analyse du contexte et
+                des compétences développées.
               </p>
-              <div class="project-meta">
-                <span class="pill">UI / UX</span>
-                <span class="pill">Animation</span>
-                <span class="pill">Design system</span>
-              </div>
-              <a href="work.html" class="project-link">Voir le cas d’usage →</a>
             </div>
-          </article>
-
-          <article class="project-feature reveal">
-            <div class="project-thumb skeleton"></div>
-            <div class="project-content">
-              <h3>Portfolio vidéo & motion</h3>
-              <p>
-                Un site mono-page mettant en avant des vidéos, transitions
-                cinématographiques et effets de texte synchronisés.
-              </p>
-              <div class="project-meta">
-                <span class="pill">Front-end</span>
-                <span class="pill">Motion</span>
-                <span class="pill">Responsive</span>
-              </div>
-              <a href="work.html" class="project-link">Découvrir les détails →</a>
+            <div class="btn-group">
+              <a href="work.html" class="btn primary">Voir toutes mes réalisations</a>
+              <a href="about.html" class="btn ghost">En savoir plus sur moi</a>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
       <!-- COMPÉTENCES -->
-      <section class="section">
-        <div class="container section-header">
-          <h2 class="section-title reveal">Ce que je sais faire</h2>
+      <section class="section home-section-dense">
+        <div class="container section-header" style="margin-bottom: 2.5rem;">
+          <h2 class="section-title reveal" style="margin-bottom: 0.5rem;">Ce que je sais faire</h2>
         </div>
 
-        <div class="container skills-grid">
-          <div class="skill-card glass reveal">
-            <h3>Design d’interface</h3>
+        <div class="container home-skills-grid-dense">
+          <div class="skill-card glass reveal home-skill-card-dense">
+            <h3>Gestion & Organisation</h3>
             <p>
-              Hiérarchie visuelle, couleurs, typographie et composants cohérents
-              pour raconter une histoire dès le premier écran.
+              Coordonner le travail d'équipe, prioriser les tâches techniques
+              et assurer la fluidité des itérations.
             </p>
-            <ul>
-              <li>Design system & UI kits</li>
-              <li>Grilles & layouts responsives</li>
-              <li>Accessibilité et lisibilité</li>
+            <ul class="mini-list" style="margin-top: 1rem;">
+              <li>Git / GitHub (versioning)</li>
+              <li>Méthodes agiles</li>
             </ul>
           </div>
 
-          <div class="skill-card glass reveal">
-            <h3>Développement front-end</h3>
+          <div class="skill-card glass reveal home-skill-card-dense">
+            <h3>Prototypage & Expérience</h3>
             <p>
-              Intégration pixel-perfect, animations performantes et code propre
-              prêt pour la production.
+              Donner vie à des idées rapidement via des prototypes jouables
+              soignant le "game feel" et l'ergonomie.
             </p>
-            <ul>
-              <li>HTML sémantique</li>
-              <li>CSS moderne (Grid, Flex, variables)</li>
-              <li>JavaScript vanilla & frameworks</li>
+            <ul class="mini-list" style="margin-top: 1rem;">
+              <li>Intégration Unity & C#</li>
+              <li>UI/UX Design</li>
             </ul>
           </div>
 
-          <div class="skill-card glass reveal">
-            <h3>Expérience & storytelling</h3>
+          <div class="skill-card glass reveal home-skill-card-dense">
+            <h3>Développement Web & Logiciel</h3>
             <p>
-              Construire des parcours utilisateurs fluides, qui donnent envie
-              de cliquer, scroller et revenir.
+              Construire des solutions robustes, de la base de données relationnelle
+              à l'interface interactive.
             </p>
-            <ul>
-              <li>Micro-interactions</li>
-              <li>Transitions entre pages</li>
-              <li>Parcours utilisateur complet</li>
+            <ul class="mini-list" style="margin-top: 1rem;">
+              <li>Front-end (HTML/CSS)</li>
+              <li>Back-end (PHP/SQL/Java)</li>
             </ul>
           </div>
         </div>
       </section>
 
       <!-- CALL TO ACTION -->
-      <section class="section section-cta">
-        <div class="container cta-box glass reveal">
-          <div>
-            <h2>Un projet en tête ?</h2>
-            <p>
-              Portfolio, site d’artiste, expérience interactive ou refonte
-              complète : discutons-en.
+      <section class="section home-section-dense">
+        <div class="container cta-box glass reveal" style="padding: 2.5rem;">
+          <div style="flex: 1;">
+            <h2 style="margin-bottom: 0.5rem;">Envie de collaborer ?</h2>
+            <p style="margin-bottom: 0;">
+              Je suis à la recherche d'une alternance pour mettre mes compétences
+              au service de vos projets.
             </p>
           </div>
-          <div class="cta-actions">
+          <div class="cta-actions" style="margin-top: 0;">
             <a href="contact.html" class="btn primary">Me contacter</a>
-            <a href="work.html" class="btn ghost">Voir mes projets</a>
           </div>
         </div>
       </section>
@@ -225,13 +178,17 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Ton Nom — Tous droits réservés.</p>
+        <p>© 2025 Nathan Dabonneville — Tous droits réservés.</p>
         <div class="footer-links">
-          <a href="mailto:contact@tonmail.com">contact@tonmail.com</a>
+          <a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a>
           <span>•</span>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span>•</span>
-          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/" target="_blank" rel="noreferrer"
+            aria-label="LinkedIn">
+            <svg style="width: 20px; height: 20px; vertical-align: middle; fill: currentColor;" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
@@ -243,4 +200,5 @@
 
   <script src="main.js" defer></script>
 </body>
+
 </html>

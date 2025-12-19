@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <title>Portfolio - À propos</title>
@@ -7,6 +8,7 @@
   <meta name="description" content="En savoir plus sur mon parcours et ma façon de travailler." />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="theme-dark page-about">
   <a href="#main" class="skip-link">Passer au contenu</a>
 
@@ -38,157 +40,151 @@
     </header>
 
     <main id="main">
-      <section class="section">
-        <div class="container section-header">
-          <h1 class="section-title reveal">À propos de moi</h1>
-          <p class="section-subtitle reveal">
-            Un mélange de curiosité, de rigueur et de passion pour le web et
-            l’image.
+      <!-- Hero Section -->
+      <section class="about-hero container">
+        <div class="reveal">
+          <span class="about-badge">Alternance (rythme IUT) — disponible dès le semestre 2, et en immersion 100% de
+            mi-avril à fin août (au plus tard dès le 13 avril).</span>
+          <h1 class="about-title">
+            À propos de <br>
+            <span class="gradient-text">Nathan Dabonneville</span>
+          </h1>
+          <p class="about-pitch">
+            Je transforme des idées en prototypes jouables <br>
+            et en interfaces propres.
           </p>
-        </div>
 
-        <div class="container about-grid">
-          <div class="about-main glass reveal">
-            <h2>Qui je suis</h2>
-            <p>
-              Je suis un développeur / designer qui aime autant le code que
-              l’esthétique. Mon objectif : créer des interfaces qui ont du
-              caractère, mais qui restent simples à utiliser.
-            </p>
-            <p>
-              Je m’intéresse autant aux détails visuels (typographie, lumière,
-              rythme) qu’aux aspects techniques (performance, structure du
-              code, accessibilité). Pour moi, un bon projet est celui où
-              l’utilisateur ressent que tout est à sa place.
-            </p>
-            <p>
-              En dehors de l’écran, je me nourris de cinéma, de jeux vidéo,
-              de musique et de photographie — autant de sources qui influencent
-              mes choix créatifs.
-            </p>
+          <p class="about-location">Saint-Brès (34670) — Montpellier & alentours</p>
+
+          <div class="about-cta-group" style="margin-top: 2rem;">
+            <a href="contact.html" class="btn primary">Me contacter</a>
+            <a href="ressources/cv-nathan-dabonneville.pdf" class="btn ghost">
+              Télécharger mon CV
+            </a>
+
+            <!-- Social Bar intégré au Hero -->
+            <div class="about-social-bar">
+              <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/" class="about-social-link"
+                target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a href="mailto:nathandabonneville.pro@gmail.com" class="about-social-link" aria-label="Email">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099l3.83-3.104 5.612 8.818h-18.738l5.472-8.813zm9.201-1.259l4.623-3.746v9.458l-4.623-5.712z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <aside class="about-side reveal">
-            <div class="info-card glass">
-              <h3>Infos rapides</h3>
-              <ul class="info-list">
-                <li><span>Rôle</span><strong>Front-end & UI Design</strong></li>
-                <li><span>Localisation</span><strong>France</strong></li>
-                <li><span>Disponibilité</span><strong>Ouvert aux opportunités</strong></li>
-                <li><span>Langues</span><strong>Français, Anglais</strong></li>
-              </ul>
+          <div class="about-pills">
+            <span class="pill">HTML / CSS</span>
+            <span class="pill">Java</span>
+            <span class="pill">SQL</span>
+            <span class="pill">PHP</span>
+            <span class="pill">Python</span>
+            <span class="pill">Unity</span>
+            <span class="pill">UI / UX</span>
+            <span class="pill">Gestion de projet</span>
+            <span class="pill">Game design</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Grid -->
+      <section class="section container">
+        <div class="about-grid">
+          <!-- Main Content -->
+          <div class="about-main-content">
+            <div class="about-card glass reveal">
+              <h2 class="about-section-title">Qui je suis</h2>
+              <p>
+                Je suis un développeur polyvalent avec un goût marqué pour la dimension graphique.
+                J’aime autant construire une solution technique solide que soigner la clarté,
+                le rythme et l’expérience utilisateur.
+              </p>
+              <p>
+                Curieux de nature, j’aime expérimenter et explorer des approches moins « standard ».
+                Quand je m’implique dans un projet, je travaille de façon intensive et itérative :
+                j’avance vite, je teste, j’ajuste, puis je peaufine jusqu’à obtenir un rendu
+                convaincant — en particulier sur le « feeling » (UX / game feel).
+              </p>
+              <p>
+                J’apprécie le travail en équipe et je suis naturellement attiré par l’organisation :
+                structurer les tâches, prioriser, fluidifier la communication et faire avancer
+                le projet collectivement.
+              </p>
             </div>
 
-            <div class="info-card glass">
-              <h3>Soft skills</h3>
-              <ul class="tag-list">
-                <li>Curieux</li>
-                <li>Autonome</li>
-                <li>Pédagogue</li>
-                <li>Esprit d’équipe</li>
-                <li>Rigoureux</li>
+            <div class="about-card glass reveal" style="margin-top: 2.5rem;">
+              <h2 class="about-section-title">Ce que je recherche</h2>
+              <ul class="mini-list">
+                <li>
+                  <strong>Alternance (rythme IUT) —</strong> disponible dès le semestre 2 ; immersion 100% en entreprise
+                  de mi-avril à fin août (au plus tard dès le 13 avril). Montpellier & alentours.
+                </li>
+                <li>
+                  <strong>Missions —</strong> Front / UI, backend PHP/SQL, prototypage (Unity), outils internes,
+                  coordination.
+                </li>
+                <li>
+                  <strong>Objectif —</strong> progresser vers un Master orienté Game Design (prototypage, itération,
+                  UX).
+                </li>
               </ul>
+              <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Langues : Français (natif) • Anglais B2 (certifié Cambridge, oral & écrit).
+              </p>
+            </div>
+          </div>
+
+          <!-- Secondary Column (Sidebar style) -->
+          <aside class="about-side-content">
+            <div class="about-card glass reveal">
+              <h2 class="about-section-title">Parcours</h2>
+              <div class="about-timeline">
+                <div class="about-timeline-item">
+                  <span class="about-timeline-date">Septembre 2024</span>
+                  <h3>IUT Montpellier-Sète</h3>
+                  <p>Début du BUT Informatique. Apprentissage des fondamentaux et projets concrets.</p>
+                </div>
+                <div class="about-timeline-item">
+                  <span class="about-timeline-date">Janvier 2025</span>
+                  <h3>Code Game Jam 2025</h3>
+                  <p>Collaboration intensive et création de prototype sous contrainte de temps.</p>
+                </div>
+                <div class="about-timeline-item">
+                  <span class="about-timeline-date">2025</span>
+                  <h3>Analyse Python</h3>
+                  <p>Projet de backtest statistique orienté investissement.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-featured-card glass reveal" style="margin-top: 2.5rem;">
+              <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; opacity: 0.7;">Projet Phare</h3>
+              <h4 style="font-size: 1.4rem; color: var(--accent-strong); margin-bottom: 1rem;">Code Game Jam 2025</h4>
+              <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+                Mon projet le plus formateur : collaborer à 6, m’organiser sous contrainte de temps
+                et livrer un prototype jouable avec une direction claire.
+              </p>
+              <a href="project-code-game-jam.html" class="btn ghost full-width" style="justify-content: center;">
+                Voir le projet
+              </a>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <!-- Timeline -->
-      <section class="section">
-        <div class="container section-header">
-          <h2 class="section-title reveal">Parcours & expériences</h2>
-        </div>
-
-        <div class="container timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="timeline-date">2024 - 2025</span>
-              <h3>Projets personnels & portfolios</h3>
-              <p>
-                Développement de plusieurs sites portfolio, expériences web
-                animées, mini-jeux et prototypes UI pour explorer des idées
-                créatives.
-              </p>
-              <ul class="mini-list">
-                <li>Maîtrise des animations CSS et JS</li>
-                <li>Optimisation des performances</li>
-                <li>Itérations rapides sur le design</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="timeline-date">2023 - 2024</span>
-              <h3>Collaboration sur des projets web</h3>
-              <p>
-                Participation à des projets collectifs : sites vitrine, pages
-                événementielles, intégration de maquettes Figma en code.
-              </p>
-              <ul class="mini-list">
-                <li>Organisation du code et des composants</li>
-                <li>Travail en équipe (Git, revues de code)</li>
-                <li>Respect des contraintes de délais</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="timeline-date">Avant</span>
-              <h3>Curiosité et expérimentation</h3>
-              <p>
-                Tests de concepts, redesigns de sites existants, essais
-                d’effets visuels, prototypes et créations “juste pour voir”.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Méthode de travail -->
-      <section class="section">
-        <div class="container section-header">
-          <h2 class="section-title reveal">Ma façon de travailler</h2>
-        </div>
-
-        <div class="container method-grid">
-          <div class="method-step glass reveal">
-            <span class="step-number">01</span>
-            <h3>Comprendre</h3>
-            <p>
-              Clarifier le besoin, le public cible, les contraintes techniques
-              et les objectifs du projet.
-            </p>
-          </div>
-          <div class="method-step glass reveal">
-            <span class="step-number">02</span>
-            <h3>Imaginer</h3>
-            <p>
-              Esquisser des pistes visuelles, définir l’architecture de
-              l’interface et le ton global de l’expérience.
-            </p>
-          </div>
-          <div class="method-step glass reveal">
-            <span class="step-number">03</span>
-            <h3>Construire</h3>
-            <p>
-              Intégrer l’interface, peaufiner les détails, ajouter des
-              animations, tester et optimiser.
-            </p>
-          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Ton Nom — Tous droits réservés.</p>
+        <p>© <span id="year"></span> Nathan Dabonneville — Tous droits réservés.</p>
         <div class="footer-links">
-          <a href="mailto:contact@tonmail.com">contact@tonmail.com</a>
+          <a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a>
           <span>•</span>
           <a href="contact.html">Me joindre</a>
         </div>
@@ -202,4 +198,5 @@
 
   <script src="main.js" defer></script>
 </body>
+
 </html>

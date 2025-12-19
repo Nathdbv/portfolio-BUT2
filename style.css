@@ -1352,3 +1352,704 @@ body.theme-light .theme-toggle-icon {
   transform: scale(0.96) !important;
   box-shadow: none !important; /* Ensure it stays a full sun */
 }
+
+/* --- Page About Refonte Premium --- */
+
+.about-hero {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Spotlight/Glow doux en fond */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(120deg, rgba(108, 92, 231, 0.2), rgba(34, 211, 238, 0.2));
+  border: 1px solid rgba(108, 92, 231, 0.4);
+  color: var(--accent-strong);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-title {
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.about-title .gradient-text {
+  background: linear-gradient(135deg, #6c5ce7, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.about-title:hover .gradient-text {
+  transform: translateY(-5px);
+}
+
+.about-pitch {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.about-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-pills .pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.about-pills .pill:hover {
+  border-color: var(--accent);
+  background: rgba(108, 92, 231, 0.1);
+  color: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.about-card {
+  padding: 2.5rem;
+}
+
+.about-section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-section-title::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.about-timeline {
+  margin-top: 2rem;
+}
+
+.about-timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-timeline-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.about-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.about-timeline-date {
+  font-size: 0.85rem;
+  color: var(--accent-strong);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-featured-card {
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-social-bar {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+.about-social-link {
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.about-social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.about-social-link:hover {
+  color: var(--accent-strong);
+  filter: drop-shadow(0 0 8px rgba(108, 92, 231, 0.5));
+  transform: translateY(-3px);
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+
+/* Refinement About - Social Bar in Hero & Location */
+.about-hero .about-cta-group {
+  align-items: center;
+}
+
+.about-location {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.about-hero .about-social-bar {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .about-hero .about-cta-group {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero .about-social-bar {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+
+
+/* --- Refonte Esthétique Bas de Page About --- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Plus équilibré */
+  gap: 2.5rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.about-card.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure plus fine et subtile */
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card.glass:hover {
+  border-color: rgba(108, 92, 231, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+  color: #fff;
+  position: relative;
+}
+
+.about-section-title::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Timeline Premium */
+.about-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-timeline-item {
+  border-left: 2px solid rgba(108, 92, 231, 0.15);
+  padding-left: 2.5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.about-timeline-item:hover {
+  border-left-color: var(--accent);
+}
+
+.about-timeline-item:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.about-timeline-item::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-timeline-item:hover::after {
+  transform: scale(1.2);
+  background: var(--accent);
+}
+
+/* Listes et Textes */
+.about-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.about-card .mini-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+}
+
+.about-card .mini-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  color: var(--accent-strong);
+  font-weight: bold;
+}
+
+/* Featured card spécifique */
+.about-featured-card.glass {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.05), rgba(34, 211, 238, 0.05));
+  border-color: rgba(108, 92, 231, 0.2);
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+
+/* Fix: Ajouter les propriétés de carte manquantes à about-featured-card */
+.about-featured-card.glass {
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fix: Assurer que le bouton dans la carte est bien visible */
+.about-featured-card .button {
+  margin-top: auto;
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+/* Final Card & Button Fixes */
+.about-featured-card {
+  padding: 2.5rem !important; /* Force le padding */
+  border-radius: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100%;
+}
+
+.about-featured-card .btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Fix: Suppression de l outline/contour indésirable lors du clic sur les boutons et liens dans les cartes glass */
+.glass a, .glass button, .btn {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optionnel : Assurer un focus visible uniquement pour le clavier pour l accessibilité */
+.glass a:focus-visible, .glass button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 4px;
+}
+
+/* --- Home Page Refinements --- */
+.home-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(108, 92, 231, 0.1);
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.home-reperes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.home-reperes-card {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.home-reperes-card h3 {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.home-reperes-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.home-discovery-box {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-discovery-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.home-cta-mini {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.home-cta-mini:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .home-reperes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --- Refined Home Hero Styles --- */
+.home-badge-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.home-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(108, 92, 231, 0.15);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 6px;
+  color: #a29bfe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.home-badge-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.home-reperes-card.compact {
+  max-width: 320px;
+  padding: 1.2rem;
+  margin-left: auto;
+}
+
+.home-reperes-card.compact h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.home-reperes-mini-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.home-reperes-item {
+  border-left: 2px solid rgba(108, 92, 231, 0.3);
+  padding-left: 0.8rem;
+}
+
+.home-reperes-item h3 {
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.home-reperes-item p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media (max-width: 960px) {
+  .home-reperes-card.compact {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+
+/* --- Home Densification Styles --- */
+.home-section-dense {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.home-hero-dense {
+  padding-top: 8rem !important; /* Réduit par rapport au standard */
+  padding-bottom: 5rem !important;
+}
+
+.home-hero-mini-info {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+.home-hero-mini-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-hero-mini-info span::before {
+  content: "";
+  color: var(--accent);
+}
+
+.home-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 360px;
+  margin-left: auto;
+}
+
+.home-mini-card {
+  padding: 1.25rem !important;
+  border-radius: 12px !important;
+}
+
+.home-mini-card h2, .home-mini-card h3 {
+  font-size: 1rem !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--accent) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.home-mini-card p {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0 !important;
+}
+
+.home-discovery-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 2.5rem !important;
+  border-radius: 16px !important;
+  margin-top: 1rem;
+}
+
+.home-discovery-bar .text-side {
+  flex: 1;
+}
+
+.home-discovery-bar .text-side p {
+  margin-bottom: 0 !important;
+  font-size: 1.05rem !important;
+}
+
+.home-discovery-bar .btn-group {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.home-skills-grid-dense {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem !important;
+}
+
+.home-skill-card-dense {
+  padding: 1.5rem !important;
+}
+
+.home-skill-card-dense p {
+  line-height: 1.5 !important;
+  font-size: 0.95rem !important;
+}
+
+@media (max-width: 960px) {
+  .home-cards-stack {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .home-discovery-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem !important;
+  }
+  .home-skills-grid-dense {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Centrer le texte dans la barre de découverte */
+.home-discovery-bar .text-side {
+  text-align: center;
+}
+
+/* Fix vertical centering for discovery bar text */
+.home-discovery-bar {
+  align-items: center !important;
+}
+
+.home-discovery-bar .text-side {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Correction finale pour le centrage vertical parfait */
+.home-discovery-bar .text-side p {
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+/* Mise en valeur du conteneur Discovery Bar */
+.home-discovery-bar {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(108, 92, 231, 0.3) !important; /* Bordure accentuée */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 
+              inset 0 0 20px rgba(108, 92, 231, 0.05) !important; /* Ombre + glow interne */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.home-discovery-bar:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(108, 92, 231, 0.6) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 
+              0 0 20px rgba(108, 92, 231, 0.1) !important;
+}
