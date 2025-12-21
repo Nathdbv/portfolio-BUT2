@@ -246,8 +246,9 @@
                         <span class="ctf-hero-badge">SAE 3.01 • Mission Cyber</span>
                         <h1 class="ctf-hero-title">SAE 3.01 — <span class="accent-gradient">Case 404 (CTF)</span></h1>
                         <p class="ctf-hero-pitch">
-                            Conception et déploiement d’un écosystème CTF cloud-ready pour l’association Yggame. Une
-                            infrastructure sécurisée, automatisée et une immersion totale pour les compétiteurs.
+                            Conception et mise en production d’une plateforme CTF pour l’association Yggame :
+                            déploiement sur VPS Debian, isolation des défis par conteneurs Docker, sécurisation via
+                            reverse proxy Nginx et intégration de plugins CTFd.
                         </p>
                         <!--<div class="hero-actions" style="margin-top: 2rem;">
                             <a href="work.html" class="btn primary">← Retour</a>
@@ -304,26 +305,27 @@
                 <!-- CONTEXTE & ROLE -->
                 <section class="ctf-section-grid reveal">
                     <article class="ctf-glass-card">
-                        <h2>Contexte & Mission</h2>
-                        <p>Dans le cadre de la SAE 3.01, nous avons dû répondre à un besoin client réel : fournir une
-                            infrastructure CTF robuste permettant de supporter des dizaines d’utilisateurs simultanés
-                            tout en garantissant une étanchéité totale entre les challenges.</p>
-                        <p style="margin-top: 1rem;">L’objectif était de transformer un VPS Debian brut avec CTFd natif
-                            en une
-                            plateforme ludique, monitorée et hautement sécurisée via filtrage IPv4 (allow-list).</p>
+                        <h2>Contexte & mission</h2>
+                        <p>Dans le cadre de la SAE 3.01, nous avons répondu à un besoin client réel : disposer d’une
+                            plateforme CTF stable et exploitable, capable d’accueillir des participants en parallèle
+                            tout en garantissant une séparation fiable entre les environnements de défis.</p>
+                        <p style="margin-top: 1rem;">L’objectif était de partir d’un VPS Debian et d’une base CTFd, puis
+                            d’aboutir à un environnement complet : déploiement orchestré, supervision, sécurisation des
+                            accès (allow-list IPv4) et intégration fonctionnelle (plugins, thème, expérience
+                            utilisateur).</p>
                     </article>
 
                     <article class="ctf-glass-card" style="border-left: 4px solid var(--ctf-primary);">
-                        <h2>Mon Rôle Stratégique</h2>
+                        <h2>Mon rôle (contributions personnelles)</h2>
                         <ul class="mini-list">
-                            <li><strong>Lead Infra :</strong> Orchestration de l’architecture Docker (compose global,
-                                volumes persistants).</li>
-                            <li><strong>Sécurité Réseau :</strong> Configuration du reverse proxy Nginx avec restriction
-                                d’accès par IP.</li>
-                            <li><strong>Intégration Plugins :</strong> Adaptation du code Python des plugins tiers
-                                (Rôles, Multi-flags, QCM).</li>
-                            <li><strong>UI & UX :</strong> Intégration et personnalisation du thème visuel Case 404.
-                            </li>
+                            <li><strong>Infra & déploiement :</strong> orchestration Docker (compose global), volumes
+                                persistants, mise en place et suivi via Portainer.</li>
+                            <li><strong>Sécurité réseau :</strong> configuration d’un reverse proxy Nginx et restriction
+                                des accès par allow-list IPv4.</li>
+                            <li><strong>Plugins CTFd :</strong> intégration et adaptation de plugins Python (rôles
+                                personnalisés, multi-flags, QCM, défis flash, annonces, webhook Discord).</li>
+                            <li><strong>UI / UX :</strong> intégration et ajustements du thème “Case 404”, avec
+                                corrections ciblées quand certains plugins entraient en conflit avec le style.</li>
                         </ul>
                     </article>
                 </section>
@@ -333,14 +335,14 @@
                     <div class="grid-2" style="align-items: center;">
                         <div>
                             <h3>Écosystème Docker & Sécurité</h3>
-                            <p>Chaque défi (Enquêtes, Forensic, Web, etc.) est encapsulé dans son propre container
-                                Docker pour éviter toute fuite ou compromission de l'hôte. Portainer nous permet de
-                                monitorer l'état des services en temps réel.</p>
+                            <p>Chaque défi (Web, Forensic, OSINT, etc.) est isolé dans son propre conteneur afin de
+                                limiter les impacts et d’éviter toute fuite entre challenges ou vers l’hôte.
+                                L’orchestration est assurée par Docker Compose, et la supervision par Portainer.</p>
                             <ul class="mini-list" style="margin-top: 1.5rem;">
-                                <li>Orchestration via <strong>Docker Compose</strong>.</li>
-                                <li>Isolation des processus & limitation des ressources.</li>
-                                <li><strong>Allow-list IPv4</strong> dynamique sur Nginx.</li>
-                                <li>Persistence via volumes Docker sécurisés.</li>
+                                <li>Orchestration via <strong>Docker Compose</strong></li>
+                                <li>Isolation et contrôle des processus</li>
+                                <li>Filtrage des accès via <strong>Nginx (allow-list IPv4)</strong></li>
+                                <li>Persistance maîtrisée via volumes Docker</li>
                             </ul>
                         </div>
                         <div class="code-block-wrapper" style="margin:0;">
@@ -357,55 +359,66 @@ deny all;          # Zero Trust</code></pre>
                 <section class="ctf-section-grid reveal">
                     <article class="ctf-glass-card">
                         <h3>Défis & Thématiques</h3>
-                        <p>20 défis conçus pour une progression pédagogique fluide :</p>
+                        <p>La plateforme embarque 20 défis prêts, répartis sur plusieurs catégories afin d’assurer une
+                            progression variée et cohérente :</p>
                         <div class="skill-pill-stack" style="margin-top: 1rem;">
+                            <span class="pill">Enquêtes spéciales</span>
+                            <span class="pill">Téléphone</span>
                             <span class="pill">Forensique</span>
-                            <span class="pill">OSINT</span>
                             <span class="pill">Cryptographie</span>
-                            <span class="pill">Web Exploitation</span>
+                            <span class="pill">OSINT</span>
                             <span class="pill">Stéganographie</span>
-                            <span class="pill">Shell / App</span>
+                            <span class="pill">Application</span>
+                            <span class="pill">Web</span>
+                            <span class="pill">Shell</span>
                         </div>
-                        <p class="note" style="margin-top: 1.5rem;"><em>Note : Isolation par containers pour les défis
-                                interactifs (SSH/Web).</em></p>
+                        <p class="note" style="margin-top: 1.5rem;"><em>Remarque : les intitulés détaillés et contenus
+                                des défis ne sont pas affichés ici afin d’éviter tout spoil et de conserver la sécurité
+                                de l’évènement.</em></p>
                     </article>
 
                     <article class="ctf-glass-card">
-                        <h3>Collaboration Agile</h3>
-                        <p>Gestion par sprints via <strong>Trello</strong> et versioning centralisé sur
-                            <strong>GitLab</strong>. La rotation du Scrum Master a assuré une cohésion d'équipe et une
-                            responsabilisaiton totale.
-                        </p>
+                        <h3>Collaboration & organisation</h3>
+                        <p>Le projet a été piloté en 5 sprints, avec gestion du backlog et des sprints via Trello,
+                            versioning et documentation sur GitLab, et un suivi régulier via Discord (dailies). Le rôle
+                            de Scrum Master tournait selon les sprints pour maintenir une dynamique d’équipe et une
+                            responsabilité partagée.</p>
                         <div class="stats-bar" style="margin-top: 1rem; border: none; padding: 0;">
                             <span class="pill">Trello</span>
-                            <span class="pill">Daily Scrum</span>
-                            <span class="pill">GitLab CI</span>
+                            <span class="pill">GitLab</span>
+                            <span class="pill">Discord</span>
                         </div>
                     </article>
                 </section>
 
                 <!-- DIFFICULTÉ (FOCUS ERGONOMIE) -->
                 <section class="ctf-glass-card reveal" style="border-right: 4px solid #ffbd2e; margin-bottom: 3rem;">
-                    <h3>Le Challenge Technique : Conflit Plugins/Thème</h3>
-                    <p>Le plugin <strong>QCM interactif</strong> est entré en conflit avec les styles du thème
-                        personnalisé (collisions CSS). </p>
-                    <div class="grid-2" style="margin-top: 1.5rem; gap: 3rem;">
+                    <h3>Difficulté marquante</h3>
+                    <p>Un point bloquant a été l’intégration du plugin QCM : certains styles du thème entraient en
+                        conflit avec l’UI du plugin (collisions CSS).</p>
+                    <div class="grid-3"
+                        style="margin-top: 1.5rem; gap: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                         <div>
                             <h4 style="font-size: 0.9rem; color: #ffbd2e; text-transform: uppercase;">Diagnostic</h4>
-                            <p style="font-size: 0.9rem;">Identification des sélecteurs hautement spécifiques via
-                                DevTools.</p>
+                            <p style="font-size: 0.9rem;">Identification des sélecteurs problématiques via DevTools</p>
                         </div>
                         <div>
-                            <h4 style="font-size: 0.9rem; color: #27c93f; text-transform: uppercase;">Résolution</h4>
-                            <p style="font-size: 0.9rem;">Injection de correctifs CSS ciblés et modification des
-                                templates Jinja2 pour isoler les scopes.</p>
+                            <h4 style="font-size: 0.9rem; color: #27c93f; text-transform: uppercase;">Correction</h4>
+                            <p style="font-size: 0.9rem;">Ajustements CSS ciblés + adaptation des templates pour isoler
+                                les styles</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.9rem; color: var(--ctf-primary); text-transform: uppercase;">
+                                Validation</h4>
+                            <p style="font-size: 0.9rem;">Tests de non-régression sur le thème et sur les autres plugins
+                            </p>
                         </div>
                     </div>
                 </section>
 
                 <!-- COMPETENCES -->
                 <section class="ctf-glass-card reveal">
-                    <h2>Matrice de Compétences (BUT)</h2>
+                    <h2>Matrice de compétences (BUT) — formulation conseillée</h2>
                     <table class="ctf-skill-matrix">
                         <thead>
                             <tr>
@@ -416,23 +429,23 @@ deny all;          # Zero Trust</code></pre>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span class="ctf-skill-tag">C3</span> Administration Infra</td>
-                                <td>Déploiement VPS, Stacks Docker, Nginx Proxy, Net-Sec.</td>
+                                <td><span class="ctf-skill-tag">C3</span> Administration & déploiement</td>
+                                <td>VPS Debian, Docker Compose, Portainer, reverse proxy Nginx, filtrage réseau.</td>
                                 <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Screenshots</a></td>
                             </tr>
                             <tr>
-                                <td><span class="ctf-skill-tag">C1</span> Développement UI</td>
-                                <td>Intégration Thème, CSS Patches, Adaptation Plugins.</td>
+                                <td><span class="ctf-skill-tag">C1</span> Développement / intégration</td>
+                                <td>adaptations plugins Python, intégration UI, correctifs CSS/templates.</td>
                                 <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Rendu Final</a></td>
                             </tr>
                             <tr>
-                                <td><span class="ctf-skill-tag">C5</span> Gestion Projet</td>
-                                <td>Backlogs Sprint, Daily Meetings, Pitch Final "Vente".</td>
+                                <td><span class="ctf-skill-tag">C5</span> Gestion de projet</td>
+                                <td>sprints, backlogs, priorisation, préparation de la présentation finale.</td>
                                 <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Trello</a></td>
                             </tr>
                             <tr>
                                 <td><span class="ctf-skill-tag">C6</span> Collaboration</td>
-                                <td>Versioning GitLab, Scrum Master tournant, Entraide Technique.</td>
+                                <td>organisation d’équipe, suivi quotidien, versioning GitLab, entraide technique.</td>
                                 <td><a href="#preuves" style="color: var(--ctf-primary);">Voir Historique</a></td>
                             </tr>
                         </tbody>
@@ -511,7 +524,7 @@ deny all;          # Zero Trust</code></pre>
 
         <footer class="site-footer">
             <div class="container footer-inner text-center">
-                <p>© 2025 Nathan Dabonneville — Conçu pour l'excellence technique.</p>
+                <p>© 2025 Nathan Dabonneville — Portfolio</p>
             </div>
         </footer>
     </div>
