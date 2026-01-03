@@ -52,6 +52,13 @@ body.theme-light {
 
   --transition-fast: 0.18s ease-out;
   --transition-med: 0.28s ease-out;
+
+  /* E-commerce variables */
+  --ecom-primary: #ff6b35;
+  --ecom-accent: #ffa500;
+  --ecom-surface: rgba(255, 255, 255, 0.03);
+  --ecom-border: rgba(255, 255, 255, 0.08);
+  --ecom-text-dim: rgba(255, 255, 255, 0.6);
 }
 
 /* Light theme overrides */
@@ -2676,14 +2683,7 @@ body.theme-light {
    E-COMMERCE PROJECT - DENSE PREMIUM LAYOUT
    ========================================================= */
 
-:root {
-  --ecom-primary: #ff6b35;
-  --ecom-accent: #ffa500;
-  --ecom-surface: rgba(255, 255, 255, 0.03);
-  --ecom-border: rgba(255, 255, 255, 0.08);
-  --ecom-text-dim: rgba(255, 255, 255, 0.6);
-}
-
+/* E-commerce theme light overrides */
 body.theme-light {
   --ecom-surface: rgba(0, 0, 0, 0.02);
   --ecom-border: rgba(0, 0, 0, 0.1);
