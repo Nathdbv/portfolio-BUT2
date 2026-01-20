@@ -335,6 +335,7 @@ body.theme-light .theme-toggle-icon {
 .accent-gradient {
   background: linear-gradient(90deg, #ff8a4a, #f9447d, #6c5ce7, #22d3ee);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -407,6 +408,20 @@ body.theme-light .theme-toggle-icon {
 
 .btn.ghost:hover {
   background: rgba(255, 255, 255, 0.04);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(108, 92, 231, 0.4);
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+}
+
+.btn.secondary:hover {
+  background: rgba(108, 92, 231, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.15);
 }
 
 .btn.full-width {
@@ -1406,6 +1421,7 @@ body.theme-light .theme-toggle-icon {
 .about-title .gradient-text {
   background: linear-gradient(135deg, #6c5ce7, #22d3ee);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   transition: transform 0.3s ease;
