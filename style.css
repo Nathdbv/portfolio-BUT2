@@ -2694,3 +2694,438 @@ body.theme-light {
   text-align: center;
   width: 100%;
 }
+
+/* =========================================================
+   E-COMMERCE PROJECT - DENSE PREMIUM LAYOUT
+   ========================================================= */
+
+/* E-commerce theme light overrides */
+body.theme-light {
+  --ecom-surface: rgba(0, 0, 0, 0.02);
+  --ecom-border: rgba(0, 0, 0, 0.1);
+  --ecom-text-dim: #555555;
+}
+
+/* Hero Split Layout (Dense) */
+.ecom-hero-split {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 3rem 0 1.5rem;
+}
+
+.ecom-hero-badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid var(--ecom-primary);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ecom-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
+
+.ecom-hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+.ecom-hero-pitch {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 580px;
+  line-height: 1.55;
+}
+
+/* Identity Card (Compact) */
+.ecom-id-card {
+  background: var(--ecom-surface);
+  border: 1px solid var(--ecom-border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ecom-id-card:hover {
+  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(255, 107, 53, 0.05);
+}
+
+.ecom-id-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.ecom-id-item h4 {
+  font-size: 0.7rem;
+  color: var(--ecom-primary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.ecom-id-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Bento Stats (Compact Grid) */
+.ecom-bento-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.ecom-stat-box {
+  background: var(--ecom-surface);
+  border: 1px solid var(--ecom-border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ecom-stat-box:hover {
+  border-color: rgba(255, 107, 53, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.1);
+}
+
+.ecom-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+body.theme-light .ecom-stat-value {
+  color: #111;
+}
+
+.ecom-stat-label {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Focus Personnel Block (Hero) */
+.ecom-focus-personal {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 107, 53, 0.08);
+  border-left: 3px solid var(--ecom-primary);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ecom-focus-personal strong {
+  color: var(--ecom-primary);
+  font-weight: 700;
+}
+
+/* Mini List Optimization */
+.mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.mini-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.mini-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--ecom-primary);
+  font-weight: bold;
+}
+
+.mini-list li strong {
+  color: var(--text-strong);
+}
+
+/* Dense Section Grid (2 Columns) */
+.ecom-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.ecom-glass-card {
+  background: var(--ecom-surface);
+  border: 1px solid var(--ecom-border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.ecom-glass-card:hover {
+  border-color: rgba(255, 107, 53, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ecom-glass-card h2,
+.ecom-glass-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-strong);
+}
+
+.ecom-glass-card p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.ecom-glass-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlighted Border (Accent) */
+.ecom-highlight-border {
+  border-left: 3px solid var(--ecom-primary);
+}
+
+/* Skill Matrix Table */
+.ecom-skill-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.ecom-skill-matrix th {
+  text-align: left;
+  padding: 0.875rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--ecom-border);
+  color: var(--ecom-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ecom-skill-matrix td {
+  padding: 1rem 0.875rem;
+  border-bottom: 1px solid var(--ecom-border);
+  font-size: 0.9rem;
+}
+
+.ecom-skill-tag {
+  background: rgba(255, 107, 53, 0.15);
+  color: var(--ecom-primary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Sticky Navigation (Liquid Glass Premium) */
+.ecom-sticky-nav {
+  position: sticky;
+  top: 80px;
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.75) 0%,
+      rgba(30, 41, 59, 0.70) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  z-index: 50;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 1px 2px rgba(255, 107, 53, 0.05);
+  transition: all 0.3s ease;
+}
+
+.ecom-sticky-nav:hover {
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.82) 0%,
+      rgba(30, 41, 59, 0.78) 100%);
+  border-color: rgba(255, 107, 53, 0.2);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 2px 8px rgba(255, 107, 53, 0.08);
+}
+
+.ecom-sticky-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.ecom-sticky-nav a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecom-sticky-nav a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.15),
+      rgba(255, 165, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 6px;
+}
+
+.ecom-sticky-nav a:hover {
+  color: #fff;
+  background: rgba(255, 107, 53, 0.12);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
+}
+
+.ecom-sticky-nav a:hover::before {
+  opacity: 1;
+}
+
+.ecom-sticky-nav a:active {
+  transform: translateY(1px);
+}
+
+/* Gallery Section (Reuse CTF lightbox) */
+.ecom-gallery-section {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ecom-border);
+}
+
+/* CTA Buttons */
+.ecom-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--ecom-primary), var(--ecom-accent));
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.25);
+}
+
+.ecom-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.35);
+}
+
+/* Feature List Styling */
+.ecom-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.ecom-feature-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.ecom-feature-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--ecom-primary);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .ecom-hero-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ecom-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-bento-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .ecom-sticky-nav {
+    position: relative;
+    top: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  .ecom-sticky-nav ul {
+    gap: 0.4rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 107, 53, 0.3) rgba(255, 255, 255, 0.05);
+  }
+
+  .ecom-sticky-nav ul::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .ecom-sticky-nav ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+  }
+
+  .ecom-sticky-nav ul::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 53, 0.3);
+    border-radius: 2px;
+  }
+
+  .ecom-sticky-nav a {
+    white-space: nowrap;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+/* Fix for award image height */
+.hero-award-img {
+  max-height: 750px;
+  width: auto;
+  margin-inline: auto;
+  display: block;
+}
