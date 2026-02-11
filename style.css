@@ -562,7 +562,8 @@ body.theme-light .theme-toggle-icon {
 .hero-subtitle {
   color: var(--text-muted);
   max-width: 520px;
-  margin: 0 0 1.75rem;
+  margin-inline: auto;
+  margin-bottom: 1.75rem;
   font-size: 1rem;
 }
 
