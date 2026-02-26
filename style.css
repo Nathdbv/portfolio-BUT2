@@ -2627,10 +2627,7 @@ body.theme-light {
   gap: 1rem;
 }
 
-.about-main,
-.about-main-content {
-  /* inherits */
-}
+/* End info cards */
 
 .info-card {
   padding: 1rem;
@@ -2722,4 +2719,388 @@ body.theme-light {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+/* =========================================================
+   COMPETENCES PAGE STYLES
+   ========================================================= */
+
+/* =======================================
+   BENTO GRID SYSTEM
+======================================= */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: minmax(auto, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Wide cards */
+.bento-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-wide {
+    grid-column: span 1;
+  }
+}
+
+.bento-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: var(--radius);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bento-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+/* Icon Colors */
+.color-green {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.color-yellow {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.color-blue {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.color-purple {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.1);
+}
+
+.color-orange {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.1);
+}
+
+.color-red {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* Badges */
+.comp-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.active-green {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.active-yellow {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.active-blue {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+.active-purple {
+  background: rgba(192, 132, 252, 0.15);
+  color: #c084fc;
+}
+
+.active-orange {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+}
+
+.active-red {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.bento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.bento-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.comp-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Progress Bars */
+.comp-progress-container {
+  margin-bottom: 1.5rem;
+}
+
+.comp-progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.comp-progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+body.theme-light .comp-progress-bar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.comp-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  /* Visual growth animation from 0 based on scale */
+  animation: loadProgress 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes loadProgress {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Skills list */
+.comp-skills {
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.comp-skills strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.comp-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comp-skills li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.comp-skills li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.comp-skills li strong {
+  display: inline;
+  font-size: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text-main);
+}
+
+/* 
+  SPLIT LAYOUT FOR WIDE CARDS 
+*/
+.bento-body-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.bento-body-split.reverse {
+  grid-template-columns: 1fr 1.25fr;
+}
+
+@media (max-width: 900px) {
+
+  .bento-body-split,
+  .bento-body-split.reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Proof Link (Wide) */
+.bento-proof-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 180px;
+}
+
+.bento-proof-link:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.proof-meta {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.theme-light .proof-meta {
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.proof-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.proof-project {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.proof-visual {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 120px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proof-visual::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.proof-cta {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-card);
+  transition: color 0.2s;
+}
+
+.bento-proof-link:hover .proof-cta {
+  color: var(--accent);
+}
+
+/* Proof Link (Compact / Standard Cards) */
+.bento-proof-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+body.theme-light .bento-proof-compact {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.bento-proof-compact span strong {
+  color: var(--accent);
+}
+
+.bento-proof-compact .arrow {
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.bento-proof-compact:hover {
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.bento-proof-compact:hover .arrow {
+  transform: translateX(4px);
 }
