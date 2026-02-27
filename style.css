@@ -176,6 +176,20 @@ img {
   padding: 5rem 0 4rem;
 }
 
+/* Custom cursor base (hidden default cursor when custom is active) */
+@media (pointer: fine) {
+
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  input,
+  textarea {
+    cursor: auto !important;
+  }
+}
+
 .text-center {
   text-align: center;
 }
@@ -3170,4 +3184,222 @@ body.theme-light .bento-proof-compact {
 
 .bento-proof-compact:hover .arrow {
   transform: translateX(4px);
+}
+
+/* 
+  MOBILE OPTIMIZATIONS FOR BENTO CARDS 
+*/
+@media (max-width: 768px) {
+  .bento-card {
+    padding: 1.25rem !important;
+    /* Tighter overall padding on mobile */
+  }
+
+  .bento-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .bento-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .comp-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .comp-progress-container {
+    margin-bottom: 1rem;
+  }
+
+  .comp-skills {
+    margin-bottom: 1.25rem;
+    /* Less empty space before the proof link */
+  }
+
+  .comp-skills li {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+}
+
+/* ==================================
+   AWWWARDS UI EXTENSIONS 
+   ================================== */
+
+/* 1. Custom Cursor (Minimalist Difference) */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+.custom-cursor.hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.custom-cursor.hovering .cursor-icon {
+  width: 44px;
+  height: 44px;
+  opacity: 1;
+}
+
+.custom-cursor.text-cursor .cursor-icon {
+  width: 52px;
+  height: 52px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* 1.5 Satisfying Button Press (replaces Magnetism) */
+.btn {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.btn:active {
+  transform: translateY(2px) scale(0.95) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. Deep Glow Background Orbs */
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 1s ease;
+}
+
+.bg-orb-1 {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, rgba(255, 69, 0, 0) 70%);
+  top: -10vw;
+  right: -10vw;
+  animation: floatOrb 20s ease-in-out infinite alternate;
+}
+
+.bg-orb-2 {
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, rgba(138, 43, 226, 0) 70%);
+  bottom: -5vw;
+  left: -10vw;
+  animation: floatOrb 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-5vw, 5vw) scale(1.1);
+  }
+}
+
+body.theme-light .bg-orb {
+  opacity: 0.15;
+}
+
+/* 3. Marquee (Infinite scroll text) */
+.marquee-container {
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+body.theme-light .marquee-container {
+  color: #fff;
+  /* Keep text white on bright accent backgound */
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.marquee-content span {
+  padding: 0 2rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+  /* Assuming content is duplicated */
+}
+
+/* Magnetic Items Base */
+.magnetic-item {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

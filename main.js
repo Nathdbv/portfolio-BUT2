@@ -199,4 +199,81 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+
+  /* ==================================
+     AWWWARDS UI EXTENSIONS (JS)
+     ================================== */
+
+  // 1. Custom Cursor Logic
+  // Only init on non-touch devices
+  if (window.matchMedia("(pointer: fine)").matches) {
+    // Forcefully remove native cursor
+    const style = document.createElement('style');
+    style.innerHTML = `* { cursor: none !important; }`;
+    document.head.appendChild(style);
+
+    const cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+
+    const cursorDot = document.createElement("div");
+    cursorDot.classList.add("cursor-dot");
+    cursor.appendChild(cursorDot);
+
+    const cursorIcon = document.createElement("div");
+    cursorIcon.classList.add("cursor-icon");
+    cursor.appendChild(cursorIcon);
+
+    document.body.appendChild(cursor);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Make cursor disappear when leaving window for robustness
+    document.addEventListener("mouseleave", () => {
+      cursor.style.display = "none";
+    });
+    document.addEventListener("mouseenter", () => {
+      cursor.style.display = "flex";
+    });
+
+    // Animate cursor wrapper using transform
+    const renderCursor = () => {
+      cursorX += (mouseX - cursorX) * 0.2;
+      cursorY += (mouseY - cursorY) * 0.2;
+
+      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+      requestAnimationFrame(renderCursor);
+    };
+    requestAnimationFrame(renderCursor);
+
+    // Hover effect on links and buttons
+    const interactiveElements = document.querySelectorAll("a, button, .project-card-overlay, .nav-toggle, .theme-toggle, .bento-proof-link, .bento-proof-compact");
+    interactiveElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hovering");
+
+        // Contextual Icon/Text
+        if (el.classList.contains("project-card-overlay") || el.closest('.project-card') || el.classList.contains('bento-proof-link') || el.classList.contains('comp-desc') || el.classList.contains('bento-proof-compact')) {
+          cursor.classList.add("text-cursor");
+          cursorIcon.innerHTML = 'VOIR';
+        } else {
+          cursor.classList.remove("text-cursor");
+          // Use an empty string for typical links, just showing the empty circle inversion
+          cursorIcon.innerHTML = '';
+        }
+      });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hovering", "text-cursor");
+        cursorIcon.innerHTML = '';
+      });
+    });
+  }
 });
