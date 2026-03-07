@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio d'Apprentissage — Portfolio BUT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Bilan réflexif sur les compétences C2, C3 et C4 acquises jusqu'au niveau 2 dans le cadre du BUT Informatique parcours IAMSI." />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-dark page-apprentissage">
+    <a href="#main" class="skip-link">Passer au contenu</a>
+
+    <div class="page-wrapper">
+        <header class="site-header glass">
+            <div class="container header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">P</span>
+                    <span class="logo-text">Portfolio</span>
+                </a>
+
+                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span><span></span>
+                </button>
+
+                <nav class="site-nav" aria-label="Navigation principale">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="apprentissage.html" class="nav-link active">Apprentissage</a></li>
+                        <li><a href="work.html" class="nav-link">Projets</a></li>
+                        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
+                    <span class="theme-toggle-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main">
+            <!-- ============================================================
+                 PORTFOLIO D'APPRENTISSAGE — Compétences Niveau 2 (Parcours IAMSI)
+                 Référentiel BUT Informatique — Programme National
+                 ============================================================ -->
+            <section class="section home-section-dense" style="padding-top: 3rem;">
+                <div class="container">
+                    <div class="text-center reveal" style="margin-bottom: 2.5rem;">
+                        <h1 class="section-title" style="margin-bottom: 0.5rem; font-size: 2.5rem;">
+                            Portfolio d'<span class="accent-gradient">Apprentissage</span>
+                        </h1>
+                        <p class="hero-subtitle mx-auto" style="max-width: 700px;">
+                            Bilan réflexif sur les 3 compétences du B.U.T. Informatique qui s'arrêtent au <strong>niveau
+                                2</strong> dans le parcours D
+                            <em>(Intégration d'Applications et Management des SI)</em>. Pour chaque compétence, je
+                            présente les apprentissages critiques (AC)
+                            du référentiel national et les traces concrètes de leur validation.
+                        </p>
+                    </div>
+
+                    <!-- C2 — Optimiser des applications informatiques -->
+                    <article class="bento-card glass reveal bento-wide"
+                        style="margin-bottom: 2rem; border-left: 4px solid #f87171;">
+                        <div class="bento-content">
+                            <div class="bento-header">
+                                <h3 style="font-size: 1.3rem;">C2 — Optimiser des applications informatiques</h3>
+                                <div class="comp-badge active-red">Niveau 2 atteint</div>
+                            </div>
+                            <p class="comp-desc" style="margin-bottom: 1rem;">
+                                <strong>Objectif niveau 2 :</strong> Sélectionner les algorithmes adéquats pour répondre
+                                à un problème donné.
+                            </p>
+
+                            <h4
+                                style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #f87171; margin-bottom: 0.75rem;">
+                                Apprentissages critiques (AC) — Niveau 2
+                            </h4>
+                            <table class="ctf-skill-matrix" style="margin-bottom: 1.5rem;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">AC</th>
+                                        <th style="width: 45%;">Intitulé officiel</th>
+                                        <th style="width: 40%;">Comment je l'ai validé</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC22.01</span></td>
+                                        <td>Choisir des structures de données complexes adaptées au problème</td>
+                                        <td>Modélisation et optimisation des requêtes de panier (sessions vs BDD) sur le
+                                            site e-commerce PHP</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC22.02</span></td>
+                                        <td>Utiliser des techniques algorithmiques adaptées pour des problèmes complexes
+                                        </td>
+                                        <td>Développement de la logique de jeu en C# (Unity) lors de la Game Jam,
+                                            gestion des collisions et états</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC22.03</span></td>
+                                        <td>Comprendre les enjeux et moyens de sécurisation des données et du code</td>
+                                        <td>Implémentation du hachage de mots de passe (sel/poivre) et requêtes
+                                            préparées PDO contre injections SQL</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC22.04</span></td>
+                                        <td>Évaluer l'impact environnemental et sociétal des solutions informatiques
+                                        </td>
+                                        <td>Optimisation du poids des assets web, hébergement raisonné (VPS Debian),
+                                            choix de technologies légères</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="project-ecommerce-php.html" class="bento-proof-compact"
+                                    style="flex: 1; min-width: 200px;">
+                                    <span>Trace : <strong>Site E-commerce PHP</strong></span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="project-code-game-jam.html" class="bento-proof-compact"
+                                    style="flex: 1; min-width: 200px;">
+                                    <span>Trace : <strong>Code Game Jam</strong></span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- C3 — Administrer -->
+                    <article class="bento-card glass reveal bento-wide"
+                        style="margin-bottom: 2rem; border-left: 4px solid #60a5fa;">
+                        <div class="bento-content">
+                            <div class="bento-header">
+                                <h3 style="font-size: 1.3rem;">C3 — Administrer des systèmes informatiques communicants
+                                    complexes</h3>
+                                <div class="comp-badge active-blue">Niveau 2 atteint</div>
+                            </div>
+                            <p class="comp-desc" style="margin-bottom: 1rem;">
+                                <strong>Objectif niveau 2 :</strong> Déployer des services dans une architecture réseau.
+                            </p>
+
+                            <h4
+                                style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #60a5fa; margin-bottom: 0.75rem;">
+                                Apprentissages critiques (AC) — Niveau 2
+                            </h4>
+                            <table class="ctf-skill-matrix" style="margin-bottom: 1.5rem;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">AC</th>
+                                        <th style="width: 45%;">Intitulé officiel</th>
+                                        <th style="width: 40%;">Comment je l'ai validé</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC23.01</span></td>
+                                        <td>Concevoir et développer des applications communicantes</td>
+                                        <td>Orchestration Docker multi-conteneurs (CTFd + défis isolés), communication
+                                            inter-services via réseau Docker</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC23.02</span></td>
+                                        <td>Utiliser des serveurs et des services réseaux virtualisés</td>
+                                        <td>Déploiement sur VPS Debian, reverse proxy Nginx, gestion via Portainer,
+                                            filtrage réseau (allow-list IPv4)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC23.03</span></td>
+                                        <td>Sécuriser les services et données d'un système</td>
+                                        <td>Politique Zero Trust, isolation des défis CTF par conteneur, restriction
+                                            d'accès par IP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="project-ctf-case-404.html" class="bento-proof-compact">
+                                <span>Trace principale : <strong>SAE 3.01 — Case 404 (CTF)</strong> · 19.5/20 (Note
+                                    technique produit)</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- C4 — Gérer des données -->
+                    <article class="bento-card glass reveal bento-wide"
+                        style="margin-bottom: 2rem; border-left: 4px solid #fb923c;">
+                        <div class="bento-content">
+                            <div class="bento-header">
+                                <h3 style="font-size: 1.3rem;">C4 — Gérer des données de l'information</h3>
+                                <div class="comp-badge active-orange">Niveau 2 atteint</div>
+                            </div>
+                            <p class="comp-desc" style="margin-bottom: 1rem;">
+                                <strong>Objectif niveau 2 :</strong> Optimiser une base de données, interagir avec une
+                                application et mettre en œuvre la sécurité.
+                            </p>
+
+                            <h4
+                                style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #fb923c; margin-bottom: 0.75rem;">
+                                Apprentissages critiques (AC) — Niveau 2
+                            </h4>
+                            <table class="ctf-skill-matrix" style="margin-bottom: 1.5rem;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">AC</th>
+                                        <th style="width: 45%;">Intitulé officiel</th>
+                                        <th style="width: 40%;">Comment je l'ai validé</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC24.01</span></td>
+                                        <td>Optimiser les modèles de données de l'entreprise</td>
+                                        <td>Modélisation MCD/MLD stricte du site e-commerce (produits, commandes,
+                                            utilisateurs), requêtes SQL optimisées avec indexes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC24.02</span></td>
+                                        <td>Assurer la confidentialité des données (intégrité et sécurité)</td>
+                                        <td>Authentification sécurisée (hash sel/poivre), CRUD admin avec contrôle
+                                            d'accès, intégrité référentielle en base</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="ctf-skill-tag">AC24.03</span></td>
+                                        <td>Organiser la restitution de données à travers la programmation et la
+                                            visualisation</td>
+                                        <td>Historique commandes par utilisateur (tri, filtrage), page admin avec
+                                            restitution structurée des données produits</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="project-ecommerce-php.html" class="bento-proof-compact">
+                                <span>Trace principale : <strong>Projet E-commerce PHP</strong> · 17.25/20</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Bilan réflexif -->
+                    <article class="bento-card glass reveal bento-wide"
+                        style="border-left: 4px solid var(--accent-strong, #c084fc);">
+                        <div class="bento-content">
+                            <div class="bento-header">
+                                <h3 style="font-size: 1.3rem;">Bilan réflexif — Parcours IAMSI</h3>
+                                <div class="comp-badge active-purple">Prise de recul</div>
+                            </div>
+                            <p class="comp-desc" style="margin-bottom: 1rem;">
+                                Ces trois compétences (Optimiser, Administrer, Gérer), bien qu'elles s'arrêtent au
+                                niveau 2 dans mon parcours IAMSI,
+                                ont façonné mon profil d'intégrateur et développeur. Le CTF Case 404 m'a permis de
+                                <strong>dépasser le cadre académique</strong> en livrant un produit fonctionnel et
+                                sécurisé à un vrai client (Yggame),
+                                tandis que le projet e-commerce m'a donné une maîtrise concrète de l'optimisation et de
+                                la gestion de données en situation réelle.
+                            </p>
+                            <p class="comp-desc">
+                                Si je devais retenir une leçon transversale de ce BUT : l'ingénierie logicielle (infra,
+                                data, algo)
+                                n'a de valeur que si elle garantit un <strong>système d'information cohérent et
+                                    performant</strong>.
+                                C'est cette rigueur technique qui guide ma polyvalence, que ce soit pour orchestrer des
+                                services complexes
+                                ou pour optimiser les performances d'un jeu lors d'une Game Jam.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" style="margin-top: 4rem;">
+            <div class="container footer-inner text-center">
+                <p>© 2026 Nathan Dabonneville — Portfolio</p>
+            </div>
+        </footer>
+    </div>
+
+    <button class="scroll-top" aria-label="Retour en haut">↑</button>
+
+    <script src="main.js" defer></script>
+</body>
+
+</html>
