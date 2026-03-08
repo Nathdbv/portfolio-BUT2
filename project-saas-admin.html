@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Progiciel SaaS Admin — Projet Web | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="SaaS d'administration pour restaurateurs (React, Cloudflare Workers). Architecture Edge, publication sécurisée multirôle et vraie logique produit." />
+    <!-- Fonts already loaded in style.css but kept for safety -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* 
+           =========================================================
+           SAAS PROJECT - PAGE SPECIFIC STYLES 
+           Focus: High-End Product Engineering, Edge Tech Aesthetic
+           =========================================================
+        */
+        :root {
+            /* Violet/Indigo SaaS theme blending into the global Orange/Red ecosystem */
+            --saas-primary: #818cf8;
+            --saas-accent: #a855f7;
+            --saas-surface: rgba(255, 255, 255, 0.03);
+            --saas-border: rgba(255, 255, 255, 0.08);
+            --saas-text-dim: #9ca3af;
+        }
+
+        body.theme-light {
+            --saas-surface: rgba(0, 0, 0, 0.02);
+            --saas-border: rgba(0, 0, 0, 0.1);
+            --saas-text-dim: #555555;
+            --saas-primary: #4f46e5;
+            --saas-accent: #9333ea;
+        }
+
+        /* Subtly tint the background for this specific project */
+        .page-saas {
+            /* The global bg-page is maintained, we just add targeted glowing effects via Orbs */
+            background-color: var(--bg-page);
+        }
+
+        /* 
+           1. HERO SPLIT SECTION 
+        */
+        .saas-hero-split {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 5rem 0 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .saas-hero-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3rem 0;
+            }
+        }
+
+        @keyframes badge-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(129, 140, 248, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(129, 140, 248, 0);
+            }
+        }
+
+        .saas-hero-badge {
+            display: inline-flex;
+            padding: 6px 16px;
+            background: rgba(129, 140, 248, 0.08);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--saas-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+            animation: badge-pulse 3s infinite;
+            backdrop-filter: blur(4px);
+        }
+
+        .saas-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            color: var(--text-strong);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .saas-hero-title .accent-gradient {
+            background: linear-gradient(270deg, var(--saas-primary), var(--saas-accent), #ec4899, var(--saas-primary));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline;
+            animation: gradient-shift 6s ease infinite;
+            filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+        }
+
+        .saas-hero-pitch {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+        }
+
+        .saas-pull-quote {
+            padding-left: 1.5rem;
+            border-left: 3px solid transparent;
+            border-image: linear-gradient(to bottom, var(--saas-primary), var(--saas-accent)) 1;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            background: linear-gradient(90deg, rgba(129, 140, 248, 0.05) 0%, transparent 100%);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* 
+           2. PROJECT IDENTITY CARD 
+        */
+
+        @keyframes border-rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+
+        .saas-id-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        /* Animated border glow underlay */
+        .saas-id-card::before {
+            content: '';
+            position: absolute;
+            z-index: -2;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(var(--saas-primary), var(--saas-primary)), linear-gradient(var(--saas-accent), var(--saas-accent)), linear-gradient(var(--saas-primary), var(--saas-primary)), linear-gradient(var(--saas-accent), var(--saas-accent));
+            animation: border-rotate 4s linear infinite;
+            opacity: 0.3;
+        }
+
+        /* Inner solid mask */
+        .saas-id-card::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 1px;
+            /* thickness of the animated border */
+            background: var(--bg-page);
+            border-radius: calc(var(--radius-lg) - 1px);
+        }
+
+        .saas-id-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 1.5rem;
+        }
+
+        .saas-id-item h4 {
+            font-size: 0.75rem;
+            color: var(--saas-primary);
+            text-transform: uppercase;
+            margin: 0 0 0.4rem 0;
+            letter-spacing: 0.05em;
+        }
+
+        .saas-id-item p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-strong);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* 
+           3. BENTO STATS STRIP 
+        */
+        .saas-bento-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0 6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .saas-stat-box {
+            background: linear-gradient(145deg, var(--saas-surface), rgba(0, 0, 0, 0.2));
+            border: 1px solid var(--saas-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top border specular highlight */
+        .saas-stat-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0.5;
+        }
+
+        .saas-stat-box:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-8px);
+            background: linear-gradient(145deg, rgba(129, 140, 248, 0.08), rgba(0, 0, 0, 0.3));
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(129, 140, 248, 0.15);
+        }
+
+        body.theme-light .saas-stat-box:hover {
+            background: rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(129, 140, 248, 0.1);
+        }
+
+        .saas-stat-icon {
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+            color: var(--saas-primary);
+        }
+
+        .saas-stat-icon svg {
+            width: 2.6rem;
+            height: 2.6rem;
+        }
+
+        .saas-stat-box:hover .saas-stat-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .saas-stat-label {
+            display: block;
+            font-weight: 800;
+            color: var(--text-strong);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .saas-stat-desc {
+            font-size: 0.9rem;
+            color: var(--saas-text-dim);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* 
+           4. STICKY NAV 
+        */
+        .saas-sticky-nav {
+            position: sticky;
+            top: 5rem;
+            z-index: 40;
+            background: color-mix(in srgb, var(--bg-page) 90%, transparent);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .saas-sticky-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .saas-sticky-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+            white-space: nowrap;
+        }
+
+        .saas-sticky-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color var(--transition);
+        }
+
+        .saas-sticky-nav a:hover,
+        .saas-sticky-nav a.active {
+            color: var(--saas-primary);
+        }
+
+        /* 
+           5. SECTION GRID (Narrative) 
+        */
+        .saas-section-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+            scroll-margin-top: 8rem;
+        }
+
+        @media (max-width: 900px) {
+            .saas-section-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .saas-glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            height: 100%;
+            transition: all var(--transition);
+        }
+
+        .saas-glass-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+        }
+
+        .saas-highlight-border {
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            background: linear-gradient(180deg, rgba(129, 140, 248, 0.05), transparent 60%);
+        }
+
+        .saas-glass-card h2,
+        .saas-glass-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin: 0 0 1.5rem;
+            color: var(--text-strong);
+        }
+
+        .saas-glass-card h2 {
+            font-size: 1.8rem;
+        }
+
+        .saas-glass-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+        }
+
+        /* Premium Lists within Cards */
+        .saas-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .saas-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .saas-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--saas-primary);
+            font-weight: bold;
+        }
+
+        .saas-list li strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
+
+        /* Custom Tech Tags */
+        .saas-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .s-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--saas-border);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-family: 'Space Grotesk', monospace;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .s-tag:hover {
+            color: var(--text-strong);
+            border-color: var(--saas-accent);
+            background: rgba(168, 85, 247, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+        }
+
+        body.theme-light .s-tag {
+            background: rgba(0, 0, 0, 0.03);
+            color: var(--text-main);
+        }
+
+        /* Upgrade Highlight Border for Premium Feel */
+        .saas-highlight-border {
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), transparent 60%);
+            box-shadow: inset 0 0 30px rgba(168, 85, 247, 0.05);
+        }
+
+        /* 
+           6. GALLERY (Preuves Visuelles) 
+        */
+        .saas-gallery-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--saas-border);
+        }
+
+        .saas-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .saas-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .saas-gallery-item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: var(--radius);
+            padding: 0.5rem;
+        }
+
+        .saas-gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: var(--radius-sm);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--bg-card);
+        }
+
+        .saas-gallery-item:hover .saas-gallery-img {
+            transform: scale(1.05);
+        }
+
+        .saas-gallery-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-strong);
+            text-align: center;
+        }
+
+        /* Lightbox */
+        .saas-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .saas-lightbox-container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .saas-lightbox-content {
+            width: auto;
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .saas-lightbox-caption {
+            margin-top: 15px;
+            color: #ccc;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .saas-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .saas-lightbox-prev,
+        .saas-lightbox-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            transition: 0.3s ease;
+            user-select: none;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .saas-lightbox-prev {
+            left: 20px;
+        }
+
+        .saas-lightbox-next {
+            right: 20px;
+        }
+
+        .saas-lightbox-prev:hover,
+        .saas-lightbox-next:hover {
+            background-color: rgba(168, 85, 247, 0.8);
+        }
+    </style>
+</head>
+
+<body class="theme-dark page-project page-saas">
+    <a href="#main" class="skip-link">Passer au contenu</a>
+
+    <div class="page-wrapper">
+        <!-- Deep Glow Orbs (Portfolio Native Pattern) -->
+        <!-- Repurposed orb colors for this project via inline style hooks -->
+        <div class="bg-orb bg-orb-1"
+            style="background-image: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);"></div>
+        <div class="bg-orb bg-orb-2"
+            style="background-image: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);"></div>
+
+        <header class="site-header glass">
+            <div class="container header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">P</span>
+                    <span class="logo-text">Portfolio</span>
+                </a>
+                <button class="nav-toggle" aria-label="Ouvrir le menu">
+                    <span></span><span></span>
+                </button>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="apprentissage.html" class="nav-link">Apprentissage</a></li>
+                        <li><a href="work.html" class="nav-link active">Projets</a></li>
+                        <li><a href="competences.html" class="nav-link">Compétences</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-toggle-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main">
+            <div class="container">
+
+                <!-- STICKY NAV -->
+                <nav class="saas-sticky-nav reveal">
+                    <ul>
+                        <li><a href="#vision" class="active">Positionnement</a></li>
+                        <li><a href="#produit">Le Produit</a></li>
+                        <li><a href="#technique">Architecture Edge</a></li>
+                        <li><a href="#profil">Compétences</a></li>
+                        <li><a href="#preuves">Preuves</a></li>
+                    </ul>
+                </nav>
+
+                <!-- HERO SECTION -->
+                <section class="saas-hero-split reveal">
+                    <div>
+                        <span class="saas-hero-badge">Progiciel SaaS • React • Concepteur de Site Edge</span>
+                        <h1 class="saas-hero-title">Vitrine Admin <br><span class="accent-gradient">Restaurateurs</span>
+                        </h1>
+                        <p class="saas-hero-pitch">
+                            Conception d'un outil métier complet permettant à des restaurateurs et à leurs équipes de
+                            gérer leur site sans compétence technique. <strong>Concepteur de site modulaire</strong>
+                            (édition par blocs, prévisualisation), publication sécurisée multi-rôles et architecture
+                            Edge.
+                        </p>
+
+                        <div class="saas-pull-quote">
+                            "J'ai construit ce progiciel SaaS avec la volonté de créer un outil <strong>exploitable et
+                                pérenne</strong>. L'intérêt produit est là : réunir dans un seul outil la composition du
+                            site, la gestion des données métier du restaurant et la gouvernance de publication."
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="work.html" class="btn ghost">← Retour aux projets</a>
+                        </div>
+                    </div>
+
+                    <div class="saas-id-card">
+                        <div class="saas-id-grid">
+                            <div class="saas-id-item" style="grid-column: span 2;">
+                                <h4>Positionnement</h4>
+                                <p>Admin Control Plane</p>
+                            </div>
+                            <div class="saas-id-item">
+                                <h4>Rôle</h4>
+                                <p>Product Engineer (Solo)</p>
+                            </div>
+                            <div class="saas-id-item">
+                                <h4>Durée</h4>
+                                <p>Plusieurs mois</p>
+                            </div>
+                            <div class="saas-id-item" style="grid-column: span 2;">
+                                <h4>Stack</h4>
+                                <div class="saas-tech-tags">
+                                    <span class="s-tag">React (Vite)</span>
+                                    <span class="s-tag">CF Pages / Workers</span>
+                                    <span class="s-tag">RBAC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BENTO METRICS / KEY FEATURES -->
+                <section class="saas-bento-stats reveal">
+                    <div class="saas-stat-box">
+                        <div class="saas-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.611c-.47.47-1.088.706-1.705.706s-1.233-.235-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568c-.47-.47-.706-1.087-.706-1.704s.235-1.233.706-1.704l1.611-1.611a.98.98 0 0 1 .837-.276c.47.07.802.48.968.925a2.501 2.501 0 1 0 3.214-3.214c-.446-.166-.855-.497-.925-.968a.979.979 0 0 1 .276-.837l1.61-1.611c.47-.47 1.088-.706 1.705-.706s1.233.235 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z" />
+                            </svg>
+                        </div>
+                        <span class="saas-stat-label">Concepteur Modulaire</span>
+                        <p class="saas-stat-desc">Édition du site par blocs, réorganisation de sections et
+                            personnalisation de structure.</p>
+                    </div>
+                    <div class="saas-stat-box">
+                        <div class="saas-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <span class="saas-stat-label">Preview & Thèmes</span>
+                        <p class="saas-stat-desc">Prévisualisation du rendu en direct et personnalisation de l'interface
+                            visuelle.</p>
+                    </div>
+                    <div class="saas-stat-box">
+                        <div class="saas-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                        </div>
+                        <span class="saas-stat-label">Chaîne de Publication</span>
+                        <p class="saas-stat-desc">Création de contenu, brouillon automatique, validation Owner et
+                            publication.</p>
+                    </div>
+                    <div class="saas-stat-box">
+                        <div class="saas-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                <path d="M2 12h20" />
+                            </svg>
+                        </div>
+                        <span class="saas-stat-label">Pilotage Unifié</span>
+                        <p class="saas-stat-desc">Gestion des données établissement, du contenu vitrine et pilotage des
+                            domaines DNS.</p>
+                    </div>
+                </section>
+                </section>
+
+                <!-- CONTEXTE & PRODUIT -->
+                <section id="vision" class="saas-section-grid reveal">
+                    <article class="saas-glass-card">
+                        <h2>Le Positionnement</h2>
+                        <p>
+                            La plupart des petites structures ont besoin de mettre à jour rapidement leur site
+                            (horaires, visibilité, informations légales) mais <strong>ne disposent ni d'une équipe
+                                technique ni d'un processus fiable</strong> pour le faire sans risquer de rendre le site
+                            inopérant.
+                        </p>
+                        <p>
+                            Le produit ne se limite pas à une fiche établissement. Il intègre aussi un
+                            <strong>concepteur de site modulaire</strong> permettant d’éditer le contenu, d’organiser
+                            les sections par blocs, de prévisualiser le rendu et de faire évoluer la vitrine sans
+                            intervention technique.
+                        </p>
+                    </article>
+
+                    <article id="produit" class="saas-glass-card">
+                        <h2>L'Usage Produit (Multi-tenant)</h2>
+                        <p>L'outil réunit dans une interface centralisée la composition du site, la gestion des données
+                            métier et la gouvernance de publication :</p>
+                        <ul class="saas-list">
+                            <li><strong>Concepteur de site :</strong> Édition modulaire par blocs et preview
+                                (visualisation avant validation).</li>
+                            <li><strong>Workflow conditionné :</strong> Le propriétaire (Owner) publie directement. Le
+                                Manager/Staff propose, l'Owner valide.</li>
+                            <li><strong>Multi-tenant :</strong> Gestion de plusieurs restaurants par d'un même compte,
+                                avec application stricte de quotas.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- TECHNIQUE & PROFIL -->
+                <section id="technique" class="saas-section-grid reveal">
+                    <article class="saas-glass-card saas-highlight-border">
+                        <h2>Architecture Cloud Edge</h2>
+                        <p>
+                            L'infrastructure entière est distribuée sur l'écosystème Cloudflare, garantissant l'absence
+                            de gestion de serveurs lourds, une sécurité par conception (Security by Design), et des
+                            performances globales.
+                        </p>
+                        <ul class="saas-list">
+                            <li><strong>Découplage Front / Back :</strong> Front Admin React propulsé sur Cloudflare
+                                Pages. Hub SSR dédié pour le rendu public.</li>
+                            <li><strong>Zero Trust Relatif :</strong> Le Front n'accède <em>jamais</em> au Worker
+                                responsable de la logique métier publiquement. Tout passe par un Proxy applicatif (Pages
+                                Functions <code>/api/...</code>).</li>
+                            <li><strong>RBAC Strict & Cryptographique :</strong> Rôles <code>owner</code>,
+                                <code>manager</code> et <code>staff</code> imposés serveur avec token gates pour bloquer
+                                l'accès aux Previews.
+                            </li>
+                            <li><strong>Audits Sécurisés :</strong> Traçabilité complète des actions du workflow sans
+                                stockage des IPs brutes pour rester conforme au RGPD.</li>
+                        </ul>
+                    </article>
+
+                    <article id="profil" class="saas-glass-card">
+                        <h2>Ce Que Ce Projet Prouve</h2>
+                        <p>
+                            Bien plus qu'une simple maquette front-end, ce projet confirme ma capacité à piloter des
+                            systèmes complexes orientés <strong>Product Engineering</strong> :
+                        </p>
+                        <ul class="saas-list">
+                            <li><strong>Capacité produit complète :</strong> Construire un Admin SaaS complet intégrant
+                                un véritable builder de contenu.</li>
+                            <li><strong>Spectre technique large :</strong> Gérer simultanément l'édition
+                                (blocs/preview), la structure, la publication et la sécurité.</li>
+                            <li><strong>Usage métier ciblé :</strong> Penser un outil pour un usage quotidien critique
+                                ("Control Plane"), et pas uniquement pour une interface marketing.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- PREUVES VISUELLES -->
+                <section id="preuves" class="saas-gallery-section reveal">
+                    <h2 class="section-title text-center">Preuves Visuelles</h2>
+                    <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem;">Aperçu du builder et
+                        du Control Plane en production.</p>
+
+                    <div class="saas-gallery-grid">
+                        <!-- Main Page -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/main.png" alt="Page Principale" class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Page Principale</div>
+                        </div>
+
+                        <!-- Site Builder / Concepteur -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/concepteur.png" alt="Concepteur de sites" class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Concepteur de sites</div>
+                        </div>
+
+                        <!-- Team Management -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/team.png" alt="Team Management" class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Équipe & Permissions</div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/notifications.png" alt="Notifications" class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Centre de Notifications</div>
+                        </div>
+
+                        <!-- Publication Verification -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/publication.png" alt="Vérification Publication"
+                                class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Vérification de Publication</div>
+                        </div>
+
+                        <!-- Theme Selection -->
+                        <div class="saas-gallery-item glass">
+                            <img src="./Images/saas/themes.png" alt="Choix de thèmes" class="saas-gallery-img">
+                            <div class="saas-gallery-caption">Choix d'ambiances & Thèmes</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- LIGHTBOX -->
+        <div id="saasLightbox" class="saas-lightbox">
+            <span class="saas-lightbox-close">&times;</span>
+            <span class="saas-lightbox-prev">&#10094;</span>
+            <span class="saas-lightbox-next">&#10095;</span>
+            <div class="saas-lightbox-container">
+                <img class="saas-lightbox-content" id="saasLightboxImg">
+                <div id="saasLightboxCaption" class="saas-lightbox-caption"></div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container footer-inner text-center">
+                <p>© 2026 Nathan Dabonneville — Portfolio</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts (Using Native Setup) -->
+    <script src="main.js" defer></script>
+    <script>
+        // Local script to handle the section sticky nav highlighting natively
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('[id]:not(#main)'); // Filter out main wrapper
+            const navLinks = document.querySelectorAll('.saas-sticky-nav a');
+
+            if (!sections.length || !navLinks.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                let mostVisible = null;
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        mostVisible = e.target;
+                    }
+                });
+
+                if (mostVisible) {
+                    navLinks.forEach(a => {
+                        a.classList.remove('active');
+                        if (a.getAttribute('href') === `#${mostVisible.id}`) {
+                            a.classList.add('active');
+                        }
+                    });
+                }
+            }, {
+                rootMargin: '-20% 0px -70% 0px'
+            });
+
+            sections.forEach(s => observer.observe(s));
+
+            // Initial Active check based on scroll or click
+            document.querySelectorAll('.saas-sticky-nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    navLinks.forEach(n => n.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Lightbox functionality
+            const lb = document.getElementById('saasLightbox');
+            const lbImg = document.getElementById('saasLightboxImg');
+            const lbCap = document.getElementById('saasLightboxCaption');
+            const close = document.querySelector('.saas-lightbox-close');
+            const prev = document.querySelector('.saas-lightbox-prev');
+            const next = document.querySelector('.saas-lightbox-next');
+            const items = Array.from(document.querySelectorAll('.saas-gallery-item'));
+            let currentIndex = 0;
+
+            function openLightbox(index) {
+                currentIndex = index;
+                const item = items[currentIndex];
+                const img = item.querySelector('.saas-gallery-img');
+                const cap = item.querySelector('.saas-gallery-caption');
+
+                if (img && img.getAttribute('src')) {
+                    lb.style.display = 'flex';
+                    lbImg.src = img.src;
+                    lbCap.textContent = cap ? cap.textContent : '';
+                }
+            }
+
+            items.forEach((item, index) => {
+                const img = item.querySelector('.saas-gallery-img');
+                if (img) {
+                    img.onclick = () => openLightbox(index);
+                }
+            });
+
+            close.addEventListener('click', () => {
+                lb.style.display = 'none';
+            });
+
+            prev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentIndex > 0) openLightbox(currentIndex - 1);
+                else openLightbox(items.length - 1);
+            });
+
+            next.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentIndex < items.length - 1) openLightbox(currentIndex + 1);
+                else openLightbox(0);
+            });
+
+            lb.addEventListener('click', (e) => {
+                if (e.target === lb || e.target.classList.contains('saas-lightbox-container')) {
+                    lb.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lb.style.display === 'flex') {
+                    if (e.key === 'Escape') lb.style.display = 'none';
+                    if (e.key === 'ArrowLeft') {
+                        if (currentIndex > 0) openLightbox(currentIndex - 1);
+                        else openLightbox(items.length - 1);
+                    }
+                    if (e.key === 'ArrowRight') {
+                        if (currentIndex < items.length - 1) openLightbox(currentIndex + 1);
+                        else openLightbox(0);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

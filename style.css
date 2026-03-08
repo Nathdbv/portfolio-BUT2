@@ -176,19 +176,6 @@ img {
   padding: 5rem 0 4rem;
 }
 
-/* Custom cursor base (hidden default cursor when custom is active) */
-@media (pointer: fine) {
-
-  body,
-  body * {
-    cursor: none !important;
-  }
-
-  input,
-  textarea {
-    cursor: auto !important;
-  }
-}
 
 .text-center {
   text-align: center;
@@ -3228,70 +3215,6 @@ body.theme-light .bento-proof-compact {
 /* ==================================
    AWWWARDS UI EXTENSIONS 
    ================================== */
-
-/* 1. Custom Cursor (Minimalist Difference) */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 0;
-  height: 0;
-  mix-blend-mode: difference;
-}
-
-.cursor-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  background-color: #fff;
-  color: #000;
-  overflow: hidden;
-}
-
-.custom-cursor.hovering .cursor-dot {
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-
-.custom-cursor.hovering .cursor-icon {
-  width: 44px;
-  height: 44px;
-  opacity: 1;
-}
-
-.custom-cursor.text-cursor .cursor-icon {
-  width: 52px;
-  height: 52px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
 
 /* 1.5 Satisfying Button Press (replaces Magnetism) */
 .btn {
