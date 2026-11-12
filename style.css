@@ -148,3 +148,98 @@ a.row:hover h3{color:var(--ent)}
 .row ul{margin:10px 0 0 18px;color:var(--muted);max-width:60ch}
 .row li+li{margin-top:4px}
 .two>*,.shots>*{min-width:0}
+
+/* ---------- calendrier mural ---------- */
+:root{--pen:#e2462b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pen:#ff6b4e}}
+:root[data-theme="dark"]{--pen:#ff6b4e}
+
+.mu-main{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:start}
+.mu-head{display:flex;align-items:baseline;gap:8px;margin-bottom:14px}
+.mu-title{font-size:clamp(28px,3.4vw,44px);letter-spacing:-.03em;line-height:1}
+.mu-title .mono{font-size:14px;letter-spacing:0;margin-left:6px}
+.mu-sp{flex:1}
+.mu-arr{font:inherit;width:36px;height:32px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:4px;cursor:pointer}
+.mu-arr:disabled{opacity:.3;cursor:default}
+
+/* une semaine = une ligne cliquable */
+.mu-w{display:grid;grid-template-columns:44px repeat(5,minmax(0,1fr));gap:4px;width:100%;padding:3px;margin:0 -3px;border:1px solid transparent;border-radius:5px;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;box-sizing:content-box}
+.mu-big .mu-w{width:calc(100% - 0px)}
+.mu-dow{cursor:default;padding-bottom:4px}
+.mu-dow span{text-align:left;padding-left:8px}
+.mu-big .mu-w:not(.mu-dow)+.mu-w{margin-top:2px}
+.mu-w:not(.mu-dow):hover{border-color:var(--line)}
+.mu-w.sel{border-color:var(--ink)!important}
+.mu-w:focus-visible{outline:2px solid var(--ent);outline-offset:1px}
+.mu-n{align-self:center;color:var(--muted);font-size:11px}
+
+/* un jour */
+.mu-d{position:relative;display:flex;flex-direction:column;justify-content:space-between;height:66px;padding:7px 8px;border-radius:3px;border:1px solid var(--line);background:var(--iut)}
+.mu-d b{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.mu-d small{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.mu-d.c-e{background:var(--ent);border-color:var(--ent);color:#fff}
+.mu-d.c-e small{color:rgba(255,255,255,.75)}
+.mu-d.c-x{background:var(--exam);border-color:var(--exam);color:var(--bg)}
+.mu-d.c-x small{color:inherit;opacity:.7}
+.mu-d.c-f{background:repeating-linear-gradient(135deg,transparent 0 4px,var(--line) 4px 5px),var(--iut)}
+.mu-d.c-o{background:transparent;border-style:dashed;opacity:.5}
+.mu-d.out{opacity:.28}
+/* jours passés : rayés au trait fin, comme sur un calendrier papier */
+.mu-d.past::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - .6px),currentColor calc(50% - .6px),currentColor calc(50% + .6px),transparent calc(50% + .6px));opacity:.35;pointer-events:none}
+/* aujourd'hui : entouré au stylo */
+.pen{position:absolute;inset:-7px -6px;width:calc(100% + 12px);height:calc(100% + 14px);overflow:visible;pointer-events:none;transform:rotate(-4deg)}
+.pen path{fill:none;stroke:var(--pen);stroke-width:2.4;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:400;stroke-dashoffset:400;animation:pen 1s .3s ease-out forwards}
+@keyframes pen{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.pen path{animation:none;stroke-dashoffset:0}}
+
+.mu-side .log{margin-top:58px}
+.mu-side .log dd{font-size:15.5px}
+.mu-prog{grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:28px}
+.mu-prog b{font-size:28px}
+.mu-prog small{font-size:13px}
+
+/* l'année : 12 petits mois */
+.mu-cap{margin:52px 0 14px}
+.mu-year{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 18px}
+.mu-mini{padding:10px;border-radius:5px;border:1px solid transparent}
+.mu-mini.on{border-color:var(--line);background:var(--card)}
+.mu-mini>.mono{display:block;margin-bottom:6px;color:var(--muted);font-size:11.5px}
+.mu-mini.cur>.mono{color:var(--pen)}
+.mu-mini .mu-w{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:2px;margin:0 -3px 1px}
+.mu-mini .mu-d{height:13px;padding:0;border-radius:2px}
+.mu-mini .mu-d.past::before{display:none}
+.mu-mini .mu-d.past{opacity:.4}
+.mu-mini .mu-d.past.out{opacity:.15}
+.mu-mini .pen{inset:-5px;width:calc(100% + 10px);height:calc(100% + 10px)}
+.mu-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:26px;font-size:14px;color:var(--muted)}
+.mu-legend span{display:inline-flex;align-items:center;gap:8px}
+.mu-legend i{width:14px;height:14px;border-radius:2px;border:1px solid var(--line);background:var(--iut);display:inline-block;position:relative}
+.mu-legend i.e{background:var(--ent);border-color:var(--ent)}
+.mu-legend i.x{background:var(--exam);border-color:var(--exam)}
+.mu-legend i.f{background:repeating-linear-gradient(135deg,transparent 0 3px,var(--line) 3px 4px),var(--iut)}
+.mu-legend i.t{border:2px solid var(--pen);border-radius:50%;background:transparent}
+
+@media (max-width:900px){
+  .mu-main{grid-template-columns:1fr;gap:8px}
+  .mu-side .log{margin-top:20px}
+  .mu-year{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:520px){
+  .mu-w{grid-template-columns:30px repeat(5,minmax(0,1fr));gap:3px}
+  .mu-d{height:54px;padding:5px}
+  .mu-d b{font-size:15px}
+  .mu-d small{font-size:9px}
+  .mu-year{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .mu-prog{grid-template-columns:1fr 1fr 1fr}
+  .mu-prog b{font-size:22px}
+}
+
+/* ---------- touches « papier » ---------- */
+/* page courante : soulignée au stylo, comme aujourd'hui dans le calendrier */
+.nav ul a[aria-current]{box-shadow:none;position:relative}
+.nav ul a[aria-current]::after{content:"";position:absolute;left:-3px;right:-3px;bottom:-7px;height:7px;background:var(--pen);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5.5C20 3 45 2.5 62 3.5S90 5 98 2.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5.5C20 3 45 2.5 62 3.5S90 5 98 2.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+/* captures à venir : hachurées comme une case encore vide */
+.shot-todo{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--line) 6px 7px);background-color:var(--card)}
+.shot-todo>*{background:var(--card);align-self:flex-start;padding:1px 6px;margin-left:-6px;border-radius:2px}
