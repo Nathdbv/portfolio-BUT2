@@ -31,7 +31,23 @@
     return out;
   }
 
+  // page AMDM : uniquement la semaine en cours, sans interaction
+  function renderWeek(root) {
+    var t = R.today(), mon = R.monday(t), row = el("div", "mu-w");
+    for (var k = 0; k < 5; k++) {
+      var d = R.add(mon, k), c = code(d), b = el("span", "mu-d c-" + c.toLowerCase());
+      if (d < t && R.iso(d) !== R.iso(t) && c !== "O") b.classList.add("past");
+      b.appendChild(el("b", null, String(d.getDate())));
+      if (LABEL[c]) b.appendChild(el("small", null, LABEL[c]));
+      if (R.iso(d) === R.iso(t)) { b.classList.add("today"); b.insertAdjacentHTML("beforeend", CIRCLE); }
+      row.appendChild(b);
+    }
+    row.setAttribute("aria-label", "Semaine du " + R.fmt(mon) + " au " + R.fmt(R.add(mon, 4)));
+    root.append(el("p", "mu-cap mono muted", "Cette semaine · S" + isoWeek(mon)), row);
+  }
+
   function render(root) {
+    if (root.getAttribute("data-mural") === "week") return renderWeek(root);
     var t = R.today(), from = R.parse(R.CONTRACT.from), to = R.parse(R.CONTRACT.to);
     var clamp = t < from ? from : t > to ? to : t;
     var state = { y: clamp.getFullYear(), m: clamp.getMonth(), sel: R.iso(R.monday(clamp)) };

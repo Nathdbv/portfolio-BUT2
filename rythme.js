@@ -27,7 +27,7 @@
   var HOLIDAYS = ["2025-11-11","2025-12-25","2026-01-01","2026-04-06","2026-05-01","2026-05-08",
     "2026-05-14","2026-05-25","2026-07-14","2026-11-11","2026-12-25","2027-01-01","2027-03-29",
     "2027-05-06","2027-05-17","2027-07-14"];
-  var YEARS = [{ id: "but3", label: "BUT 3 · 2026-27", from: CONTRACT.from, to: CONTRACT.to }];
+  var YEAR = { from: CONTRACT.from, to: CONTRACT.to };
 
   var MONTHS = ["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
   var MONTHS_S = ["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"];
@@ -90,22 +90,6 @@
     return long ? IUT.long : IUT.short;
   }
 
-  /* ---------- semaines d'une année ---------- */
-  function weeksOf(y) {
-    var out = [], start = monday(parse(y.from)), end = parse(y.to);
-    for (var m = start; m <= end; m = add(m, 7)) {
-      var days = [], n = { E: 0, C: 0, X: 0, F: 0 };
-      for (var k = 0; k < 5; k++) { var d = add(m, k), s = status(d); days.push({ d: d, s: s }); if (s && n[s] !== undefined) n[s]++; }
-      var cls = n.E + n.C + n.X === 0 ? "off" : (n.E >= n.C + n.X ? "e" : "c");
-      out.push({ mon: m, days: days, cls: cls, exam: n.X > 0 });
-    }
-    return out;
-  }
-  function yearOf(d) {
-    var s = iso(d);
-    for (var i = 0; i < YEARS.length; i++) if (s >= iso(monday(parse(YEARS[i].from))) && s <= iso(add(monday(parse(YEARS[i].to)), 6))) return YEARS[i];
-    return s < YEARS[0].from ? YEARS[0] : YEARS[YEARS.length - 1];
-  }
   function count(y, upTo) {
     var r = { E: 0, C: 0, X: 0, doneE: 0, doneC: 0 };
     for (var d = parse(y.from), e = parse(y.to); d <= e; d = add(d, 1)) {
@@ -167,96 +151,16 @@
     document.querySelectorAll("[data-today]").forEach(function (e) { e.textContent = fmtLong(today()) + " " + today().getFullYear(); });
   }
 
-  function renderCal(root) {
-    var t = today(), focus = root.getAttribute("data-focus"); // "e" = page entreprise
-    var cur = yearOf(t), year = cur;
-    var tabs = el("div", "tabs"), months = el("div", "months"), weeks = el("div", "weeks"), log = el("dl", "log");
-    var legend = el("div", "legend"), prog = el("div", "progress");
-    legend.innerHTML = '<span><i class="e"></i>' + cap(ENTREPRISE.long) + '</span><span><i></i>' + cap(IUT.long) +
-      '</span><span><i class="x"></i>Examens</span><span class="mono">▢ semaine en cours</span>';
-    YEARS.forEach(function (y) {
-      var b = el("button", null, y.label); b.type = "button";
-      b.addEventListener("click", function () { year = y; draw(); });
-      y._btn = b; tabs.appendChild(b);
-    });
-    if (YEARS.length < 2) tabs.hidden = true;
-    root.append(tabs, months, weeks, legend, log, prog);
-
-    function draw() {
-      YEARS.forEach(function (y) { y._btn.setAttribute("aria-pressed", y === year ? "true" : "false"); });
-      var ws = weeksOf(year), cols = "repeat(" + ws.length + ",minmax(0,1fr))", nowMon = iso(monday(t)), sel = null;
-      weeks.style.gridTemplateColumns = months.style.gridTemplateColumns = cols;
-      weeks.innerHTML = months.innerHTML = "";
-      var lastM = -1;
-      ws.forEach(function (w, i) {
-        var m = add(w.mon, 3).getMonth(), lab = el("span");
-        if (m !== lastM) { lab.textContent = MONTHS_S[m]; lastM = m; }
-        months.appendChild(lab);
-        var b = el("button", "wk " + w.cls + (w.exam ? " x" : ""));
-        b.type = "button";
-        b.setAttribute("aria-label", "Semaine du " + fmt(w.mon) + " : " + (w.cls === "e" ? ENTREPRISE.long : w.cls === "c" ? IUT.long : "hors calendrier"));
-        if (iso(w.mon) === nowMon) { b.classList.add("now"); sel = i; }
-        else if (w.mon < monday(t)) b.classList.add("past");
-        b.addEventListener("click", function () { pick(i); });
-        w._b = b; weeks.appendChild(b);
-      });
-      function pick(i) {
-        ws.forEach(function (w) { w._b.classList.remove("sel"); }); ws[i]._b.classList.add("sel");
-        showWeek(ws[i]);
-      }
-      if (sel === null) sel = t < parse(year.from) ? 0 : ws.length - 1;
-      pick(sel);
-      showProgress();
-    }
-
-    function showWeek(w) {
-      log.innerHTML = "";
-      var fri = add(w.mon, 4), b = null;
-      function line(k, v) { log.appendChild(el("dt", null, k)); var dd = el("dd"); dd.innerHTML = v; log.appendChild(dd); }
-      line("Semaine", fmt(w.mon) + " → " + fmt(fri) + " " + fri.getFullYear() + (iso(w.mon) === iso(monday(t)) ? ' <span class="mono muted">· cette semaine</span>' : ""));
-      var codes = {}; w.days.forEach(function (x) { if (x.s) codes[x.s] = 1; });
-      var mixed = Object.keys(codes).filter(function (c) { return c !== "F"; }).length > 1 || codes.F;
-      if (w.cls === "off") { line("Lieu", "Hors calendrier d'alternance"); return; }
-      if (!mixed) line("Lieu", cap(place(w.days[0].s, true)));
-      else line("Jours", w.days.map(function (x) {
-        var lab = x.s === "F" ? "férié" : x.s === "W" || !x.s ? "—" : x.s === "E" ? ENTREPRISE.short : x.s === "X" ? "examens" : IUT.short;
-        return '<span class="mono">' + DAYS[x.d.getDay()].slice(0, 3) + ". " + x.d.getDate() + "</span> " + lab;
-      }).join(" &nbsp;·&nbsp; "));
-      for (var k = 0; k < 5 && !b; k++) b = block(w.days[k].d);
-      if (b) line("Période", (b.code === "E" ? "Entreprise" : b.code === "X" ? "Examens" : "Formation") + " du " + fmt(b.from) + " au " + fmt(b.to) +
-        ' <span class="mono muted">· ' + b.weeks + " sem.</span>");
-    }
-
-    function showProgress() {
-      var c = count(year, t), tot = c.E + c.C + c.X, done = c.doneE + c.doneC;
-      var pct = Math.max(0, Math.min(100, Math.round(done / tot * 100)));
-      prog.innerHTML = "";
-      [[pct + " %", "de l'alternance écoulée"],
-       [c.doneE + " / " + c.E, "jours à " + ENTREPRISE.short + (focus === "e" ? " effectués" : "")],
-       [c.doneC + " / " + (c.C + c.X), "jours à " + IUT.short + " (dont " + c.X + " d'examens)"]]
-        .forEach(function (p, i) {
-          if (focus === "e" && i === 2) return;
-          var d = el("div"); d.appendChild(el("b", null, p[0])); d.appendChild(el("small", null, p[1])); prog.appendChild(d);
-        });
-      if (focus === "e") {
-        var r = el("div"), left = c.E - c.doneE;
-        r.appendChild(el("b", null, String(left))); r.appendChild(el("small", null, "jours en entreprise restants cette année"));
-        prog.appendChild(r);
-      }
-    }
-    draw();
-  }
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
   // utilisé par d'autres vues du calendrier (ex. calendrier mural)
   window.Rythme = { status: status, block: block, today: today, parse: parse, iso: iso, add: add, monday: monday,
     count: count, place: place, cap: cap, fmt: fmt, fmtLong: fmtLong, CONTRACT: CONTRACT, ENTREPRISE: ENTREPRISE, IUT: IUT,
-    MONTHS_L: MONTHS_L, MONTHS_S: MONTHS_S, DAYS: DAYS, year: YEARS[0] };
+    MONTHS_L: MONTHS_L, MONTHS_S: MONTHS_S, DAYS: DAYS, year: YEAR };
 
   function init() {
     var st = now();
     renderPills(st); renderStatus(st);
-    document.querySelectorAll("[data-rythme]").forEach(renderCal);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
