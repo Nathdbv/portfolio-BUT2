@@ -1,0 +1,72 @@
+<main>
+<section class="first">
+  <p class="kicker">Compétences · BUT Informatique</p>
+  <h1>Six compétences, <em>des preuves</em>.</h1>
+  <p class="lead" style="margin-top:22px">Les six compétences du BUT, avec mes résultats de semestre 3 et le projet qui le montre.</p>
+</section>
+<section>
+  <div class="rows">
+    <div class="row comp">
+      <span class="mono muted">C1<br>UE 3.1</span>
+      <div><h3>Réaliser <span class="muted" style="font-weight:500">un développement d'application</span></h3><p>Architecture MVC et orientée objet ; sessions et cookies PHP ; panier dynamique.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-ecommerce-php.html">E-commerce PHP →</a> · <a href="amdm.html">Alternance AMDM →</a></p></div>
+      <div class="meter"><b>14,86<small> / 20</small></b><span style="--p:74.3%"></span><small class="mono muted">74,3 % · UE 3.1</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C2<br>UE 3.2</span>
+      <div><h3>Optimiser <span class="muted" style="font-weight:500">des applications</span></h3><p>Requêtes SQL (index, jointures) ; chargement conditionnel des médias ; reverse proxy Nginx.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-ecommerce-php.html">E-commerce PHP →</a> · <a href="project-noflyer.html">NoFlyer →</a></p></div>
+      <div class="meter"><b>14,31<small> / 20</small></b><span style="--p:71.6%"></span><small class="mono muted">71,6 % · UE 3.2</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C3<br>UE 3.3</span>
+      <div><h3>Administrer <span class="muted" style="font-weight:500">des systèmes communicants</span></h3><p>Serveurs Linux (Debian/Ubuntu) ; Docker et Compose ; filtrage réseau, allow-lists IP.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-ctf-case-404.html">CTF Case 404 →</a> · <a href="project-noflyer.html">NoFlyer →</a></p></div>
+      <div class="meter"><b>15,72<small> / 20</small></b><span style="--p:78.6%"></span><small class="mono muted">78,6 % · UE 3.3</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C4<br>UE 3.4</span>
+      <div><h3>Gérer <span class="muted" style="font-weight:500">des données</span></h3><p>Modélisation MCD/MLD sous MySQL ; intégrité référentielle ; back-office CRUD sécurisé.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-ecommerce-php.html">E-commerce PHP →</a> · <a href="project-noflyer.html">NoFlyer →</a></p></div>
+      <div class="meter"><b>15,27<small> / 20</small></b><span style="--p:76.4%"></span><small class="mono muted">76,4 % · UE 3.4</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C5<br>UE 3.5</span>
+      <div><h3>Conduire <span class="muted" style="font-weight:500">un projet</span></h3><p>Scrum (sprints, dailies) ; backlog sur Trello ; retours utilisateurs.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-ctf-case-404.html">CTF Case 404 →</a> · <a href="amdm.html">Alternance AMDM →</a></p></div>
+      <div class="meter"><b>14,20<small> / 20</small></b><span style="--p:71.0%"></span><small class="mono muted">71,0 % · UE 3.5</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C6<br>UE 3.6</span>
+      <div><h3>Collaborer <span class="muted" style="font-weight:500">au sein d'une équipe</span></h3><p>Git/GitHub et conflits de merge ; décisions sous forte contrainte de temps ; répartition des tâches techniques et artistiques.</p>
+        <p class="note" style="margin-top:10px">Traces : <a href="project-code-game-jam.html">Code Game Jam →</a> · <a href="amdm.html">Alternance AMDM →</a></p></div>
+      <div class="meter"><b>15,03<small> / 20</small></b><span style="--p:75.2%"></span><small class="mono muted">75,2 % · UE 3.6</small></div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:22px">Notes du semestre 3. Les traces de l'alternance (missions à l'AMDM) et de NoFlyer complètent celles des SAÉ.</p>
+</section>
+<section>
+  <div class="sec-head"><p class="kicker">Parcours IAMSI</p><h2>Apprentissages critiques de niveau 2.</h2></div>
+  <p class="prose muted">Dans le parcours IAMSI (Intégration d'applications et management du SI), C2, C3 et C4 s'arrêtent au niveau 2. Voici comment j'ai validé chaque apprentissage critique.</p>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C2 · niveau 2</p></div>
+    <div><h3>Optimiser des applications informatiques</h3><p class="muted" style="margin-top:4px">Sélectionner les algorithmes adéquats pour répondre à un problème donné.</p>
+      <dl class="log ac"><dt>AC22.01</dt><dd><b>Choisir des structures de données complexes adaptées au problème</b><span>Modélisation et optimisation des requêtes du panier (session vs base) sur l'e-commerce PHP</span></dd><dt>AC22.02</dt><dd><b>Utiliser des techniques algorithmiques adaptées pour des problèmes complexes</b><span>Logique de jeu en C# (Unity) à la Game Jam : collisions et états</span></dd><dt>AC22.03</dt><dd><b>Comprendre les enjeux et moyens de sécurisation des données et du code</b><span>Hachage des mots de passe (sel/poivre), requêtes préparées PDO contre les injections SQL</span></dd><dt>AC22.04</dt><dd><b>Évaluer l'impact environnemental et sociétal des solutions informatiques</b><span>Poids des assets web, hébergement raisonné (VPS Debian), technologies légères</span></dd></dl></div>
+  </div>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C3 · niveau 2</p></div>
+    <div><h3>Administrer des systèmes informatiques communicants complexes</h3><p class="muted" style="margin-top:4px">Déployer des services dans une architecture réseau.</p>
+      <dl class="log ac"><dt>AC23.01</dt><dd><b>Concevoir et développer des applications communicantes</b><span>Orchestration Docker multi-conteneurs (CTFd + défis isolés), communication via réseau Docker</span></dd><dt>AC23.02</dt><dd><b>Utiliser des serveurs et des services réseaux virtualisés</b><span>VPS Debian, reverse proxy Nginx, Portainer, allow-list IPv4</span></dd><dt>AC23.03</dt><dd><b>Sécuriser les services et données d'un système</b><span>Politique Zero Trust, isolation des défis par conteneur, restriction d'accès par IP</span></dd></dl></div>
+  </div>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C4 · niveau 2</p></div>
+    <div><h3>Gérer des données de l'information</h3><p class="muted" style="margin-top:4px">Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité.</p>
+      <dl class="log ac"><dt>AC24.01</dt><dd><b>Optimiser les modèles de données de l'entreprise</b><span>MCD/MLD de l'e-commerce (produits, commandes, utilisateurs), requêtes avec index</span></dd><dt>AC24.02</dt><dd><b>Assurer la confidentialité des données (intégrité et sécurité)</b><span>Authentification sécurisée (sel/poivre), CRUD admin avec contrôle d'accès, intégrité référentielle</span></dd><dt>AC24.03</dt><dd><b>Organiser la restitution de données à travers la programmation et la visualisation</b><span>Historique des commandes par utilisateur (tri, filtre), restitution admin des produits</span></dd></dl></div>
+  </div>
+</section>
+<section>
+  <div class="two"><p class="kicker">Bilan</p>
+  <div class="prose"><p>Ces trois compétences ont façonné mon profil d'intégrateur et de développeur. Le CTF Case 404 m'a permis de dépasser le cadre académique en livrant un produit fonctionnel et sécurisé à un vrai client (Yggame) ; le projet e-commerce m'a donné une maîtrise concrète de l'optimisation et de la gestion de données.</p>
+  <p>La leçon que je retiens : l'ingénierie logicielle (infra, données, algorithmique) n'a de valeur que si elle garantit un système d'information cohérent et performant.</p></div></div>
+</section>
+</main>

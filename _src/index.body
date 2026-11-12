@@ -1,0 +1,44 @@
+<main>
+<section class="first">
+  <p class="kicker">Alternant · BUT Informatique · <span data-today></span></p>
+  <h1>Une année partagée entre l'IUT et <em>l'entreprise</em>.</h1>
+  <div class="status" data-now></div>
+  <div data-mural></div>
+  <div class="mu-legend"><span><i class="e"></i>La Mutuelle des Motards</span><span><i></i>L'IUT Montpellier-Sète</span><span><i class="x"></i>Examens</span><span><i class="f"></i>Férié</span><span><i class="t"></i>Aujourd'hui</span></div>
+  <p class="note">Contrat d'alternance du 1er septembre 2026 au 31 août 2027. Calculé chaque jour à partir du calendrier d'alternance officiel de l'IUT Montpellier-Sète (BUT Info IAMSI 2025-2027, prévisionnel). Cliquez une semaine pour le détail.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="kicker">Projets</p>
+    <h2>Quelques projets.</h2>
+  </div>
+  <div class="rows">
+    <a class="row" href="project-noflyer.html">
+      <span class="mono muted">Projet perso</span>
+      <div><h3>NoFlyer</h3><p>Plateforme pour les hôtes et les conciergeries : une page par logement, ouverte par QR code, avec assistant IA. En production.</p>
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span></div></div>
+      <span></span>
+    </a>
+    <a class="row" href="project-ctf-case-404.html">
+      <span class="mono muted">SAÉ 3.01</span>
+      <div><h3>CTF « Case 404 »</h3><p>Plateforme CTFd déployée pour l'association Yggame : 30 challenges, infra Docker, plugins sur mesure. 19,5/20.</p>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Python</span><span class="tag">Scrum</span></div></div>
+      <img src="img/ctf-home.jpg" alt="Accueil du CTF Case 404" loading="lazy">
+    </a>
+    <a class="row" href="project-ecommerce-php.html">
+      <span class="mono muted">Oct.–nov. 2025</span>
+      <div><h3>E-commerce PHP MVC</h3><p>Boutique complète en trio : panier, commandes, back-office, mots de passe salés et poivrés. 17,25/20.</p>
+      <div class="tags"><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">MVC</span></div></div>
+      <img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique" loading="lazy">
+    </a>
+    <a class="row" href="project-code-game-jam.html">
+      <span class="mono muted">Janv. 2025</span>
+      <div><h3>Code Game Jam 2025</h3><p>30 h, équipe de 6, thème « Mélodie à l'Infini ». Prix design global et 2ᵉ place locale à Montpellier.</p>
+      <div class="tags"><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">C#</span></div></div>
+      <img src="img/cgj.jpg" alt="Capture du jeu de la Code Game Jam" loading="lazy">
+    </a>
+  </div>
+  <p class="note"><a href="projets.html">Tous les projets →</a></p>
+</section>
+</main>

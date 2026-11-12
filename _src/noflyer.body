@@ -1,0 +1,110 @@
+<main>
+<section class="first">
+  <p class="kicker"><a href="projets.html">Projets</a> / Projet personnel · depuis mai 2026</p>
+  <h1>NoFlyer.</h1>
+  <p class="lead" style="margin-top:22px">Une plateforme pour les hôtes de location courte durée et les conciergeries : chaque logement a sa page d'accueil, ouverte par QR code, avec le guide du logement, le Wi-Fi et un assistant IA pour les voyageurs.</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Statut</dt><dd>En production · pilote privé</dd></div>
+    <div><dt>Équipe</dt><dd>Projet personnel</dd></div>
+    <div><dt>Volume</dt><dd>1 000+ commits · 238 PR</dd></div>
+    <div><dt>Tests</dt><dd>281 fichiers de tests</dd></div>
+  </dl>
+  <div class="shots" style="margin-top:40px">
+    <div class="shot-todo wide"><span class="mono">Capture à venir</span><b>Page voyageur sur mobile</b>Le guide du logement tel que le voit le voyageur après avoir scanné le QR code.</div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Le problème</p>
+    <div class="prose">
+      <p>Les hôtes remettent les infos pratiques (Wi-Fi, règles, équipements, bonnes adresses) sur papier ou par messages éparpillés.</p>
+      <p>NoFlyer les rassemble dans une page mobile multilingue, accessible par QR code. Les données privées ne sont jamais exposées : le mot de passe Wi-Fi n'apparaît que si le voyageur demande à le voir.</p>
+      <p>L'objectif : construire la plateforme et développer le produit auprès des conciergeries et des hôtes en France.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Ce que j'ai fait</p>
+    <div class="prose">
+      <ul>
+        <li>Mise en place du monorepo : applications, API, base de données, environnements Docker.</li>
+        <li>Stockage sécurisé du Wi-Fi, avec révélation explicite côté voyageur.</li>
+        <li>Abonnements Stripe : paiement, portail client, nombre de logements selon l'offre.</li>
+        <li>E-mails transactionnels : envoi asynchrone via une file d'attente, réinitialisation du mot de passe.</li>
+        <li>Sécurité de l'authentification : double authentification, limites de tentatives, contrôle des rôles.</li>
+        <li>Intégration continue durcie : scan de secrets, règles d'imports, actions épinglées.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Architecture</p>
+    <div>
+      <dl class="log" style="margin-top:0">
+        <dt>Voyageur</dt><dd>Page publique Next.js, servie par une API publique qui ne renvoie que des données publiques</dd>
+        <dt>Hôte · admin</dt><dd>Back-offices authentifiés (JWT, rôles), servis par une API privée</dd>
+        <dt>Partagé</dt><dd>Schéma de données, authentification, chatbot, paiement, composants d'interface</dd>
+        <dt>Infra</dt><dd>VPS Ubuntu · Docker Compose · Nginx · déploiement par version exacte</dd>
+      </dl>
+      <div class="tags" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:20px">
+        <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Fastify</span><span class="tag">Zod</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Redis</span><span class="tag">OpenAI</span><span class="tag">Stripe</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">GitHub Actions</span><span class="tag">Vitest</span><span class="tag">Playwright</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Une difficulté</p>
+    <div>
+      <div class="prose">
+        <p>Au départ, le mot de passe Wi-Fi était saisi en texte libre dans un champ public : il risquait de sortir par l'API, par le HTML de la page ou par le chatbot.</p>
+        <p>J'ai d'abord filtré les réponses du chatbot avec des expressions régulières. Chaque correctif révélait un nouveau cas oublié : tirets Unicode, libellés en anglais, faux positifs.</p>
+        <p>J'ai donc changé d'approche et séparé les données dès la conception : un nom de réseau public, un mot de passe privé. L'API publique n'indique plus que l'existence d'un mot de passe, qui n'est lisible que par une route dédiée, limitée en débit et jamais mise en cache. Le chatbot ne le reçoit plus du tout, et un test de bout en bout vérifie qu'il ne peut pas le divulguer.</p>
+      </div>
+      <div class="shots" style="margin-top:28px">
+        <div class="shot-todo"><span class="mono">Capture à venir</span><b>Carte Wi-Fi, avant révélation</b></div>
+        <div class="shot-todo"><span class="mono">Capture à venir</span><b>Carte Wi-Fi, après révélation</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Assistant IA</p>
+    <div>
+      <div class="prose">
+        <p>Le chatbot répond aux questions des voyageurs à partir des seules informations publiques du logement. Son budget quotidien est plafonné et il est testé contre les fuites.</p>
+        <p>Je me forme à l'IA en même temps qu'aux technologies du projet, pour rester à jour : je l'intègre dans le produit et je l'utilise comme assistant de développement, en relisant et validant chaque changement.</p>
+      </div>
+      <div class="shots" style="margin-top:28px">
+        <div class="shot-todo"><span class="mono">Capture à venir</span><b>Chatbot voyageur</b>Une question sur le Wi-Fi, renvoyée vers le bouton de révélation.</div>
+        <div class="shot-todo"><span class="mono">Capture à venir</span><b>Studio hôte</b>Création d'un logement ou gabarits d'impression du QR code.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Compétences</p>
+    <div>
+      <div class="tags" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag c">C1 Réaliser</span><span class="tag c">C2 Optimiser</span><span class="tag c">C3 Administrer</span><span class="tag c">C4 Données</span><span class="tag c">C5 Conduire</span></div>
+      <dl class="log">
+        <dt>C1</dt><dd>Quatre applications Next.js et deux API Fastify, de la page voyageur au back-office.</dd>
+        <dt>C2</dt><dd>Budget IA réservé de façon atomique dans Redis ; couverture de tests mesurée ; temps de CI réduit.</dd>
+        <dt>C3</dt><dd>Production sur VPS avec Docker Compose et Nginx ; ports de base de données fermés ; contrôles de santé.</dd>
+        <dt>C4</dt><dd>22 modèles Prisma, 28 migrations ; migration additive du Wi-Fi ; unicité des adresses publiques sûre en accès concurrents.</dd>
+        <dt>C5</dt><dd>Feuille de route, user stories, travail par pull requests, checklist de mise en production.</dd>
+      </dl>
+      <p class="note">Code source privé.</p>
+    </div>
+  </div>
+</section>
+</main>

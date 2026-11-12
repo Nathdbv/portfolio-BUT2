@@ -1,0 +1,59 @@
+<main>
+<section class="first">
+  <p class="kicker">À propos</p>
+  <h1>Nathan <em>Dabonneville</em>.</h1>
+  <p class="lead" style="margin-top:22px">Alternant en BUT Informatique, parcours IAMSI. Je transforme des idées en prototypes jouables et en interfaces propres.</p>
+  <p class="cta"><a class="btn" href="Ressources/CV/CV_Nathan_Dabonneville.pdf" download>Télécharger mon CV <span class="mono">PDF ↓</span></a></p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Basé à</dt><dd>Montpellier et alentours</dd></div>
+    <div><dt>Formation</dt><dd>BUT Info · IAMSI</dd></div>
+    <div><dt>Langues</dt><dd>Français · anglais B2 (Cambridge)</dd></div>
+    <div><dt>Permis</dt><dd>A2 · B</dd></div>
+  </dl>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Qui je suis</p>
+    <div class="prose">
+      <p>Je fonctionne avant tout à la curiosité, à l'instinct et au besoin de stimulation. J'aime créer et comprendre, surtout quand il y a un skill gap à combler : apprendre, tester, rater, recommencer.</p>
+      <p>Je suis rationnel mais très intuitif : j'aime la logique, mais il m'arrive de me fier à mon instinct. Je reste parfois impatient face à la routine ; j'ai besoin d'explorer et de sentir que j'avance. L'échec ne me bloque pas : c'est une étape normale du processus.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">En dehors du code</p>
+    <div class="rows" style="border-top:0">
+      <div class="row" style="grid-template-columns:110px 1fr;padding-top:0">
+        <span class="mono muted">Moto</span>
+        <div><p style="margin:0">La moto m'attire pour l'adrénaline, la progression technique et l'appartenance à une communauté dans laquelle je me sens à ma place. Permis A2 en poche — et une alternance à la Mutuelle des Motards.</p></div>
+      </div>
+      <div class="row" style="grid-template-columns:110px 1fr">
+        <span class="mono muted">Jeu vidéo</span>
+        <div><p style="margin:0">Développement de jeux, game et level design, 3D : construire des univers et donner forme à des idées qui n'existent pas encore. Code Game Jam 2025, Crazy Game Jam 2026.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Objectif</p>
+    <div class="prose"><p>Évoluer vers le game design : prototyper, tester, itérer, et comprendre ce qui rend une expérience fun et lisible.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><p class="kicker">Parcours</p><h2>Depuis 2024.</h2></div>
+  <dl class="log">
+    <dt>sept. 2024</dt><dd>Entrée en BUT Informatique à l'IUT Montpellier-Sète</dd>
+    <dt>janv. 2025</dt><dd><a href="project-code-game-jam.html">Code Game Jam 2025</a> — Prix design global, 2ᵉ place locale</dd>
+    <dt>sept. 2025</dt><dd>BUT 2, parcours IAMSI · <a href="project-ctf-case-404.html">SAÉ 3.01 Case 404</a> (jusqu'en janv. 2026) · <a href="project-ecommerce-php.html">e-commerce PHP</a></dd>
+    <dt>avr.–juil. 2026</dt><dd>Stage à la <a href="amdm.html">Mutuelle des Motards</a></dd>
+    <dt>été 2026</dt><dd><a href="project-crazy-game-jam.html">Crazy Game Jam</a></dd>
+    <dt>sept. 2026</dt><dd>BUT 3 en alternance à la <a href="amdm.html">Mutuelle des Motards</a>, jusqu'au 31 août 2027</dd>
+  </dl>
+</section>
+</main>

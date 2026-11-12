@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="me" href="index.html">Nathan Dabonneville</a>
+  <ul>
+    <li><a href="index.html"__A_index__>Rythme</a></li>
+    <li><a href="amdm.html"__A_amdm__>AMDM</a></li>
+    <li><a href="projets.html"__A_projets__>Projets</a></li>
+    <li><a href="competences.html"__A_competences__>Compétences</a></li>
+    <li><a href="about.html"__A_about__>À propos</a></li>
+    <li><a href="contact.html"__A_contact__>Contact</a></li>
+  </ul>
+  <span class="pill" data-now-pill>…</span>
+</nav>

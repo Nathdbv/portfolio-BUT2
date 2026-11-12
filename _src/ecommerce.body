@@ -1,0 +1,70 @@
+<main>
+<section class="first">
+  <p class="kicker"><a href="projets.html">Projets</a> / Projet IUT · oct.–nov. 2025</p>
+  <h1>E-commerce <em>PHP</em>.</h1>
+  <p class="lead" style="margin-top:22px">Catalogue → panier persistant → commande → historique → administration. Architecture MVC en PHP/SQL.</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Équipe</dt><dd>3 personnes</dd></div>
+    <div><dt>Durée</dt><dd>1 mois et demi</dd></div>
+    <div><dt>Rôle</dt><dd>Dev full-stack</dd></div>
+    <div><dt>Note</dt><dd>17,25 / 20</dd></div>
+  </dl>
+  <div class="shots" style="margin-top:40px"><figure class="wide"><img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique"><figcaption>Page d'accueil</figcaption></figure></div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Contexte</p>
+    <div class="prose">
+      <p>Attendu : un e-commerce complet avec architecture MVC, un parcours d'achat fluide et une administration CRUD fonctionnelle.</p>
+      <p>Contraintes : MVC imposé, base SQL, gestion d'état par sessions et cookies, cohérence de l'expérience utilisateur.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Mon rôle</p>
+    <div class="prose"><ul>
+      <li><b>Panier</b> : ajout, suppression, quantités, calcul du total, persistance en session.</li>
+      <li><b>Commandes et historique</b> : transformation panier → commande en base SQL, historique par utilisateur (tri descendant : n°, date, produit, prix), logique anti-doublons.</li>
+      <li><b>État applicatif</b> : persistance du panier, des commandes et des préférences via sessions PHP et cookies.</li>
+      <li><b>Interface sombre</b> : retours visuels sur l'ajout au panier, la validation et les erreurs.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Technique</p>
+    <div class="prose">
+      <p><b>MVC</b> : contrôleur frontal avec routage par paramètres (action / contrôleur), séparation modèle / vue / contrôleur.</p>
+      <p><b>Données</b> : panier en session, commandes en base ; CRUD produits ; requêtes préparées PDO.</p>
+      <p><b>Sécurité</b> : hachage des mots de passe avec sel et poivre, mis en place au niveau de l'équipe.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Méthode</p>
+    <div class="prose">
+      <p>Tests manuels après chaque fonctionnalité (panier → commande → historique). Git en équipe de 3 avec branches de fonctionnalité et commits atomiques. Débogage par logs PHP et inspection SQL dans phpMyAdmin.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Compétences</p>
+    <div>
+      <dl class="log" style="margin-top:0">
+        <dt>C1 Réaliser</dt><dd>Logique métier (panier, commandes, historique), architecture MVC, contrôleur frontal</dd>
+        <dt>C4 Gérer</dt><dd>CRUD produits, structuration de la base, requêtes SQL</dd>
+        <dt>C6 Collaborer</dt><dd>Versioning Git, travail en équipe</dd>
+      </dl>
+      <p class="note"><a href="https://webinfo.iutmontp.univ-montp2.fr/~annarellim/projetweb/web/controleurFrontal.php?action=afficher&amp;controleur=accueil">Voir le site en ligne →</a></p>
+    </div>
+  </div>
+</section>
+</main>

@@ -1,0 +1,41 @@
+<main>
+<section class="first">
+  <p class="kicker">Projets</p>
+  <h1>Ce que j'ai <em>construit</em>.</h1>
+</section>
+
+<section>
+  <div class="rows">
+    <a class="row" href="project-ctf-case-404.html">
+      <span class="mono muted">Sept. 2025 → janv. 2026<br>SAÉ 3.01 · 4 étudiants</span>
+      <div><h3>CTF « Case 404 » →</h3><p>Plateforme CTFd pour l'association Yggame : 30 challenges sur 9 catégories, infrastructure Docker Compose + Portainer + Nginx filtré par IP, plugins CTFd sur mesure. Note 19,5/20, en ligne.</p>
+      <div class="tags"><span class="tag c">C3</span><span class="tag c">C1</span><span class="tag c">C5</span><span class="tag c">C6</span><span class="tag">CTFd</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Python</span></div></div>
+      <img src="img/ctf-home.jpg" alt="Accueil du CTF Case 404" loading="lazy">
+    </a>
+    <a class="row" href="project-noflyer.html">
+      <span class="mono muted">Mai 2026 → aujourd'hui<br>projet personnel</span>
+      <div><h3>NoFlyer →</h3><p>Plateforme pour les hôtes de location courte durée et les conciergeries : une page d'accueil par logement, ouverte par QR code, avec guide, Wi-Fi et assistant IA. En production, pilote privé.</p>
+      <div class="tags"><span class="tag c">C1</span><span class="tag c">C2</span><span class="tag c">C3</span><span class="tag c">C4</span><span class="tag c">C5</span><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div></div>
+      <span></span>
+    </a>
+    <a class="row" href="project-crazy-game-jam.html">
+      <span class="mono muted">Début été 2026</span>
+      <div><h3>Crazy Game Jam →</h3>
+      <div class="todo" style="margin-top:10px"><span class="mono">Fiche en préparation</span>Thème, équipe, rôle et captures à venir.</div></div>
+      <span></span>
+    </a>
+    <a class="row" href="project-ecommerce-php.html">
+      <span class="mono muted">Oct.–nov. 2025<br>3 étudiants</span>
+      <div><h3>E-commerce PHP MVC →</h3><p>Architecture MVC avec contrôleur frontal, panier en session, commandes et historique en base SQL, CRUD d'administration, hachage des mots de passe avec sel et poivre. Note 17,25/20.</p>
+      <div class="tags"><span class="tag c">C1</span><span class="tag c">C4</span><span class="tag c">C6</span><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">PDO</span></div></div>
+      <img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique" loading="lazy">
+    </a>
+    <a class="row" href="project-code-game-jam.html">
+      <span class="mono muted">23–25 janv. 2025<br>équipe de 6</span>
+      <div><h3>Code Game Jam 2025 →</h3><p>30 h à l'Ob.i LAB Montpellier, thème « Mélodie à l'Infini » : les Quatre Saisons de Vivaldi en 8-bit, la carte change toutes les 30 s. Prix design global et 2ᵉ place locale.</p>
+      <div class="tags"><span class="tag c">C6</span><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">GitHub</span></div></div>
+      <img src="img/cgj.jpg" alt="Capture du jeu" loading="lazy">
+    </a>
+  </div>
+</section>
+</main>

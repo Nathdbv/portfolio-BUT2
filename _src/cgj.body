@@ -1,0 +1,55 @@
+<main>
+<section class="first">
+  <p class="kicker"><a href="projets.html">Projets</a> / 23–25 janvier 2025 · 9ᵉ édition</p>
+  <h1>Code Game Jam <em>2025</em>.</h1>
+  <p class="lead" style="margin-top:22px">30 heures non-stop à l'Ob.i LAB, campus de Montpellier, sur le thème imposé « Mélodie à l'Infini ».</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Durée</dt><dd>30 h</dd></div>
+    <div><dt>Équipe</dt><dd>6 étudiants</dd></div>
+    <div><dt>Outils</dt><dd>Unity · Blender · GitHub</dd></div>
+    <div><dt>Résultat</dt><dd>Prix design global · 2ᵉ local</dd></div>
+  </dl>
+  <div class="shots" style="margin-top:40px"><figure class="wide"><img src="img/cgj.jpg" alt="Capture du gameplay"><figcaption>Vivaldi's Disorder — gameplay</figcaption></figure></div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Le concept</p>
+    <div class="prose"><p>Une réinterprétation des Quatre Saisons de Vivaldi en 8-bit : la carte évolue toutes les 30 secondes, au rythme des saisons.</p>
+    <p>Contraintes : thème imposé, délai très court, exécutable autonome à livrer.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Mon rôle</p>
+    <div class="prose"><ul>
+      <li><b>Game design</b> : définition et ajustement des mécaniques principales pour garder un gameplay cohérent en 30 h.</li>
+      <li><b>Modélisation 3D</b> (Blender) : éléments visuels adaptés au concept et au rythme du jeu.</li>
+      <li><b>Intégration</b> : mise en place des assets et des comportements dans le jeu pour livrer un prototype jouable.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Une difficulté</p>
+    <div class="prose"><p>Un gros conflit Git : à un moment, j'étais le seul à conserver une version viable, les autres avaient perdu la leur.</p>
+    <p>J'en retiens l'importance d'une gestion de version rigoureuse (synchronisation fréquente, intégration progressive, vigilance sur les merges) et de prévenir vite l'équipe quand un blocage la met en danger.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Résultat</p>
+    <div>
+      <div class="prose"><p>Un prototype jouable, pas entièrement terminé, mais un concept clair récompensé par le jury : <b>Prix design global</b> et <b>2ᵉ place locale</b> (site de Montpellier).</p></div>
+      <div class="shots" style="margin-top:28px">
+        <figure><img src="img/cgj-equipe.jpg" alt="Photo de l'équipe" loading="lazy"><figcaption>L'équipe</figcaption></figure>
+        <figure><img src="img/cgj-prix.jpg" alt="Prix CGJ 2025" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%"><figcaption>Prix CGJ 2025</figcaption></figure>
+      </div>
+      <p class="note"><span class="tag c">C6 Collaborer</span> &nbsp; <a href="https://batpit-21.itch.io/vivaldis-disorder">Jouer sur itch.io →</a></p>
+    </div>
+  </div>
+</section>
+</main>

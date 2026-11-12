@@ -1,0 +1,75 @@
+<main>
+<section class="first">
+  <p class="kicker"><a href="projets.html">Projets</a> / SAÉ 3.01 · sept. 2025 → janv. 2026</p>
+  <h1>CTF « Case 404 ».</h1>
+  <p class="lead" style="margin-top:22px">Une plateforme de Capture The Flag conçue, développée et déployée pour l'association Yggame, sur le thème d'une enquête.</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Équipe</dt><dd>4 étudiants · Scrum</dd></div>
+    <div><dt>Durée</dt><dd>5 sprints</dd></div>
+    <div><dt>Contenu</dt><dd>30 challenges</dd></div>
+    <div><dt>Note</dt><dd>19,5 / 20</dd></div>
+  </dl>
+  <figure class="shots" style="margin-top:40px"><figure class="wide"><img src="img/ctf-home.jpg" alt="Page d'accueil du CTF"><figcaption>Accueil — thème « Case 404 »</figcaption></figure></figure>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Mon rôle</p>
+    <div class="prose">
+      <ul>
+        <li>Infrastructure et déploiement : Docker Compose, Portainer, reverse proxy Nginx.</li>
+        <li>Sécurité réseau : accès restreint par liste blanche d'adresses IPv4.</li>
+        <li>Plugins CTFd : rôles personnalisés, multi-flags, QCM, challenges flash, annonces, webhook Discord.</li>
+        <li>Interface du thème « Case 404 ».</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Les challenges</p>
+    <div>
+      <div class="prose"><p>30 challenges répartis en 9 catégories.</p></div>
+      <div class="tags" style="display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 28px">
+        <span class="tag">Enquêtes spéciales</span><span class="tag">Téléphone</span><span class="tag">Forensique</span><span class="tag">Crypto</span><span class="tag">OSINT</span><span class="tag">Stéganographie</span><span class="tag">Application</span><span class="tag">Web</span><span class="tag">Shell</span>
+      </div>
+      <div class="shots">
+        <figure class="wide"><img src="img/ctf-enquetes.jpg" alt="Liste des enquêtes" loading="lazy"><figcaption>Catégorie « Enquêtes spéciales »</figcaption></figure>
+        <figure><img src="img/ctf-qcm-admin.jpg" alt="Administration du plugin QCM" loading="lazy"><figcaption>Plugin QCM — administration</figcaption></figure>
+        <figure><img src="img/ctf-webhook.jpg" alt="Webhook Discord" loading="lazy"><figcaption>Plugin webhook Discord</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Une difficulté</p>
+    <div class="prose">
+      <p>Le plugin QCM entrait en collision avec le CSS du thème.</p>
+      <p>Diagnostic dans les DevTools, CSS ciblé et isolation des templates, puis tests de non-régression sur les autres pages.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Infra &amp; organisation</p>
+    <div class="shots">
+      <figure><img src="img/ctf-portainer.jpg" alt="Conteneurs dans Portainer" loading="lazy"><figcaption>Conteneurs gérés dans Portainer</figcaption></figure>
+      <figure><img src="img/ctf-trello.jpg" alt="Tableau Trello du projet" loading="lazy"><figcaption>Trello · GitLab · dailies Discord · Scrum Master tournant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Compétences</p>
+    <div>
+      <div class="tags" style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag c">C3 Administrer</span><span class="tag c">C1 Réaliser</span><span class="tag c">C5 Conduire</span><span class="tag c">C6 Collaborer</span></div>
+      <p class="note"><a href="https://ctf-eq2.yggame.fr/">ctf-eq2.yggame.fr →</a></p>
+    </div>
+  </div>
+</section>
+</main>
