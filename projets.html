@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projets</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +18,9 @@
     <li><a href="index.html">Rythme</a></li>
     <li><a href="amdm.html">AMDM</a></li>
     <li><a href="projets.html" aria-current="page">Projets</a></li>
-    <li><a href="mailto:nathandabonneville.pro@gmail.com">Contact</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <span class="pill" data-now-pill>…</span>
 </nav>
@@ -27,38 +30,44 @@
   <h1>Ce que j'ai <em>construit</em>.</h1>
 </section>
 
-<section id="ctf">
+<section>
   <div class="rows">
-    <a class="row" href="projet-case-404.html">
-      <span class="mono muted">SAÉ 3.01<br>4 étudiants</span>
+    <a class="row" href="project-ctf-case-404.html">
+      <span class="mono muted">Sept. 2025 → janv. 2026<br>SAÉ 3.01 · 4 étudiants</span>
       <div><h3>CTF « Case 404 » →</h3><p>Plateforme CTFd pour l'association Yggame : 30 challenges sur 9 catégories, infrastructure Docker Compose + Portainer + Nginx filtré par IP, plugins CTFd sur mesure. Note 19,5/20, en ligne.</p>
       <div class="tags"><span class="tag c">C3</span><span class="tag c">C1</span><span class="tag c">C5</span><span class="tag c">C6</span><span class="tag">CTFd</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Python</span></div></div>
       <img src="img/ctf-home.jpg" alt="Accueil du CTF Case 404" loading="lazy">
     </a>
-    <div class="row" id="ecommerce">
-      <span class="mono muted">Oct.–nov. 2024<br>3 étudiants</span>
-      <div><h3>E-commerce PHP MVC</h3><p>Architecture MVC avec contrôleur frontal, panier en session, commandes et historique en base SQL, CRUD d'administration, hachage des mots de passe avec sel et poivre. Note 17,25/20.</p>
+    <a class="row" href="project-noflyer.html">
+      <span class="mono muted">NoFlyer</span>
+      <div><h3>NoFlyer →</h3>
+      <div class="todo" style="margin-top:10px"><span class="mono">Fiche en préparation</span>Description, stack et captures à venir.</div></div>
+      <span></span>
+    </a>
+    <a class="row" href="project-crazy-game-jam.html">
+      <span class="mono muted">Début été 2026</span>
+      <div><h3>Crazy Game Jam →</h3>
+      <div class="todo" style="margin-top:10px"><span class="mono">Fiche en préparation</span>Thème, équipe, rôle et captures à venir.</div></div>
+      <span></span>
+    </a>
+    <a class="row" href="project-ecommerce-php.html">
+      <span class="mono muted">Oct.–nov. 2025<br>3 étudiants</span>
+      <div><h3>E-commerce PHP MVC →</h3><p>Architecture MVC avec contrôleur frontal, panier en session, commandes et historique en base SQL, CRUD d'administration, hachage des mots de passe avec sel et poivre. Note 17,25/20.</p>
       <div class="tags"><span class="tag c">C1</span><span class="tag c">C4</span><span class="tag c">C6</span><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">PDO</span></div></div>
       <img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique" loading="lazy">
-    </div>
-    <div class="row" id="cgj">
+    </a>
+    <a class="row" href="project-code-game-jam.html">
       <span class="mono muted">23–25 janv. 2025<br>équipe de 6</span>
-      <div><h3>Code Game Jam 2025</h3><p>30 h à l'Ob.i LAB Montpellier, thème « Mélodie à l'Infini » : les Quatre Saisons de Vivaldi en 8-bit, la carte change toutes les 30 s. Game design, modélisation Blender, intégration. Prix design global et 2ᵉ place locale.</p>
-      <div class="tags"><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">GitHub</span></div></div>
+      <div><h3>Code Game Jam 2025 →</h3><p>30 h à l'Ob.i LAB Montpellier, thème « Mélodie à l'Infini » : les Quatre Saisons de Vivaldi en 8-bit, la carte change toutes les 30 s. Prix design global et 2ᵉ place locale.</p>
+      <div class="tags"><span class="tag c">C6</span><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">GitHub</span></div></div>
       <img src="img/cgj.jpg" alt="Capture du jeu" loading="lazy">
-    </div>
-    <div class="row" id="backtest">
-      <span class="mono muted">Projet perso</span>
-      <div><h3>Backtest de stratégies d'investissement</h3><p>Application Python 3.13 : graphiques interactifs matplotlib, gestionnaire de stratégies en interface graphique (ajouter, dupliquer, supprimer), préréglages en JSON, journaux CSV et XLSX pour chaque jour analysé.</p>
-      <div class="tags"><span class="tag">Python</span><span class="tag">matplotlib</span><span class="tag">JSON</span></div></div>
-      <div class="todo"><span class="mono">Capture à ajouter</span>Contexte, dates et visuels à fournir.</div>
-    </div>
+    </a>
   </div>
 </section>
 </main>
 <footer class="foot">
   <span>BUT Informatique · parcours IAMSI · IUT Montpellier-Sète · 2024–2027</span>
-  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a></span>
+  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a> · <a href="https://github.com/Nathdbv">GitHub</a></span>
 </footer>
 </div>
 <script src="rythme.js"></script>

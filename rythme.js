@@ -8,26 +8,26 @@
   var ENTREPRISE = { short: "l'AMDM", long: "la Mutuelle des Motards" };
   var IUT = { short: "l'IUT", long: "l'IUT Montpellier-Sète" };
 
+  // Contrat d'alternance (cerfa) : 1er sept. 2026 → 31 août 2027.
+  var CONTRACT = { from: "2026-09-01", to: "2027-08-31" };
+  // Stage de BUT 2 à l'AMDM, avant l'alternance.
+  var STAGE = { from: "2026-04-13", to: "2026-07-03" };
   var RUNS = [
-    ["2025-09-01","2025-10-17","C"],["2025-10-20","2025-11-07","E"],["2025-11-10","2025-12-19","C"],
-    ["2025-12-22","2026-01-02","E"],["2026-01-05","2026-01-16","C"],["2026-01-19","2026-01-30","E"],
-    ["2026-02-02","2026-02-27","C"],["2026-03-02","2026-03-20","E"],["2026-03-23","2026-04-17","C"],
-    ["2026-04-20","2026-08-24","E"],["2026-08-25","2026-08-25","X"],["2026-08-26","2026-09-04","E"],
+    ["2026-09-01","2026-09-04","E"],
     ["2026-09-07","2026-09-25","C"],["2026-09-28","2026-10-09","E"],["2026-10-12","2026-10-23","C"],
     ["2026-10-26","2026-11-06","E"],["2026-11-09","2026-11-20","C"],["2026-11-23","2026-12-04","E"],
     ["2026-12-07","2026-12-18","C"],["2026-12-21","2026-12-31","E"],["2027-01-04","2027-01-15","C"],
     ["2027-01-18","2027-01-29","E"],["2027-02-01","2027-02-12","C"],["2027-02-15","2027-03-05","E"],
     ["2027-03-08","2027-03-19","C"],["2027-03-22","2027-04-02","E"],["2027-04-05","2027-04-16","C"],
     ["2027-04-19","2027-04-30","E"],["2027-05-03","2027-05-04","X"],["2027-05-05","2027-08-23","E"],
-    ["2027-08-24","2027-08-26","X"],["2027-08-27","2027-08-27","E"]
+    ["2027-08-24","2027-08-26","X"],["2027-08-27","2027-08-27","E"],
+    // 30-31 août : absents du calendrier IUT, mais le contrat court jusqu'au 31.
+    ["2027-08-30","2027-08-31","E"]
   ];
   var HOLIDAYS = ["2025-11-11","2025-12-25","2026-01-01","2026-04-06","2026-05-01","2026-05-08",
     "2026-05-14","2026-05-25","2026-07-14","2026-11-11","2026-12-25","2027-01-01","2027-03-29",
     "2027-05-06","2027-05-17","2027-07-14"];
-  var YEARS = [
-    { id: "but2", label: "BUT 2 · 2025-26", from: "2025-09-01", to: "2026-09-04" },
-    { id: "but3", label: "BUT 3 · 2026-27", from: "2026-09-07", to: "2027-08-27" }
-  ];
+  var YEARS = [{ id: "but3", label: "BUT 3 · 2026-27", from: CONTRACT.from, to: CONTRACT.to }];
 
   var MONTHS = ["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
   var MONTHS_S = ["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"];
@@ -118,8 +118,13 @@
   /* ---------- phrase d'état ---------- */
   function now() {
     var t = today(), s = status(t), first = parse(RUNS[0][0]), last = parse(RUNS[RUNS.length - 1][1]);
-    if (t < first) return { code: null, html: "Rentrée en BUT 2 le " + fmtLong(first) + ".", short: "bientôt" };
-    if (t > last) return { code: null, html: "Calendrier d'alternance 2025-2027 terminé.", short: "terminé" };
+    if (t < first) {
+      var ts = iso(t), wd = t.getDay();
+      if (ts >= STAGE.from && ts <= STAGE.to && wd > 0 && wd < 6)
+        return { code: "E", where: "En ce moment, je suis <em>en stage à " + ENTREPRISE.long + "</em>.", next: "Alternance à partir du " + fmtLong(first) + " " + first.getFullYear() + ".", short: "en stage" };
+      return { code: null, where: "Alternance à " + ENTREPRISE.long + " à partir du <em>" + fmtLong(first) + " " + first.getFullYear() + "</em>.", short: "bientôt" };
+    }
+    if (t > last) return { code: null, where: "Alternance à " + ENTREPRISE.long + " terminée le " + fmtLong(last) + " " + last.getFullYear() + ".", short: "terminé" };
     var res = { date: t, code: s };
     if (s === "E" || s === "C" || s === "X") {
       var nx = nextChange(t, s);
@@ -128,7 +133,7 @@
         : "En ce moment, je suis <em>en formation</em> à " + IUT.short + ".";
       res.next = nx ? (nx.code === "E" ? "Retour à " + ENTREPRISE.short : nx.code === "X" ? "Examens" : "Retour à " + IUT.short)
         + " le " + fmtLong(nx.date) + (nx.block && nx.block.weeks > 1 ? " · " + nx.block.weeks + " semaines" : "") + "."
-        : "Dernière période du calendrier.";
+        : "Fin de l'alternance le " + fmtLong(last) + " " + last.getFullYear() + ".";
       res.short = s === "E" ? "à " + ENTREPRISE.short : s === "X" ? "en examens" : "à " + IUT.short;
     } else {
       var w = nextWorkday(t);
@@ -174,6 +179,7 @@
       b.addEventListener("click", function () { year = y; draw(); });
       y._btn = b; tabs.appendChild(b);
     });
+    if (YEARS.length < 2) tabs.hidden = true;
     root.append(tabs, months, weeks, legend, log, prog);
 
     function draw() {
@@ -225,7 +231,7 @@
       var c = count(year, t), tot = c.E + c.C + c.X, done = c.doneE + c.doneC;
       var pct = Math.max(0, Math.min(100, Math.round(done / tot * 100)));
       prog.innerHTML = "";
-      [[pct + " %", "de l'année " + year.label.split(" · ")[1] + " écoulée"],
+      [[pct + " %", "de l'alternance écoulée"],
        [c.doneE + " / " + c.E, "jours à " + ENTREPRISE.short + (focus === "e" ? " effectués" : "")],
        [c.doneC + " / " + (c.C + c.X), "jours à " + IUT.short + " (dont " + c.X + " d'examens)"]]
         .forEach(function (p, i) {

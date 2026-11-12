@@ -1,227 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Nathan Dabonneville - Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio de Nathan Dabonneville - Développeur Informatique BUT2." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" href="#" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nathan Dabonneville</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="me" href="index.html">Nathan Dabonneville</a>
+  <ul>
+    <li><a href="index.html" aria-current="page">Rythme</a></li>
+    <li><a href="amdm.html">AMDM</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="pill" data-now-pill>…</span>
+</nav>
+<main>
+<section class="first">
+  <p class="kicker">Alternant · BUT Informatique · <span data-today></span></p>
+  <h1>Une année partagée entre l'IUT et <em>l'entreprise</em>.</h1>
+  <div class="status" data-now></div>
+  <div data-rythme></div>
+  <p class="note">Contrat d'alternance du 1er septembre 2026 au 31 août 2027. Calculé chaque jour à partir du calendrier d'alternance officiel de l'IUT Montpellier-Sète (BUT Info IAMSI 2025-2027, prévisionnel). Cliquez une semaine pour le détail.</p>
+</section>
 
-<body class="theme-dark page-home">
-  <a href="#main" class="skip-link">Passer au contenu</a>
-
-  <div class="page-wrapper">
-    <!-- Deep Glow Orbs -->
-    <div class="bg-orb bg-orb-1"></div>
-    <div class="bg-orb bg-orb-2"></div>
-
-    <header class="site-header glass">
-      <div class="container header-inner">
-        <a href="index.html" class="logo">
-          <span class="logo-mark">P</span>
-          <span class="logo-text">Portfolio</span>
-        </a>
-
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-          <span></span><span></span>
-        </button>
-
-        <nav class="site-nav" aria-label="Navigation principale">
-          <ul>
-            <li><a href="index.html" class="nav-link active">Accueil</a></li>
-            <li><a href="about.html" class="nav-link">À propos</a></li>
-            <li><a href="apprentissage.html" class="nav-link">Apprentissage</a></li>
-            <li><a href="work.html" class="nav-link">Projets</a></li>
-            <li><a href="competences.html" class="nav-link">Compétences</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-
-        <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
-          <span class="theme-toggle-icon"></span>
-        </button>
-      </div>
-    </header>
-
-    <main id="main">
-      <!-- HERO DENSE -->
-      <section class="section hero home-hero-dense">
-        <div class="container hero-grid" style="gap: 2.5rem;">
-          <div class="hero-text">
-            <h1 class="hero-title reveal" style="margin-bottom: 1rem;">
-              Je développe des <br /><span class="accent-gradient">expériences interactives</span><br />
-              avec un vrai souci du "feeling".
-            </h1>
-            <p class="hero-subtitle reveal" style="margin-bottom: 2rem; max-width: 600px;">
-              Développeur BUT2 Informatique : de l'intégration web propre au prototypage Unity,
-              en passant par l'analyse technique.
-            </p>
-            <div class="hero-actions reveal" style="margin-bottom: 0;">
-              <a href="work.html" class="btn primary">Voir mes projets</a>
-              <a href="about.html" class="btn ghost">À propos</a>
-            </div>
-
-            <div class="home-hero-mini-info reveal">
-              <span>Montpellier & alentours</span>
-              <span>BUT2 Info</span>
-              <span>Anglais B2 Cambridge</span>
-            </div>
-          </div>
-
-          <div class="hero-panel reveal">
-            <div class="home-cards-stack">
-              <!-- Card 1: Repères -->
-              <div class="glass home-mini-card">
-                <h2>Repères</h2>
-                <div class="home-reperes-mini-grid">
-                  <div class="home-reperes-item">
-                    <p>BUT Informatique — 2e année</p>
-                  </div>
-                  <div class="home-reperes-item">
-                    <p>Anglais B2 — Certifié Cambridge</p>
-                  </div>
-                  <div class="home-reperes-item">
-                    <p>Stack : Web • Java • Unity • Python</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2: Alternance -->
-              <div class="glass home-mini-card">
-                <h3>Alternance</h3>
-                <p>Disponible dès le Semestre 4. </p>
-                <p>Immersion à 100% en entreprise à partir du 13 avril.</p>
-                <a href="contact.html" class="btn ghost full-width"
-                  style="margin-top: 1rem; min-height: 40px; font-size: 0.85rem; justify-content: center;">Me
-                  contacter</a>
-              </div>
-            </div>
-          </div>
-        </div>
+<section>
+  <div class="sec-head">
+    <p class="kicker">Projets</p>
+    <h2>Quelques projets.</h2>
   </div>
-  </section>
-
-  <!-- MARQUEE (Awwwards Style Infinite Scroll) -->
-  <section class="marquee-container">
-    <div class="marquee-content">
-      <span>Développeur BUT2 Informatique</span>
-      <span>•</span>
-      <span>Recherche Alternance Septembre 2025</span>
-      <span>•</span>
-      <span>Dev Fullstack</span>
-      <span>•</span>
-      <span>C# & Unity</span>
-      <span>•</span>
-      <span>PHP & SQL</span>
-      <span>•</span>
-      <span>Développeur BUT2 Informatique</span>
-      <span>•</span>
-      <span>Recherche Alternance Septembre 2025</span>
-      <span>•</span>
-      <span>Dev Fullstack</span>
-      <span>•</span>
-      <span>C# & Unity</span>
-      <span>•</span>
-      <span>PHP & SQL</span>
-      <span>•</span>
-    </div>
-  </section>
-
-  <!-- DÉCOUVRIR MES RÉALISATIONS (Glass Bar) -->
-  <section class="section home-section-dense">
-    <div class="container">
-      <div class="glass home-discovery-bar reveal">
-        <div class="text-side">
-          <p>
-            Retrouvez mes projets (IUT, <strong>Code Game Jam 2025</strong>, prototypes) avec analyse du contexte et
-            des compétences développées.
-          </p>
-        </div>
-        <div class="btn-group">
-          <a href="work.html" class="btn primary">Voir toutes mes réalisations</a>
-          <a href="about.html" class="btn ghost">En savoir plus sur moi</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPÉTENCES -->
-  <section class="section home-section-dense">
-    <div class="container section-header" style="margin-bottom: 2.5rem;">
-      <h2 class="section-title reveal" style="margin-bottom: 0.5rem;">Ce que je sais faire</h2>
-    </div>
-
-    <div class="container home-skills-grid-dense">
-      <div class="skill-card glass reveal home-skill-card-dense">
-        <h3>Gestion & Organisation</h3>
-        <p>
-          Coordonner le travail d'équipe, prioriser les tâches techniques
-          et assurer la fluidité des itérations.
-        </p>
-        <ul class="mini-list" style="margin-top: 1rem;">
-          <li>Git / GitHub (versioning)</li>
-          <li>Méthodes agiles</li>
-        </ul>
-      </div>
-
-      <div class="skill-card glass reveal home-skill-card-dense">
-        <h3>Prototypage & Expérience</h3>
-        <p>
-          Donner vie à des idées rapidement via des prototypes jouables
-          soignant le "game feel" et l'ergonomie.
-        </p>
-        <ul class="mini-list" style="margin-top: 1rem;">
-          <li>Intégration Unity & C#</li>
-          <li>UI/UX Design</li>
-        </ul>
-      </div>
-
-      <div class="skill-card glass reveal home-skill-card-dense">
-        <h3>Développement Web & Logiciel</h3>
-        <p>
-          Construire des solutions robustes, de la base de données relationnelle
-          à l'interface interactive.
-        </p>
-        <ul class="mini-list" style="margin-top: 1rem;">
-          <li>Front-end (HTML/CSS)</li>
-          <li>Back-end (PHP/SQL/Java)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALL TO ACTION -->
-  <section class="section home-section-dense">
-    <div class="container cta-box glass reveal" style="padding: 2.5rem;">
-      <div style="flex: 1;">
-        <h2 style="margin-bottom: 0.5rem;">Envie de collaborer ?</h2>
-        <p style="margin-bottom: 0;">
-          Je suis à la recherche d'une alternance pour mettre mes compétences
-          au service de vos projets.
-        </p>
-      </div>
-      <div class="cta-actions" style="margin-top: 0;">
-        <a href="contact.html" class="btn primary">Me contacter</a>
-      </div>
-    </div>
-  </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner text-center">
-      <p>© 2026 Nathan Dabonneville — Portfolio</p>
-    </div>
-  </footer>
+  <div class="rows">
+    <a class="row" href="project-ctf-case-404.html">
+      <span class="mono muted">SAÉ 3.01</span>
+      <div><h3>CTF « Case 404 »</h3><p>Plateforme CTFd déployée pour l'association Yggame : 30 challenges, infra Docker, plugins sur mesure. 19,5/20.</p>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Python</span><span class="tag">Scrum</span></div></div>
+      <img src="img/ctf-home.jpg" alt="Accueil du CTF Case 404" loading="lazy">
+    </a>
+    <a class="row" href="project-ecommerce-php.html">
+      <span class="mono muted">Oct.–nov. 2025</span>
+      <div><h3>E-commerce PHP MVC</h3><p>Boutique complète en trio : panier, commandes, back-office, mots de passe salés et poivrés. 17,25/20.</p>
+      <div class="tags"><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">MVC</span></div></div>
+      <img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique" loading="lazy">
+    </a>
+    <a class="row" href="project-code-game-jam.html">
+      <span class="mono muted">Janv. 2025</span>
+      <div><h3>Code Game Jam 2025</h3><p>30 h, équipe de 6, thème « Mélodie à l'Infini ». Prix design global et 2ᵉ place locale à Montpellier.</p>
+      <div class="tags"><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">C#</span></div></div>
+      <img src="img/cgj.jpg" alt="Capture du jeu de la Code Game Jam" loading="lazy">
+    </a>
   </div>
-
-  <button class="scroll-top" aria-label="Retour en haut">
-    ↑
-  </button>
-
-  <script src="main.js" defer></script>
+  <p class="note"><a href="projets.html">Tous les projets →</a></p>
+</section>
+</main>
+<footer class="foot">
+  <span>BUT Informatique · parcours IAMSI · IUT Montpellier-Sète · 2024–2027</span>
+  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a> · <a href="https://github.com/Nathdbv">GitHub</a></span>
+</footer>
+</div>
+<script src="rythme.js"></script>
 </body>
-
 </html>

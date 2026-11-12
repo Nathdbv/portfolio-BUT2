@@ -1,420 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Site E-commerce PHP — Projet Web | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Site e-commerce PHP complet : catalogue, panier sessions/cookies, CRUD admin, et parcours d'achat. Focus sur la fiabilité et l'UX." />
-    <link rel="stylesheet" href="style.css?v=2026010301" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E-commerce PHP</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="me" href="index.html">Nathan Dabonneville</a>
+  <ul>
+    <li><a href="index.html">Rythme</a></li>
+    <li><a href="amdm.html">AMDM</a></li>
+    <li><a href="projets.html" aria-current="page">Projets</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="pill" data-now-pill>…</span>
+</nav>
+<main>
+<section class="first">
+  <p class="kicker"><a href="projets.html">Projets</a> / Projet IUT · oct.–nov. 2025</p>
+  <h1>E-commerce <em>PHP</em>.</h1>
+  <p class="lead" style="margin-top:22px">Catalogue → panier persistant → commande → historique → administration. Architecture MVC en PHP/SQL.</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Équipe</dt><dd>3 personnes</dd></div>
+    <div><dt>Durée</dt><dd>1 mois et demi</dd></div>
+    <div><dt>Rôle</dt><dd>Dev full-stack</dd></div>
+    <div><dt>Note</dt><dd>17,25 / 20</dd></div>
+  </dl>
+  <div class="shots" style="margin-top:40px"><figure class="wide"><img src="img/ecommerce.jpg" alt="Page d'accueil de la boutique"><figcaption>Page d'accueil</figcaption></figure></div>
+</section>
 
-<body class="theme-dark page-project page-ecommerce">
-    <a href="#main" class="skip-link">Passer au contenu</a>
-
-    <div class="page-wrapper">
-        <!-- Deep Glow Orbs -->
-        <div class="bg-orb bg-orb-1"></div>
-        <div class="bg-orb bg-orb-2"></div>
-
-        <header class="site-header glass">
-            <div class="container header-inner">
-                <a href="index.html" class="logo">
-                    <span class="logo-mark">P</span>
-                    <span class="logo-text">Portfolio</span>
-                </a>
-                <button class="nav-toggle" aria-label="Ouvrir le menu">
-                    <span></span><span></span>
-                </button>
-                <nav class="site-nav">
-                    <ul>
-                        <li><a href="index.html" class="nav-link">Accueil</a></li>
-                        <li><a href="about.html" class="nav-link">À propos</a></li>
-                        <li><a href="apprentissage.html" class="nav-link">Apprentissage</a></li>
-                        <li><a href="work.html" class="nav-link active">Projets</a></li>
-                        <li><a href="competences.html" class="nav-link">Compétences</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-                <button id="themeToggle" class="theme-toggle">
-                    <span class="theme-toggle-icon"></span>
-                </button>
-            </div>
-        </header>
-
-        <main id="main">
-            <div class="container">
-                <!-- STICKY NAV -->
-                <nav class="ecom-sticky-nav reveal">
-                    <ul>
-                        <li><a href="#contexte">Contexte</a></li>
-                        <li><a href="#role">Mon rôle</a></li>
-                        <li><a href="#features">Fonctionnalités</a></li>
-                        <li><a href="#technique">Technique</a></li>
-                        <li><a href="#competences">Compétences</a></li>
-                        <li><a href="#preuves">Preuves</a></li>
-                    </ul>
-                </nav>
-
-                <!-- HERO PREMIUM -->
-                <section class="ecom-hero-split reveal">
-                    <div>
-                        <span class="ecom-hero-badge">Projet IUT • Web • PHP</span>
-                        <h1 class="ecom-hero-title">Site <span class="accent-gradient">E-commerce PHP</span></h1>
-                        <p class="ecom-hero-pitch">
-                            Site e-commerce complet : catalogue → panier persistant → validation commande → historique →
-                            admin CRUD. Architecture MVC en PHP/SQL, avec gestion d'état robuste.
-                        </p>
-
-                        <!-- Focus personnel -->
-                        <div class="ecom-focus-personal">
-                            <strong>Focus personnel :</strong> J'ai principalement travaillé sur la logique métier liée
-                            au panier et aux commandes : persistance, transformation panier→commande en base, historique
-                            par utilisateur connecté, et feedback UI cohérent en thème sombre.
-                        </div>
-
-                        <div class="hero-actions" style="margin-top: 2rem;">
-                            <a href="https://webinfo.iutmontp.univ-montp2.fr/~annarellim/projetweb/web/controleurFrontal.php?action=afficher&controleur=accueil"
-                                target="_blank" rel="noopener noreferrer" class="btn primary ecom-cta-primary">
-                                🌐 Voir le site en ligne
-                            </a>
-                            <a href="Ressources/CV/PORTFOLIO%20Nathan%20Dabonneville%20S3_compressed.pdf"
-                                target="_blank" class="btn portfolio-pdf">
-                                📄 Mon Portfolio PDF
-                            </a>
-                            <a href="work.html" class="btn ghost">← Retour projets</a>
-                        </div>
-                    </div>
-
-                    <div class="ecom-id-card">
-                        <div class="ecom-id-grid">
-                            <div class="ecom-id-item">
-                                <h4>Type</h4>
-                                <p>Projet Formation</p>
-                            </div>
-                            <div class="ecom-id-item">
-                                <h4>Durée</h4>
-                                <p>1 semestre</p>
-                            </div>
-                            <div class="ecom-id-item">
-                                <h4>Rôle</h4>
-                                <p>Dev Full-Stack</p>
-                            </div>
-                            <div class="ecom-id-item">
-                                <h4>Statut</h4>
-                                <p>MVP Fonctionnel</p>
-                            </div>
-                            <div class="ecom-id-item" style="grid-column: span 2;">
-                                <h4>Stack</h4>
-                                <p>PHP • SQL • Sessions/Cookies • MVC</p>
-                            </div>
-                            <div class="ecom-id-item"
-                                style="grid-column: span 2; border-top: 2px solid var(--ctf-primary); padding-top: 0.75rem; margin-top: 0.25rem;">
-                                <h4 style="color: var(--ctf-primary);">Note Technique</h4>
-                                <p style="font-size: 1.5rem; font-weight: 900; color: var(--ctf-primary);">17.25 / 20
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CE QUE ÇA PROUVE (orienté valeur) -->
-                <section class="ecom-bento-stats reveal">
-                    <div class="ecom-stat-box">
-                        <span class="ecom-stat-value"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em"
-                                height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="8" cy="21" r="1" />
-                                <circle cx="19" cy="21" r="1" />
-                                <path
-                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                            </svg></span>
-                        <span class="ecom-stat-label">Panier Persistant</span>
-                        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Sessions + cookies</p>
-                    </div>
-                    <div class="ecom-stat-box">
-                        <span class="ecom-stat-value"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em"
-                                height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                                <path d="M3 6h18" />
-                                <path d="M16 10a4 4 0 0 1-8 0" />
-                            </svg></span>
-                        <span class="ecom-stat-label">Parcours d'Achat</span>
-                        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Du produit au checkout</p>
-                    </div>
-                    <div class="ecom-stat-box">
-                        <span class="ecom-stat-value"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em"
-                                height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg></span>
-                        <span class="ecom-stat-label">Admin Produits</span>
-                        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">CRUD complet</p>
-                    </div>
-                    <div class="ecom-stat-box">
-                        <span class="ecom-stat-value"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em"
-                                height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="13.5" cy="5.5" r=".5" />
-                                <circle cx="17.5" cy="10.5" r=".5" />
-                                <circle cx="8.5" cy="7.5" r=".5" />
-                                <circle cx="6.5" cy="12.5" r=".5" />
-                                <path
-                                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
-                            </svg></span>
-                        <span class="ecom-stat-label">UI Sombre Cohérente</span>
-                        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Lisibilité + feedback</p>
-                    </div>
-                </section>
-
-                <!-- CONTEXTE & OBJECTIFS -->
-                <section id="contexte" class="ecom-section-grid reveal">
-                    <article class="ecom-glass-card">
-                        <h2>Contexte & Objectifs</h2>
-                        <p><strong>Attendu :</strong> E-commerce complet avec architecture MVC, parcours d'achat fluide
-                            et admin CRUD fonctionnel.</p>
-                        <p><strong>Objectif :</strong> Livrer un parcours utilisateur stable (catalogue → panier →
-                            commande → historique) avec état applicatif fiable.</p>
-                        <p><strong>Contraintes :</strong> MVC imposé, base SQL, gestion d'état (sessions/cookies),
-                            cohérence UX.</p>
-                        <p><strong>Authentification :</strong> Hash robuste (sel/poivre) mis en place au niveau équipe.
-                        </p>
-                        <p><strong>Durée :</strong> 1 mois et demi (octobre-novembre 2024)</p>
-                        <p><strong>Équipe :</strong> 3 personnes</p>
-                        <div class="hero-actions" style="margin-top: 1.5rem;">
-                            <a href="https://webinfo.iutmontp.univ-montp2.fr/~annarellim/projetweb/web/controleurFrontal.php?action=afficher&controleur=accueil"
-                                target="_blank" rel="noopener noreferrer" class="btn ghost" style="font-size: 0.9rem;">
-                                Accéder au site live →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article id="role" class="ecom-glass-card ecom-highlight-border">
-                        <h2>Mon Rôle</h2>
-                        <ul class="mini-list">
-                            <li><strong>Panier :</strong> Développement complet (ajout/suppression/quantités, calcul
-                                total, persistance session)</li>
-                            <li><strong>Commandes & historique :</strong> Validation panier→commande (stockage base
-                                SQL), page historique par utilisateur (tri descendant), affichage n°/date/produit/prix,
-                                logique anti-doublons</li>
-                            <li><strong>État applicatif :</strong> Persistance panier/commandes/préférences via sessions
-                                PHP et cookies</li>
-                            <li><strong>UX théme sombre :</strong> Feedback visuel sur ajout panier, validation
-                                commande, erreurs ; lisibilité optimisée</li>
-                            <li><strong>Intégration :</strong> Parcours complet produit → panier → commande → historique
-                                → admin</li>
-                        </ul>
-                    </article>
-                </section>
-
-                <!-- FONCTIONNALITÉS & TECHNIQUE -->
-                <section id="features" class="ecom-section-grid reveal">
-                    <article class="ecom-glass-card">
-                        <h3>Fonctionnalités Clés</h3>
-                        <ul class="ecom-feature-list">
-                            <li>Catalogue produits + fiche détaillée</li>
-                            <li>Panier persistant (ajout/suppression/quantités)</li>
-                            <li>Validation commande (transformation panier → base SQL)</li>
-                            <li>Historique commandes (par utilisateur connecté, tri descendant)</li>
-                            <li>Admin CRUD produits</li>
-                            <li>Authentification utilisateur</li>
-                        </ul>
-                    </article>
-
-                    <article id="technique" class="ecom-glass-card">
-                        <h3>Qualité Technique</h3>
-                        <p><strong>Architecture MVC :</strong> Contrôleur frontal avec routage par paramètres
-                            (action/controleur), séparation modèle/vue/contrôleur.</p>
-                        <p><strong>Persistance & état :</strong> Panier en session, commandes/historique en base SQL.
-                            Séparation claire panier actif vs commandes validées, historique unique par compte.</p>
-                        <p><strong>Données :</strong> CRUD produits, requêtes structurées, logique anti-doublons sur
-                            validation commande.</p>
-                        <p><strong>UX :</strong> Feedback visuel (ajout/validation/erreurs), thème sombre cohérent,
-                            lisibilité optimisée.</p>
-                    </article>
-                </section>
-
-                <!-- MÉTHODES DE TRAVAIL -->
-                <section class="ecom-section-grid reveal">
-                    <article class="ecom-glass-card" style="grid-column: span 2;">
-                        <h3>Méthodes de travail</h3>
-                        <p><strong>Développement itératif :</strong> Tests manuels après chaque fonctionnalité (panier →
-                            commande → historique), ajustements UI en continu selon feedback utilisateur.</p>
-                        <p><strong>Versioning Git :</strong> Collaboration en équipe de 3 via branches feature, commits
-                            atomiques, merge après validation.</p>
-                        <p><strong>Debugging :</strong> Logs PHP + inspection SQL (phpMyAdmin) pour valider persistance
-                            commandes et cohérence panier/historique.</p>
-                    </article>
-                </section>
-
-                <!-- COMPÉTENCES BUT -->
-                <section id="competences" class="ecom-glass-card reveal">
-                    <h2>Compétences BUT</h2>
-                    <table class="ecom-skill-matrix">
-                        <thead>
-                            <tr>
-                                <th>Compétence</th>
-                                <th>Actions réalisées</th>
-                                <th>Preuve</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="ecom-skill-tag">C1</span> Développement</td>
-                                <td>Logique métier e-commerce (panier, commandes, historique), architecture MVC,
-                                    contrôleur frontal</td>
-                                <td><a href="#preuves" style="color: var(--ecom-primary); font-weight: 600;">Voir
-                                        Screenshots →</a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="ecom-skill-tag">C4</span> Données</td>
-                                <td>CRUD produits, structuration base de données, requêtes SQL</td>
-                                <td><a href="#preuves" style="color: var(--ecom-primary); font-weight: 600;">Voir Admin
-                                        CRUD →</a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="ecom-skill-tag">C6</span> Collaboration</td>
-                                <td>Versioning Git, travail équipe</td>
-                                <td><a href="#preuves" style="color: var(--ecom-primary); font-weight: 600;">Voir Projet
-                                        →</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <!-- PREUVES VISUELLES -->
-                <section id="preuves" class="ecom-gallery-section reveal">
-                    <h2 class="section-title text-center">Preuves Visuelles</h2>
-
-                    <div class="filter-bar flex-center" style="margin-bottom: 3rem;">
-                        <button class="filter-button active" data-filter="all">Tous</button>
-                        <button class="filter-button" data-filter="ui">Interface</button>
-                        <button class="filter-button" data-filter="panier">Panier</button>
-                        <button class="filter-button" data-filter="admin">Admin</button>
-                    </div>
-
-                    <div class="ctf-gallery-grid" id="ecomGallery">
-                        <!-- UI -->
-                        <div class="gallery-item glass" data-category="ui">
-                            <img src="./Images/ecommerce/front.png" alt="Page d'accueil" class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g1)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E🏠%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3EPage d\'accueil%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Page d'accueil</div>
-                        </div>
-                        <div class="gallery-item glass" data-category="ui">
-                            <img src="./Images/ecommerce/product.png" alt="Fiche produit détaillée"
-                                class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g2%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g2)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E📦%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3EFiche Produit%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Fiche produit</div>
-                        </div>
-
-                        <!-- Panier -->
-                        <div class="gallery-item glass" data-category="panier">
-                            <img src="./Images/ecommerce/cart.png" alt="Panier avec sessions/cookies"
-                                class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g3%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g3)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E🛒%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3EPanier%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Panier</div>
-                        </div>
-                        <div class="gallery-item glass" data-category="panier">
-                            <img src="./Images/ecommerce/orders.png" alt="Historique des commandes"
-                                class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g6%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g6)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E📋%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3EHistorique Commandes%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Historique des commandes</div>
-                        </div>
-                        <div class="gallery-item glass" data-category="panier">
-                            <img src="./Images/ecommerce/checkout.png" alt="Checkout / Confirmation"
-                                class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g4%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g4)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E💳%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3ECheckout%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Checkout</div>
-                        </div>
-
-                        <!-- Admin -->
-                        <div class="gallery-item glass" data-category="admin">
-                            <img src="./Images/ecommerce/admin.png" alt="Admin CRUD produits" class="ctf-gallery-img"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 225%22%3E%3Cdefs%3E%3ClinearGradient id=%22g5%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:rgba(15,23,42,0.95)%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:rgba(30,41,59,0.95)%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22400%22 height=%22225%22 fill=%22url(%23g5)%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%221%22 rx=%2212%22/%3E%3Ctext x=%2250%25%22 y=%2242%25%22 text-anchor=%22middle%22 font-size=%2248%22 opacity=%220.3%22%3E⚙️%3C/text%3E%3Ctext x=%2250%25%22 y=%2260%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22rgba(255,255,255,0.6)%22%3EImage à venir%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2211%22 fill=%22rgba(255,255,255,0.4)%22%3EAdmin CRUD%3C/text%3E%3C/svg%3E'">
-                            <div class="gallery-caption">Admin (CRUD produits)</div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="hero-actions flex-center section">
-                    <a href="work.html" class="btn primary">← Retour au portfolio</a>
-                    <a href="https://webinfo.iutmontp.univ-montp2.fr/~annarellim/projetweb/web/controleurFrontal.php?action=afficher&controleur=accueil"
-                        target="_blank" rel="noopener noreferrer" class="btn ghost"
-                        style="display:flex; align-items:center; gap:0.5rem;">Voir le site live <svg
-                            xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                            <path d="M2 12h20" />
-                        </svg></a>
-                </div>
-            </div>
-        </main>
-
-        <!-- LIGHTBOX -->
-        <div id="ecomLightbox" class="ctf-lightbox">
-            <span class="ctf-lightbox-close">&times;</span>
-            <img class="ctf-lightbox-content" id="ecomLightboxImg">
-            <div id="ecomLightboxCaption" class="ctf-lightbox-caption"></div>
-        </div>
-
-        <footer class="site-footer">
-            <div class="container footer-inner text-center">
-                <p>© 2026 Nathan Dabonneville — Portfolio</p>
-            </div>
-        </footer>
+<section>
+  <div class="two">
+    <p class="kicker">Contexte</p>
+    <div class="prose">
+      <p>Attendu : un e-commerce complet avec architecture MVC, un parcours d'achat fluide et une administration CRUD fonctionnelle.</p>
+      <p>Contraintes : MVC imposé, base SQL, gestion d'état par sessions et cookies, cohérence de l'expérience utilisateur.</p>
     </div>
+  </div>
+</section>
 
-    <button class="scroll-top">↑</button>
-    <script src="main.js"></script>
+<section>
+  <div class="two">
+    <p class="kicker">Mon rôle</p>
+    <div class="prose"><ul>
+      <li><b>Panier</b> : ajout, suppression, quantités, calcul du total, persistance en session.</li>
+      <li><b>Commandes et historique</b> : transformation panier → commande en base SQL, historique par utilisateur (tri descendant : n°, date, produit, prix), logique anti-doublons.</li>
+      <li><b>État applicatif</b> : persistance du panier, des commandes et des préférences via sessions PHP et cookies.</li>
+      <li><b>Interface sombre</b> : retours visuels sur l'ajout au panier, la validation et les erreurs.</li>
+    </ul></div>
+  </div>
+</section>
 
-    <!-- INLINE PAGE LOGIC (Lightbox + Filters) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Lightbox
-            const lb = document.getElementById('ecomLightbox');
-            const lbImg = document.getElementById('ecomLightboxImg');
-            const lbCap = document.getElementById('ecomLightboxCaption');
-            const close = document.querySelector('.ctf-lightbox-close');
+<section>
+  <div class="two">
+    <p class="kicker">Technique</p>
+    <div class="prose">
+      <p><b>MVC</b> : contrôleur frontal avec routage par paramètres (action / contrôleur), séparation modèle / vue / contrôleur.</p>
+      <p><b>Données</b> : panier en session, commandes en base ; CRUD produits ; requêtes préparées PDO.</p>
+      <p><b>Sécurité</b> : hachage des mots de passe avec sel et poivre, mis en place au niveau de l'équipe.</p>
+    </div>
+  </div>
+</section>
 
-            document.querySelectorAll('#ecomGallery .ctf-gallery-img').forEach(img => {
-                img.onclick = () => {
-                    lb.style.display = "block";
-                    lbImg.src = img.src;
-                    lbCap.innerHTML = img.alt;
-                }
-            });
+<section>
+  <div class="two">
+    <p class="kicker">Méthode</p>
+    <div class="prose">
+      <p>Tests manuels après chaque fonctionnalité (panier → commande → historique). Git en équipe de 3 avec branches de fonctionnalité et commits atomiques. Débogage par logs PHP et inspection SQL dans phpMyAdmin.</p>
+    </div>
+  </div>
+</section>
 
-            const closeLb = () => lb.style.display = "none";
-            close.onclick = closeLb;
-            lb.onclick = (e) => { if (e.target === lb) closeLb(); }
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
-
-            // Filters
-            const btns = document.querySelectorAll('.filter-button');
-            const items = document.querySelectorAll('#ecomGallery .gallery-item');
-
-            btns.forEach(btn => {
-                btn.onclick = () => {
-                    btns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const filter = btn.dataset.filter;
-                    items.forEach(item => {
-                        if (filter === 'all' || item.dataset.category === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                }
-            });
-        });
-    </script>
+<section>
+  <div class="two">
+    <p class="kicker">Compétences</p>
+    <div>
+      <dl class="log" style="margin-top:0">
+        <dt>C1 Réaliser</dt><dd>Logique métier (panier, commandes, historique), architecture MVC, contrôleur frontal</dd>
+        <dt>C4 Gérer</dt><dd>CRUD produits, structuration de la base, requêtes SQL</dd>
+        <dt>C6 Collaborer</dt><dd>Versioning Git, travail en équipe</dd>
+      </dl>
+      <p class="note"><a href="https://webinfo.iutmontp.univ-montp2.fr/~annarellim/projetweb/web/controleurFrontal.php?action=afficher&amp;controleur=accueil">Voir le site en ligne →</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <span>BUT Informatique · parcours IAMSI · IUT Montpellier-Sète · 2024–2027</span>
+  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a> · <a href="https://github.com/Nathdbv">GitHub</a></span>
+</footer>
+</div>
+<script src="rythme.js"></script>
 </body>
-
 </html>

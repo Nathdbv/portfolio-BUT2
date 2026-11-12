@@ -1,217 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Portfolio - À propos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="En savoir plus sur mon parcours et ma façon de travailler." />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>À propos</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="me" href="index.html">Nathan Dabonneville</a>
+  <ul>
+    <li><a href="index.html">Rythme</a></li>
+    <li><a href="amdm.html">AMDM</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="about.html" aria-current="page">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="pill" data-now-pill>…</span>
+</nav>
+<main>
+<section class="first">
+  <p class="kicker">À propos</p>
+  <h1>Nathan <em>Dabonneville</em>.</h1>
+  <p class="lead" style="margin-top:22px">Alternant en BUT Informatique, parcours IAMSI. Je transforme des idées en prototypes jouables et en interfaces propres.</p>
+  <dl class="facts" style="margin-top:40px">
+    <div><dt>Basé à</dt><dd>Saint-Brès · Montpellier</dd></div>
+    <div><dt>Formation</dt><dd>BUT Info · IAMSI</dd></div>
+    <div><dt>Langues</dt><dd>Français · anglais B2 (Cambridge)</dd></div>
+    <div><dt>Permis</dt><dd>A2 · B</dd></div>
+  </dl>
+</section>
 
-<body class="theme-dark page-about">
-  <a href="#main" class="skip-link">Passer au contenu</a>
-
-  <div class="page-wrapper">
-    <!-- Deep Glow Orbs -->
-    <div class="bg-orb bg-orb-1"></div>
-    <div class="bg-orb bg-orb-2"></div>
-
-    <header class="site-header glass">
-      <div class="container header-inner">
-        <a href="index.html" class="logo">
-          <span class="logo-mark">P</span>
-          <span class="logo-text">Portfolio</span>
-        </a>
-
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-          <span></span><span></span>
-        </button>
-
-        <nav class="site-nav" aria-label="Navigation principale">
-          <ul>
-            <li><a href="index.html" class="nav-link">Accueil</a></li>
-            <li><a href="about.html" class="nav-link active">À propos</a></li>
-            <li><a href="apprentissage.html" class="nav-link">Apprentissage</a></li>
-            <li><a href="work.html" class="nav-link">Projets</a></li>
-            <li><a href="competences.html" class="nav-link">Compétences</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-
-        <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
-          <span class="theme-toggle-icon"></span>
-        </button>
-      </div>
-    </header>
-
-    <main id="main">
-      <!-- Hero Section -->
-      <section class="about-hero container">
-        <div class="reveal">
-
-          <h1 class="about-title">
-            À propos de <br>
-            <span class="gradient-text">Nathan Dabonneville</span>
-          </h1>
-          <p class="about-pitch">
-            Je transforme des idées en prototypes jouables <br>
-            et en interfaces propres.
-          </p>
-
-          <p class="about-location">Saint-Brès (34670) — Montpellier & alentours</p>
-
-          <div class="about-cta-group" style="margin-top: 2rem;">
-            <a href="Ressources/CV/CV_Nathan_Dabonneville.pdf" class="btn primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" style="width: 18px; height: 18px; margin-right: 4px;">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Télécharger mon CV
-            </a>
-
-            <a href="contact.html" class="btn ghost">
-              Me contacter
-            </a>
-          </div>
-
-          <div class="about-pills">
-            <span class="pill">HTML / CSS</span>
-            <span class="pill">Java</span>
-            <span class="pill">SQL</span>
-            <span class="pill">PHP</span>
-            <span class="pill">Python</span>
-            <span class="pill">Unity</span>
-            <span class="pill">UI / UX</span>
-            <span class="pill">Gestion de projet</span>
-            <span class="pill">Game design</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Content Grid -->
-      <section class="section container">
-        <div class="about-grid">
-          <!-- Main Content -->
-          <div class="about-main-content">
-            <div class="about-card glass reveal">
-              <h2 class="about-section-title">Qui je suis</h2>
-              <p>
-                Je m'appelle Nathan Dabonneville, et je fonctionne avant tout à la curiosité, à l'instinct et au besoin
-                de stimulation.
-                J'aime créer et comprendre, surtout quand il y a un skill gap à combler : apprendre, tester, rater,
-                recommencer.
-                C'est ce que je retrouve dans le développement de jeux vidéo, le game et level design ou la 3D,
-                où je peux construire des univers et donner forme à des idées qui n'existent pas encore.
-              </p>
-              <p>
-                À l'opposé mais avec la même logique, la moto et la voiture m'attirent pour l'adrénaline,
-                la progression technique et l'appartenance à une communauté dans laquelle je me sens à ma place.
-              </p>
-              <p>
-                J'ai aussi un rapport plus sensible à l'esthétique et à l'interprétation, notamment à travers le piano
-                et la photographie,
-                qui me permettent d'exprimer quelque chose de plus personnel, sans forcément passer par les mots.
-              </p>
-              <p>
-                Globalement, je suis rationnel mais très intuitif : j'aime la logique mais il m'arrive de me fier à mon
-                instinct
-                quitte à ne pas suivre le protocole précisément.
-                Je reste parfois impatient face à la répétition ou à la routine. J'ai du mal à rester enfermé dans une
-                seule voie
-                trop longtemps, parce que j'ai besoin d'explorer, de remettre en question et de sentir que j'avance.
-                L'échec ne me bloque pas spécialement : pour moi, c'est une étape normale du processus.
-              </p>
-              <p>
-                Ce qui me définit le plus, c'est cette envie constante de créer, ressentir et apprendre — tant que je ne
-                m'ennuie pas.
-              </p>
-            </div>
-
-            <div class="about-card glass reveal" style="margin-top: 2.5rem;">
-              <h2 class="about-section-title">Ce que je recherche</h2>
-              <ul class="mini-list">
-                <li>
-                  <strong>Alternance (rythme IUT) —</strong> disponible dès le semestre 4, avec une immersion 100% en
-                  entreprise de mi-avril à fin août (au plus tard dès le 13 avril). Idéalement, je souhaite poursuivre
-                  l'alternance jusqu'à la fin du BUT3. Montpellier & alentours.
-                </li>
-                <li>
-                  <strong>Missions —</strong> je suis partant pour toucher à tout en info, mais je m'éclate surtout
-                  quand il y a du front/UI, du PHP/SQL, du prototypage Unity et un peu de coordination.
-                </li>
-                <li>
-                  <strong>Objectif —</strong> évoluer vers le game design : prototyper, tester, itérer, et comprendre ce
-                  qui rend une expérience fun et lisible.
-                </li>
-              </ul>
-              <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
-                Langues — Français (natif) • Anglais B2 (certifié Cambridge, oral & écrit).
-              </p>
-            </div>
-          </div>
-
-          <!-- Secondary Column (Sidebar style) -->
-          <aside class="about-side-content">
-            <div class="about-card glass reveal">
-              <h2 class="about-section-title">Parcours</h2>
-              <div class="about-timeline">
-                <div class="about-timeline-item">
-                  <span class="about-timeline-date">Septembre 2024</span>
-                  <h3>IUT Montpellier-Sète</h3>
-                  <p>Début du BUT Informatique. Apprentissage des fondamentaux et projets concrets.</p>
-                </div>
-                <div class="about-timeline-item">
-                  <span class="about-timeline-date">Fin Janvier 2025</span>
-                  <h3>Code Game Jam 2025</h3>
-                  <p>Collaboration intensive et création de prototype sous contrainte de temps.</p>
-                </div>
-                <div class="about-timeline-item">
-                  <span class="about-timeline-date">Septembre 2025 - Janvier 2026</span>
-                  <h3>SAE 3.01 — Case 404 (CTF)</h3>
-                  <p>Déploiement d'une plateforme CTF complète avec Docker, Nginx et plugins personnalisés.</p>
-                </div>
-                <div class="about-timeline-item">
-                  <span class="about-timeline-date">Octobre-Novembre 2025</span>
-                  <h3>Projet E-commerce PHP</h3>
-                  <p>Site marchand complet : panier persistant, CRUD admin, architecture MVC.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-featured-card glass reveal" style="margin-top: 2.5rem;">
-              <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; opacity: 0.7;">Projet Phare</h3>
-              <h4 style="font-size: 1.4rem; color: var(--accent-strong); margin-bottom: 1rem;">SAE 3.01 — Case 404 (CTF)
-              </h4>
-              <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-                Plateforme CTF complète déployée sur VPS avec Docker, Nginx et plugins personnalisés.
-                Note technique : <strong style="color: #00f2fe;">19.5/20</strong>
-              </p>
-              <img src="Images/CTF/ctfHome.png" alt="Plateforme CTF Case 404"
-                style="width: 100%; border-radius: 0.75rem; margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1);">
-              <a href="project-ctf-case-404.html" class="btn ghost full-width" style="justify-content: center;">
-                Voir le projet
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner text-center">
-        <p>© 2026 Nathan Dabonneville — Portfolio</p>
-      </div>
-    </footer>
+<section>
+  <div class="two">
+    <p class="kicker">Qui je suis</p>
+    <div class="prose">
+      <p>Je fonctionne avant tout à la curiosité, à l'instinct et au besoin de stimulation. J'aime créer et comprendre, surtout quand il y a un skill gap à combler : apprendre, tester, rater, recommencer.</p>
+      <p>Je suis rationnel mais très intuitif : j'aime la logique, mais il m'arrive de me fier à mon instinct. Je reste parfois impatient face à la routine ; j'ai besoin d'explorer et de sentir que j'avance. L'échec ne me bloque pas : c'est une étape normale du processus.</p>
+    </div>
   </div>
+</section>
 
-  <button class="scroll-top" aria-label="Retour en haut">
-    ↑
-  </button>
+<section>
+  <div class="two">
+    <p class="kicker">En dehors du code</p>
+    <div class="rows" style="border-top:0">
+      <div class="row" style="grid-template-columns:110px 1fr;padding-top:0">
+        <span class="mono muted">Moto</span>
+        <div><p style="margin:0">La moto m'attire pour l'adrénaline, la progression technique et l'appartenance à une communauté dans laquelle je me sens à ma place. Permis A2 en poche — et une alternance à la Mutuelle des Motards.</p></div>
+      </div>
+      <div class="row" style="grid-template-columns:110px 1fr">
+        <span class="mono muted">Jeu vidéo</span>
+        <div><p style="margin:0">Développement de jeux, game et level design, 3D : construire des univers et donner forme à des idées qui n'existent pas encore. Code Game Jam 2025, Crazy Game Jam 2026.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="main.js" defer></script>
+<section>
+  <div class="two">
+    <p class="kicker">Objectif</p>
+    <div class="prose"><p>Évoluer vers le game design : prototyper, tester, itérer, et comprendre ce qui rend une expérience fun et lisible.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><p class="kicker">Parcours</p><h2>Depuis 2024.</h2></div>
+  <dl class="log">
+    <dt>sept. 2024</dt><dd>Entrée en BUT Informatique à l'IUT Montpellier-Sète</dd>
+    <dt>janv. 2025</dt><dd><a href="project-code-game-jam.html">Code Game Jam 2025</a> — Prix design global, 2ᵉ place locale</dd>
+    <dt>sept. 2025</dt><dd>BUT 2, parcours IAMSI · <a href="project-ctf-case-404.html">SAÉ 3.01 Case 404</a> (jusqu'en janv. 2026) · <a href="project-ecommerce-php.html">e-commerce PHP</a></dd>
+    <dt>avr.–juil. 2026</dt><dd>Stage à la <a href="amdm.html">Mutuelle des Motards</a></dd>
+    <dt>été 2026</dt><dd><a href="project-crazy-game-jam.html">Crazy Game Jam</a></dd>
+    <dt>sept. 2026</dt><dd>BUT 3 en alternance à la <a href="amdm.html">Mutuelle des Motards</a>, jusqu'au 31 août 2027</dd>
+  </dl>
+  <p class="note"><a href="Ressources/CV/CV_Nathan_Dabonneville.pdf">Télécharger mon CV (PDF) →</a></p>
+</section>
+</main>
+<footer class="foot">
+  <span>BUT Informatique · parcours IAMSI · IUT Montpellier-Sète · 2024–2027</span>
+  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a> · <a href="https://github.com/Nathdbv">GitHub</a></span>
+</footer>
+</div>
+<script src="rythme.js"></script>
 </body>
-
 </html>

@@ -1,439 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio - Compétences</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Mes 6 compétences acquises durant mon BUT Informatique." />
-    <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compétences</title>
+<meta name="description" content="Portfolio de Nathan Dabonneville, alternant en BUT Informatique (parcours IAMSI) à l'IUT Montpellier-Sète et à la Mutuelle des Motards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
-<body class="theme-dark page-competences">
-    <a href="#main" class="skip-link">Passer au contenu</a>
-
-    <div class="page-wrapper">
-        <header class="site-header glass">
-            <div class="container header-inner">
-                <a href="index.html" class="logo">
-                    <span class="logo-mark">P</span>
-                    <span class="logo-text">Portfolio</span>
-                </a>
-
-                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-                    <span></span><span></span>
-                </button>
-
-                <nav class="site-nav" aria-label="Navigation principale">
-                    <ul>
-                        <li><a href="index.html" class="nav-link">Accueil</a></li>
-                        <li><a href="about.html" class="nav-link">À propos</a></li>
-                        <li><a href="apprentissage.html" class="nav-link">Apprentissage</a></li>
-                        <li><a href="work.html" class="nav-link">Projets</a></li>
-                        <li><a href="competences.html" class="nav-link active">Compétences</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-
-                <button id="themeToggle" class="theme-toggle" aria-label="Changer de thème">
-                    <span class="theme-toggle-icon"></span>
-                </button>
-            </div>
-        </header>
-
-        <main id="main">
-            <section class="section hero home-hero-dense" style="padding-bottom: 2rem;">
-                <div class="container text-center">
-                    <h1 class="hero-title reveal" style="margin-bottom: 1rem;">
-                        Mes <span class="accent-gradient">Compétences</span>
-                    </h1>
-                    <p class="hero-subtitle reveal mx-auto" style="margin-bottom: 2rem; max-width: 650px;">
-                        Une vue détaillée des 6 compétences clés développées et consolidées durant mon B.U.T.
-                        Informatique. Ce que je sais faire, comment je le fais, et l'application concrète dans mes
-                        projets.
-                    </p>
-                </div>
-            </section>
-
-            <!-- BENTO GRID SYSTEM -->
-            <section class="section home-section-dense" style="padding-top: 1rem;">
-                <div class="container bento-grid">
-
-                    <!-- Compétence 1 : Développement (Carte Large - span 2) -->
-                    <article class="bento-card glass reveal bento-wide">
-                        <div class="bento-icon-wrapper color-green">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>1. Réaliser un développement d'application</h2>
-                                <div class="comp-badge active-green">Développement</div>
-                            </div>
-
-                            <div class="bento-body-split">
-                                <div class="bento-text">
-                                    <p class="comp-desc">
-                                        Concevoir et développer des applications web ou logicielles fonctionnelles,
-                                        sécurisées et maintenables en partant de zéro, en respectant les standards de
-                                        l'industrie.
-                                    </p>
-
-                                    <div class="comp-progress-container">
-                                        <div class="comp-progress-header">
-                                            <span>Acquisition (UE 3.1)</span>
-                                            <span style="color: #4ade80;">74.3% (14.86/20) —
-                                                <strong>Solide</strong></span>
-                                        </div>
-                                        <div class="comp-progress-bar">
-                                            <div class="comp-progress-fill" style="width: 74.3%; background: #4ade80;">
-                                            </div>
-                                        </div>
-                                        <p
-                                            style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                            Très à l'aise avec la logique backend et la structuration (MVC, OOP), je
-                                            continue d'affûter mes réflexes sur les gros frameworks modernes.
-                                        </p>
-                                    </div>
-                                    <div class="comp-skills">
-                                        <strong>Ce que je maîtrise :</strong>
-                                        <ul>
-                                            <li>Architecture logicielle robuste (Modèle <strong>MVC</strong>, orienté
-                                                objet)</li>
-                                            <li>Gestion sécurisée des états utilisateurs (<strong>Sessions, Cookies
-                                                    PHP</strong>)</li>
-                                            <li>Fonctionnalités avancées (ex: système de panier dynamique)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <a href="project-ecommerce-php.html" class="bento-proof-link glass-hover">
-                                    <div class="proof-meta">
-                                        <span class="proof-label">Validation</span>
-                                        <span class="proof-project">E-commerce PHP</span>
-                                    </div>
-                                    <div class="proof-visual"
-                                        style="background-image: url('Images/ecommerce/front.png');"></div>
-                                    <div class="proof-cta">Voir le cas d'étude →</div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Compétence 2 : Optimisation (Carte Standard) -->
-                    <article class="bento-card glass reveal">
-                        <div class="bento-icon-wrapper color-yellow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>2. Optimiser des applications</h2>
-                                <div class="comp-badge active-yellow">Performance</div>
-                            </div>
-
-                            <p class="comp-desc">
-                                Analyser, identifier les goulets d'étranglement et améliorer significativement les
-                                performances applicatives ou d'infrastructure.
-                            </p>
-
-                            <div class="comp-progress-container">
-                                <div class="comp-progress-header">
-                                    <span>Acquisition (UE 3.2)</span>
-                                    <span style="color: #fbbf24;">71.6% (14.31/20) —
-                                        <strong>Satisfaisant</strong></span>
-                                </div>
-                                <div class="comp-progress-bar">
-                                    <div class="comp-progress-fill" style="width: 71.6%; background: #fbbf24;"></div>
-                                </div>
-                                <p
-                                    style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                    Je comprends les enjeux de performance et sais isoler les problèmes (requêtes
-                                    lourdes), même si l'optimisation réseau très bas niveau reste à approfondir.
-                                </p>
-                            </div>
-
-                            <div class="comp-skills">
-                                <strong>Savoir-faire :</strong>
-                                <ul>
-                                    <li>Optimisation des <strong>requêtes SQL</strong> (indexes, jointures)</li>
-                                    <li>Chargement conditionnel et asynchrone des médias</li>
-                                    <li>Réglages réseau (reverse proxy <strong>Nginx/Traefik</strong>)</li>
-                                </ul>
-                            </div>
-
-                            <a href="project-ecommerce-php.html" class="bento-proof-compact">
-                                <span>Preuve : <strong>E-commerce PHP</strong></span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Compétence 3 : Système (Carte Standard) -->
-                    <article class="bento-card glass reveal">
-                        <div class="bento-icon-wrapper color-blue">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>3. Administrer des systèmes</h2>
-                                <div class="comp-badge active-blue">Infrastructure</div>
-                            </div>
-
-                            <p class="comp-desc">
-                                Déployer, configurer, superviser et sécuriser une architecture système distribuée,
-                                capable de tenir la charge en production.
-                            </p>
-
-                            <div class="comp-progress-container">
-                                <div class="comp-progress-header">
-                                    <span>Acquisition (UE 3.3)</span>
-                                    <span style="color: #60a5fa;">78.6% (15.72/20) — <strong>Avancé</strong></span>
-                                </div>
-                                <div class="comp-progress-bar">
-                                    <div class="comp-progress-fill" style="width: 78.6%; background: #60a5fa;"></div>
-                                </div>
-                                <p
-                                    style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                    Un de mes points forts : je maîtrise bien Docker, le déploiement sous Linux, et je
-                                    prends un vrai plaisir à concevoir des architectures résilientes.
-                                </p>
-                            </div>
-
-                            <div class="comp-skills">
-                                <strong>Savoir-faire :</strong>
-                                <ul>
-                                    <li>Déploiement sur serveur <strong>Linux (Debian/Ubuntu)</strong></li>
-                                    <li>Conteneurisation et isolation avec <strong>Docker & Compose</strong></li>
-                                    <li>Filtrage réseau et sécurité (Zero-trust, allow-lists IP)</li>
-                                </ul>
-                            </div>
-
-                            <a href="project-ctf-case-404.html" class="bento-proof-compact">
-                                <span>Preuve : <strong>CTF Case 404</strong></span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Compétence 4 : Données (Carte Standard) -->
-                    <article class="bento-card glass reveal">
-                        <div class="bento-icon-wrapper color-orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>4. Gérer des données</h2>
-                                <div class="comp-badge active-orange">Data & SQL</div>
-                            </div>
-
-                            <p class="comp-desc">
-                                Modéliser, manipuler et sécuriser les informations vitales d'un système via des bases de
-                                données relationnelles complexes.
-                            </p>
-
-                            <div class="comp-progress-container">
-                                <div class="comp-progress-header">
-                                    <span>Acquisition (UE 3.4)</span>
-                                    <span style="color: #fb923c;">76.4% (15.27/20) — <strong>Maîtrisé</strong></span>
-                                </div>
-                                <div class="comp-progress-bar">
-                                    <div class="comp-progress-fill" style="width: 76.4%; background: #fb923c;"></div>
-                                </div>
-                                <p
-                                    style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                    J'ai une très bonne rigueur sur la conception de BDD (MCD/MLD) ainsi que sur
-                                    l'écriture de requêtes SQL fiables pour garantir l'intégrité des données.
-                                </p>
-                            </div>
-
-                            <div class="comp-skills">
-                                <strong>Savoir-faire :</strong>
-                                <ul>
-                                    <li>Modélisation stricte (MCD, MLD) sous <strong>MySQL</strong></li>
-                                    <li>Intégrité référentielle (commandes, historique, stock)</li>
-                                    <li>Conception de <strong>Back-Office (CRUD)</strong> sécurisé</li>
-                                </ul>
-                            </div>
-
-                            <a href="project-ecommerce-php.html" class="bento-proof-compact">
-                                <span>Preuve : <strong>E-commerce PHP</strong></span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Compétence 5 : Projet (Carte Standard) -->
-                    <article class="bento-card glass reveal">
-                        <div class="bento-icon-wrapper color-red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>5. Conduire un projet</h2>
-                                <div class="comp-badge active-red">Management</div>
-                            </div>
-
-                            <p class="comp-desc">
-                                Mener à bien un projet informatique de l'expression du besoin client à sa livraison en
-                                production en appliquant les méthodes agiles.
-                            </p>
-
-                            <div class="comp-progress-container">
-                                <div class="comp-progress-header">
-                                    <span>Acquisition (UE 3.5)</span>
-                                    <span style="color: #f87171;">71.0% (14.20/20) —
-                                        <strong>Opérationnel</strong></span>
-                                </div>
-                                <div class="comp-progress-bar">
-                                    <div class="comp-progress-fill" style="width: 71.0%; background: #f87171;"></div>
-                                </div>
-                                <p
-                                    style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                    Je sais structurer le travail d'une équipe en suivant les principes agiles, même si
-                                    j'ai parfois tendance à prioriser rapidement l'action face à un blocage.
-                                </p>
-                            </div>
-
-                            <div class="comp-skills">
-                                <strong>Savoir-faire :</strong>
-                                <ul>
-                                    <li>Méthodologie <strong>Scrum</strong> (Sprints, Dailies)</li>
-                                    <li>Gestion de Backlog (organisation sur <strong>Trello</strong>)</li>
-                                    <li>Recueil et analyse des feedbacks utilisateurs finaux</li>
-                                </ul>
-                            </div>
-
-                            <a href="project-ctf-case-404.html" class="bento-proof-compact">
-                                <span>Preuve : <strong>CTF Case 404</strong></span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Compétence 6 : Équipe (Carte Large - span 2 inversé) -->
-                    <article class="bento-card glass reveal bento-wide">
-                        <div class="bento-icon-wrapper color-purple">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                        </div>
-
-                        <div class="bento-content">
-                            <div class="bento-header">
-                                <h2>6. Collaborer au sein d'une équipe</h2>
-                                <div class="comp-badge active-purple">Agilité & Humain</div>
-                            </div>
-
-                            <div class="bento-body-split reverse">
-                                <div class="bento-text">
-                                    <p class="comp-desc">
-                                        S'intégrer efficacement au sein d'une équipe technique hétérogène, communiquer
-                                        clairement, et assurer une gestion de version fluide sans bloquer les autres
-                                        développeurs.
-                                    </p>
-
-                                    <div class="comp-progress-container">
-                                        <div class="comp-progress-header">
-                                            <span>Acquisition (UE 3.6)</span>
-                                            <span style="color: #c084fc;">75.2% (15.03/20) — <strong>Très
-                                                    bon</strong></span>
-                                        </div>
-                                        <div class="comp-progress-bar">
-                                            <div class="comp-progress-fill" style="width: 75.2%; background: #c084fc;">
-                                            </div>
-                                        </div>
-                                        <p
-                                            style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5;">
-                                            La versioning collaborative (Git) et la coordination de workflow sont
-                                            naturelles pour moi. J'apprécie particulièrement l'émulation d'une équipe
-                                            soudée.
-                                        </p>
-                                    </div>
-                                    <div class="comp-skills">
-                                        <strong>Ce que je maîtrise :</strong>
-                                        <ul>
-                                            <li>Gestion de version avancée sous <strong>Git / GitHub</strong> (gestion
-                                                des conflits de merge)</li>
-                                            <li>Prise de décision rapide sous <strong>très forte contrainte de
-                                                    temps</strong></li>
-                                            <li>Répartition asynchrone des tâches techniques et artistiques</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <a href="project-code-game-jam.html" class="bento-proof-link glass-hover">
-                                    <div class="proof-meta">
-                                        <span class="proof-label">Validation</span>
-                                        <span class="proof-project">Game Jam (30h)</span>
-                                    </div>
-                                    <div class="proof-visual" style="background-image: url('Images/cgj1.png');"></div>
-                                    <div class="proof-cta">Voir le cas d'étude →</div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-
-
-            <section class="section home-section-dense" style="padding-bottom: 5rem;">
-                <div class="container text-center reveal">
-                    <a href="work.html" class="btn primary">Découvrir les projets en détail</a>
-                </div>
-            </section>
-        </main>
-
-        <footer class="site-footer">
-            <div class="container footer-inner text-center">
-                <p>© 2026 Nathan Dabonneville — Portfolio</p>
-            </div>
-        </footer>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="me" href="index.html">Nathan Dabonneville</a>
+  <ul>
+    <li><a href="index.html">Rythme</a></li>
+    <li><a href="amdm.html">AMDM</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="competences.html" aria-current="page">Compétences</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="pill" data-now-pill>…</span>
+</nav>
+<main>
+<section class="first">
+  <p class="kicker">Compétences · BUT Informatique</p>
+  <h1>Six compétences, <em>des preuves</em>.</h1>
+  <p class="lead" style="margin-top:22px">Les six compétences du BUT, avec mes résultats de semestre 3 et le projet qui le montre.</p>
+</section>
+<section>
+  <div class="rows">
+    <div class="row comp">
+      <span class="mono muted">C1<br>UE 3.1</span>
+      <div><h3>Réaliser <span class="muted" style="font-weight:500">un développement d'application</span></h3><p>Architecture MVC et orientée objet ; sessions et cookies PHP ; panier dynamique.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-ecommerce-php.html">E-commerce PHP →</a></p></div>
+      <div class="meter"><b>14,86<small> / 20</small></b><span style="--p:74.3%"></span><small class="mono muted">74,3 % · UE 3.1</small></div>
     </div>
-
-    <button class="scroll-top" aria-label="Retour en haut">↑</button>
-
-    <script src="main.js" defer></script>
+    <div class="row comp">
+      <span class="mono muted">C2<br>UE 3.2</span>
+      <div><h3>Optimiser <span class="muted" style="font-weight:500">des applications</span></h3><p>Requêtes SQL (index, jointures) ; chargement conditionnel des médias ; reverse proxy Nginx.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-ecommerce-php.html">E-commerce PHP →</a></p></div>
+      <div class="meter"><b>14,31<small> / 20</small></b><span style="--p:71.6%"></span><small class="mono muted">71,6 % · UE 3.2</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C3<br>UE 3.3</span>
+      <div><h3>Administrer <span class="muted" style="font-weight:500">des systèmes communicants</span></h3><p>Serveurs Linux (Debian/Ubuntu) ; Docker et Compose ; filtrage réseau, allow-lists IP.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-ctf-case-404.html">CTF Case 404 →</a></p></div>
+      <div class="meter"><b>15,72<small> / 20</small></b><span style="--p:78.6%"></span><small class="mono muted">78,6 % · UE 3.3</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C4<br>UE 3.4</span>
+      <div><h3>Gérer <span class="muted" style="font-weight:500">des données</span></h3><p>Modélisation MCD/MLD sous MySQL ; intégrité référentielle ; back-office CRUD sécurisé.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-ecommerce-php.html">E-commerce PHP →</a></p></div>
+      <div class="meter"><b>15,27<small> / 20</small></b><span style="--p:76.4%"></span><small class="mono muted">76,4 % · UE 3.4</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C5<br>UE 3.5</span>
+      <div><h3>Conduire <span class="muted" style="font-weight:500">un projet</span></h3><p>Scrum (sprints, dailies) ; backlog sur Trello ; retours utilisateurs.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-ctf-case-404.html">CTF Case 404 →</a></p></div>
+      <div class="meter"><b>14,20<small> / 20</small></b><span style="--p:71.0%"></span><small class="mono muted">71,0 % · UE 3.5</small></div>
+    </div>
+    <div class="row comp">
+      <span class="mono muted">C6<br>UE 3.6</span>
+      <div><h3>Collaborer <span class="muted" style="font-weight:500">au sein d'une équipe</span></h3><p>Git/GitHub et conflits de merge ; décisions sous forte contrainte de temps ; répartition des tâches techniques et artistiques.</p>
+        <p class="note" style="margin-top:10px">Trace : <a href="project-code-game-jam.html">Code Game Jam →</a></p></div>
+      <div class="meter"><b>15,03<small> / 20</small></b><span style="--p:75.2%"></span><small class="mono muted">75,2 % · UE 3.6</small></div>
+    </div>
+  </div>
+  <div class="todo" style="margin-top:28px"><span class="mono">À venir</span><b>Les traces issues de l'alternance à l'AMDM</b>, rattachées à ces compétences.</div>
+</section>
+<section>
+  <div class="sec-head"><p class="kicker">Parcours IAMSI</p><h2>Apprentissages critiques de niveau 2.</h2></div>
+  <p class="prose muted">Dans le parcours IAMSI (Intégration d'applications et management du SI), C2, C3 et C4 s'arrêtent au niveau 2. Voici comment j'ai validé chaque apprentissage critique.</p>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C2 · niveau 2</p></div>
+    <div><h3>Optimiser des applications informatiques</h3><p class="muted" style="margin-top:4px">Sélectionner les algorithmes adéquats pour répondre à un problème donné.</p>
+      <dl class="log ac"><dt>AC22.01</dt><dd><b>Choisir des structures de données complexes adaptées au problème</b><span>Modélisation et optimisation des requêtes du panier (session vs base) sur l'e-commerce PHP</span></dd><dt>AC22.02</dt><dd><b>Utiliser des techniques algorithmiques adaptées pour des problèmes complexes</b><span>Logique de jeu en C# (Unity) à la Game Jam : collisions et états</span></dd><dt>AC22.03</dt><dd><b>Comprendre les enjeux et moyens de sécurisation des données et du code</b><span>Hachage des mots de passe (sel/poivre), requêtes préparées PDO contre les injections SQL</span></dd><dt>AC22.04</dt><dd><b>Évaluer l'impact environnemental et sociétal des solutions informatiques</b><span>Poids des assets web, hébergement raisonné (VPS Debian), technologies légères</span></dd></dl></div>
+  </div>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C3 · niveau 2</p></div>
+    <div><h3>Administrer des systèmes informatiques communicants complexes</h3><p class="muted" style="margin-top:4px">Déployer des services dans une architecture réseau.</p>
+      <dl class="log ac"><dt>AC23.01</dt><dd><b>Concevoir et développer des applications communicantes</b><span>Orchestration Docker multi-conteneurs (CTFd + défis isolés), communication via réseau Docker</span></dd><dt>AC23.02</dt><dd><b>Utiliser des serveurs et des services réseaux virtualisés</b><span>VPS Debian, reverse proxy Nginx, Portainer, allow-list IPv4</span></dd><dt>AC23.03</dt><dd><b>Sécuriser les services et données d'un système</b><span>Politique Zero Trust, isolation des défis par conteneur, restriction d'accès par IP</span></dd></dl></div>
+  </div>
+  <div class="two" style="margin-top:44px">
+    <div><p class="kicker" style="margin:4px 0 0">C4 · niveau 2</p></div>
+    <div><h3>Gérer des données de l'information</h3><p class="muted" style="margin-top:4px">Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité.</p>
+      <dl class="log ac"><dt>AC24.01</dt><dd><b>Optimiser les modèles de données de l'entreprise</b><span>MCD/MLD de l'e-commerce (produits, commandes, utilisateurs), requêtes avec index</span></dd><dt>AC24.02</dt><dd><b>Assurer la confidentialité des données (intégrité et sécurité)</b><span>Authentification sécurisée (sel/poivre), CRUD admin avec contrôle d'accès, intégrité référentielle</span></dd><dt>AC24.03</dt><dd><b>Organiser la restitution de données à travers la programmation et la visualisation</b><span>Historique des commandes par utilisateur (tri, filtre), restitution admin des produits</span></dd></dl></div>
+  </div>
+</section>
+<section>
+  <div class="two"><p class="kicker">Bilan</p>
+  <div class="prose"><p>Ces trois compétences ont façonné mon profil d'intégrateur et de développeur. Le CTF Case 404 m'a permis de dépasser le cadre académique en livrant un produit fonctionnel et sécurisé à un vrai client (Yggame) ; le projet e-commerce m'a donné une maîtrise concrète de l'optimisation et de la gestion de données.</p>
+  <p>La leçon que je retiens : l'ingénierie logicielle (infra, données, algorithmique) n'a de valeur que si elle garantit un système d'information cohérent et performant.</p></div></div>
+</section>
+</main>
+<footer class="foot">
+  <span>BUT Informatique · parcours IAMSI · IUT Montpellier-Sète · 2024–2027</span>
+  <span><a href="mailto:nathandabonneville.pro@gmail.com">nathandabonneville.pro@gmail.com</a> · <a href="https://www.linkedin.com/in/nathan-dabonneville-9a5585347/">LinkedIn</a> · <a href="https://github.com/Nathdbv">GitHub</a></span>
+</footer>
+</div>
+<script src="rythme.js"></script>
 </body>
-
 </html>
