@@ -248,6 +248,11 @@
   }
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
+  // utilisé par d'autres vues du calendrier (ex. calendrier mural)
+  window.Rythme = { status: status, block: block, today: today, parse: parse, iso: iso, add: add, monday: monday,
+    count: count, place: place, cap: cap, fmt: fmt, fmtLong: fmtLong, CONTRACT: CONTRACT, ENTREPRISE: ENTREPRISE, IUT: IUT,
+    MONTHS_L: MONTHS_L, MONTHS_S: MONTHS_S, DAYS: DAYS, year: YEARS[0] };
+
   function init() {
     var st = now();
     renderPills(st); renderStatus(st);
