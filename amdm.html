@@ -41,13 +41,13 @@
     <div class="row">
       <span class="mono muted">13 avr. → 3 juil. 2026<br>12 semaines</span>
       <div><h3>Stage de BUT 2</h3>
-        <div class="todo" style="margin-top:12px"><span class="mono">À compléter</span><b>Poste, équipe, missions du stage.</b></div></div>
+        <p>Stage de douze semaines : ma première immersion dans l'entreprise et ses équipes, avant l'alternance.</p></div>
       <span></span>
     </div>
     <div class="row">
       <span class="mono muted">1er sept. 2026 → 31 août 2027<br>contrat d'alternance</span>
-      <div><h3>Alternance de BUT 3</h3>
-        <div class="todo" style="margin-top:12px"><span class="mono">À compléter</span><b>Intitulé du poste, service, tuteur (rôle).</b></div></div>
+      <div><h3>Alternance de BUT 3 · apprenti développeur</h3>
+        <p>J'alterne entre l'entreprise et l'IUT selon le calendrier ci-dessus. Je travaille sur une application web destinée aux sociétaires, qui sert pour les Assemblées Régionales de la Mutuelle.</p></div>
       <span></span>
     </div>
   </div>
@@ -58,12 +58,76 @@
     <p class="kicker">Missions</p>
     <h2>Ce que j'y fais.</h2>
   </div>
+  <div class="rows">
+    <div class="row">
+      <span class="mono muted">01</span>
+      <div><h3>Refonte d'une page d'accueil</h3>
+        <p>L'application passe à la nouvelle charte graphique de la Mutuelle.</p>
+        <ul>
+          <li>Intégration des maquettes validées par le métier.</li>
+          <li>Bascule entre l'ancienne et la nouvelle interface par configuration, sans redéploiement.</li>
+          <li>Logique d'affichage isolée dans un service Java dédié et testé.</li>
+        </ul>
+        <p class="res">Livrée en recette, l'ancienne interface reste intacte.</p></div>
+      <div class="tags"><span class="tag c">C1 Réaliser</span><span class="tag c">C6 Collaborer</span></div>
+    </div>
+    <div class="row">
+      <span class="mono muted">02</span>
+      <div><h3>Nouvelle page d'inscription</h3>
+        <p>L'inscription se faisait dans une fenêtre modale ; elle devient une page à part entière.</p>
+        <ul>
+          <li>Création de la page et de son parcours.</li>
+          <li>Logique d'enregistrement existante extraite dans une méthode commune et réutilisée.</li>
+          <li>Contrôles côté serveur et protection contre les doubles envois.</li>
+        </ul>
+        <p class="res">Livrée en recette, avec des contrôles absents de l'ancienne version.</p></div>
+      <div class="tags"><span class="tag c">C1 Réaliser</span><span class="tag c">C4 Données</span></div>
+    </div>
+    <div class="row">
+      <span class="mono muted">03</span>
+      <div><h3>Qualité, sécurité et revue de code</h3>
+        <p>Le code est relu et approuvé avant tout déploiement.</p>
+        <ul>
+          <li>32 tests unitaires JUnit.</li>
+          <li>Échappement des données affichées et filtrage des URL.</li>
+          <li>Prise en compte des retours de relecture.</li>
+        </ul>
+        <p class="res">Demande de fusion approuvée et fusionnée.</p></div>
+      <div class="tags"><span class="tag c">C2 Optimiser</span><span class="tag c">C1 Réaliser</span></div>
+    </div>
+    <div class="row">
+      <span class="mono muted">04</span>
+      <div><h3>Livraison et déploiement</h3>
+        <p>Première livraison du projet en recette, sur une chaîne d'intégration récemment migrée.</p>
+        <ul>
+          <li>Vérification de l'archive produite par la CI.</li>
+          <li>Détection et correction d'une régression de build.</li>
+          <li>Configuration de l'environnement de recette, puis déploiement sur le serveur d'applications.</li>
+        </ul>
+        <p class="res">Application déployée en recette, régression corrigée.</p></div>
+      <div class="tags"><span class="tag c">C3 Administrer</span><span class="tag c">C5 Conduire</span></div>
+    </div>
+    <div class="row">
+      <span class="mono muted">05</span>
+      <div><h3>Documentation et échanges avec le métier</h3>
+        <p>En alternance, le projet doit pouvoir être repris en mon absence.</p>
+        <ul>
+          <li>Conception technique : règles de gestion, architecture, points ouverts.</li>
+          <li>Note de reprise : organisation du code, tests, livraison, reste à faire.</li>
+          <li>Intégration des retours du métier.</li>
+        </ul>
+        <p class="res">Documentation publiée en interne, à jour de la livraison.</p></div>
+      <div class="tags"><span class="tag c">C5 Conduire</span><span class="tag c">C6 Collaborer</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="two">
-    <span></span>
-    <div style="display:grid;gap:14px">
-      <div class="todo"><span class="mono">Mission 1 — à compléter</span><b>Contexte · ce que j'ai fait · résultat.</b></div>
-      <div class="todo"><span class="mono">Mission 2 — à compléter</span><b>Contexte · ce que j'ai fait · résultat.</b></div>
-      <div class="todo"><span class="mono">Mission 3 — à compléter</span><b>Contexte · ce que j'ai fait · résultat.</b></div>
+    <p class="kicker">Une difficulté</p>
+    <div class="prose">
+      <p>Juste avant le déploiement, l'archive produite par la CI contenait des fichiers de configuration qui n'auraient pas dû y être.</p>
+      <p>J'ai inspecté l'archive puis remonté l'historique Git : un renommage récent du projet rendait inopérantes des règles d'exclusion écrites des années plus tôt. J'ai corrigé ces règles, vérifié le résultat sur une nouvelle archive et prévenu l'équipe.</p>
     </div>
   </div>
 </section>
@@ -75,18 +139,38 @@
   </div>
   <div class="two">
     <span></span>
-    <div class="todo"><span class="mono">À compléter</span><b>Langages, frameworks, outils utilisés à l'AMDM.</b></div>
+    <dl class="log" style="margin-top:0">
+      <dt>Back-end</dt><dd>Java 8 · Spring Boot · JSP/JSTL · services REST · Keycloak</dd>
+      <dt>Front-end</dt><dd>HTML · CSS · JavaScript · Bootstrap 5 · Leaflet / OpenStreetMap</dd>
+      <dt>Qualité</dt><dd>JUnit 5 · SonarQube · revue de code par demande de fusion</dd>
+      <dt>Livraison</dt><dd>Maven · Git · GitLab CI · Artifactory · JBoss</dd>
+      <dt>Outils</dt><dd>IntelliJ IDEA · PowerShell · Confluence · Jira</dd>
+    </dl>
   </div>
 </section>
 
 <section>
   <div class="sec-head">
-    <p class="kicker">Compétences</p>
-    <h2>Compétences BUT mobilisées.</h2>
+    <p class="kicker">Captures</p>
+    <h2>En images.</h2>
   </div>
   <div class="two">
     <span></span>
-    <div class="todo"><span class="mono">À relier</span><b>Pour chaque mission : les AC visés et la trace qui le prouve.</b> Voir aussi la page <a href="competences.html">Compétences</a>.</div>
+    <div class="shots">
+      <div class="shot-todo"><span class="mono">Capture à venir</span><b>Page d'accueil, avant / après</b>Sans données réelles, avec l'accord de l'entreprise.</div>
+      <div class="shot-todo"><span class="mono">Capture à venir</span><b>Nouvelle page d'inscription</b>Sans données réelles, avec l'accord de l'entreprise.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <p class="kicker">Ce que j'apprends</p>
+    <div class="prose">
+      <p>Faire évoluer une application existante, c'est d'abord protéger ce qui marche déjà : la bascule par configuration et les tests m'ont permis de livrer sans casser l'ancienne version.</p>
+      <p>J'apprends à prioriser sous contrainte de délai, en livrant d'abord une version fonctionnelle puis en la sécurisant. La revue de code et la documentation m'ont montré qu'un projet doit pouvoir être compris et repris par quelqu'un d'autre.</p>
+      <p class="note">Le lien avec les compétences du BUT est détaillé sur la page <a href="competences.html">Compétences</a>.</p>
+    </div>
   </div>
 </section>
 </main>
